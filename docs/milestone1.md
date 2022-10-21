@@ -8,9 +8,9 @@ Lost and Found map
 # Team Overview: 
 | | Name | GitHub |
 | ------------- |------------- | ------------- |
-| ![](https://avatars.githubusercontent.com/u/71847172?v=4) | Yujin Qin | [nenevadera](https://github.com/nenevadera) |
+| ![](https://avatars.githubusercontent.com/u/71847172?s=48&v=4) | Yujin Qin | [nenevadera](https://github.com/nenevadera) |
 | ![](https://avatars.githubusercontent.com/u/112994001?v=4) | Kelly Chung | [Kelly2c](https://github.com/Kelly2c) |
-| ![](https://avatars.githubusercontent.com/u/58710754?v=4) | Yuqi Liu| [ZephyrusLiu](https://github.com/ZephyrusLiu) |
+| ![](https://avatars.githubusercontent.com/u/58710754?s=40&v=4) | Yuqi Liu| [ZephyrusLiu](https://github.com/ZephyrusLiu) |
 
 
 # Data Interactions: 
