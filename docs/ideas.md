@@ -3,7 +3,7 @@ Group Name: Het
 
 Application Name: Lost and Found map
 
-Team Overview: Yujin Qin(nenevadera), Kelly Chung(Kelly2c), and Yuqi Liu(Zephu\yrusLiu)
+Team Overview: Yujin Qin(nenevadera), Kelly Chung(Kelly2c), and Yuqi Liu(ZephyrusLiu)
 
 Innovative Idea: The general purpose of our project is to efficiently help UMass students to find their lost items in real-time. We want to find a more convenient way of reporting lost or handing in found items. Therefore, we will use an application called "Google Maps" or other map resources for people to check the nearest lost and found station, so they can hand in anything that they find on campus. After people report their lost items and put pieces of information on our application, we will match their data with existing items under the "lost" label to check if someone found it already. Thus, to build the communication with different people, we might use social platforms such as "Instagram" or "Twitter", or even "iMessage" by phone number.
 
