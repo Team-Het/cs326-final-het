@@ -6,11 +6,11 @@ Lost and Found map
 
 
 # Team Overview: 
-| Name | GitHub |
-| ------------- | ------------- |
-| Yujin Qin | [nenevadera](https://github.com/nenevadera) |
-| Kelly Chung | [Kelly2c](https://github.com/Kelly2c) |
-| Yuqi Liu| [ZephyrusLiu](https://github.com/ZephyrusLiu) |
+| | Name | GitHub |
+| ------------- |------------- | ------------- |
+| ![](https://avatars.githubusercontent.com/u/71847172?v=4) | Yujin Qin | [nenevadera](https://github.com/nenevadera) |
+| ![](https://avatars.githubusercontent.com/u/112994001?v=4) | Kelly Chung | [Kelly2c](https://github.com/Kelly2c) |
+| ![](https://avatars.githubusercontent.com/u/58710754?v=4) | Yuqi Liu| [ZephyrusLiu](https://github.com/ZephyrusLiu) |
 
 
 # Data Interactions: 
