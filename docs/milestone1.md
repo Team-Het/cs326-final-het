@@ -59,3 +59,34 @@ Hand draft version.
 
 ![dashboard wireframe](../imgs/submit_lost_item_page.png)
 
+
+
+
+
+
+## Submit Found Item Page
+This is the submit found item page for users who found items but don't know the owner, and want to create posts to find the owner of the items they found.
+
+Hand draft version.
+
+![dashboard wireframe](../imgs/submit_found_item_page.png)
+
+
+
+
+## View Posts Page
+This is the view all posts page for users to view all posts quickly by provided short informations. Users could click "view details" on the top of each post to see the detail information.
+
+Hand draft version.
+
+![dashboard wireframe](../imgs/view_posts.png)
+
+
+
+
+## View Posts Details Page
+This is view posts details page for users who wants to get more information about this post. It will show all the informations about this lost or found item.
+
+Hand draft version.
+
+![dashboard wireframe](../imgs/view_posts_details.png)
