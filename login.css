@@ -1,24 +1,20 @@
 @import "lostfound.css";
 
-.home{
-    background-image: url('lostkeys.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
+.logo{
+    width: 340px;
+    margin: 35px auto 40px;
 }
 
-.column-layout{
-    margin: 0px auto 30px 5%
+.login-info{
+    padding: 30px;
 }
 
-.home-info{
-    margin: 80px 10px;
+.login-input{
+    max-width: 500px;
+    padding-bottom: 120px;
+    margin: auto;
 }
 
-.home-input{
-    height: 600px;
-    padding: 40px;
-    font-weight: bold;
-    font-size: 20px;
-    background-color:antiquewhite;
+.align-pass{
+    margin: 0px 38px;
 }
