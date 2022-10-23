@@ -1,41 +1,30 @@
 @import "lostfound.css";
 
-.home{
-    background-image: url('lostkeys.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-}
-
 .column-layout{
-    margin: 0px auto 30px 5%
+    margin: 0px auto 30px
 }
 
-.home-info{
-    margin: 20px 30px;
+.submitLost-info{
+    margin: 20px 20px 38px 20px;
 }
 
-.home-input{
-    height: 600px;
+.submitLost-input{
+    height: 580px;
     padding: 40px;
     font-weight: bold;
     font-size: 20px;
     background-color:lightblue;
 }
 
-.home-img-info{
+/* .submitLost-img-info{
     margin: 150px 60px;
-}
-.home-img{
+} */
+.submitLost-img{
     height: 300px;
     padding: 50px;
     font-weight: bold;
     font-size: 20px;
     background-color:grey;
-}
-
-.titleW{
-    margin-top: 20px
 }
 
 .atitle{
@@ -70,3 +59,6 @@
     margin: 0px 16px 0px 10px;
 }
 
+.btn-submit{
+    margin-top: 35px;
+}
