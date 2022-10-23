@@ -1,0 +1,28 @@
+@import "lostfound.css";
+
+.logo{
+    width: 340px;
+    margin: 35px auto 40px;
+}
+
+.createAcc-info{
+    padding: 30px;
+}
+
+.createAcc-input{
+    max-width: 500px;
+    padding-bottom: 110px;
+    margin: auto;
+}
+
+.create{
+    min-width: 156px;
+}
+
+.align-pass{
+    margin: 0px 16px 0px 7px;
+}
+
+.align-email{
+    margin: 0px 16px 0px 106px;
+}
