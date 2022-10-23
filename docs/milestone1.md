@@ -21,6 +21,12 @@ In our application, we will have at least four different sources of data: post, 
 # User Interface
 ## Dashboard Page
 This is the dashboard page once the user clicked or entered the link.
-![dashboard wireframe](imgs/dashboard.jpeg)
 
+Hand draft version.
+
+![dashboard wireframe](../imgs/dashboard.jpeg)
+
+HTML version.
+
+![dashboard2 wireframe](../imgs/dashboard_html_ver.png)
 
