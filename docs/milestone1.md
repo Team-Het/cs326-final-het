@@ -52,3 +52,10 @@ HTML version.
 
 ![dashboard2 wireframe](../imgs/ca_html_ver.png)
 
+## Submit Lost Item Page
+This is the submit lost item page for users who lost items and want to create a post to find their items.
+
+Hand draft version.
+
+![dashboard wireframe](../imgs/submit_lost_item_page.png)
+
