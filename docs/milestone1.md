@@ -18,5 +18,9 @@ The general purpose of our project is to efficiently help UMass students to find
 
 In our application, we will have at least four different sources of data: post, reply, images, and map data. For the "post", users of our application are able to create a post with information that the item they found or lost. For the "reply", users of our application are able to reply to a post such as "I also saw this item at xx time xx location". For "images", users are able to upload images to specify the details of their lost or found items. For "map", users who lost something will get notified on the map once other users found items that match your description or reply to your post with location information.
 
+# User Interface
+## Dashboard Page
+This is the dashboard page once the user clicked or entered the link.
+![dashboard wireframe](imgs/dashboard.jpeg)
 
 
