@@ -30,3 +30,25 @@ HTML version.
 
 ![dashboard2 wireframe](../imgs/dashboard_html_ver.png)
 
+## Login Page
+This is the login page for users who own an account to log in.
+
+Hand draft version.
+
+![dashboard wireframe](../imgs/login.jpeg)
+
+HTML version.
+
+![dashboard2 wireframe](../imgs/login_html_ver.png)
+
+## Create Account Page
+This is the create account page for users who does not own an account to create one.
+
+Hand draft version.
+
+![dashboard wireframe](../imgs/ca.jpeg)
+
+HTML version.
+
+![dashboard2 wireframe](../imgs/ca_html_ver.png)
+
