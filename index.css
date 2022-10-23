@@ -1,0 +1,32 @@
+.icon{
+    width: 25px;
+}
+
+.second-nav{
+    color: white;
+    margin: 0px 8px;
+    font-size: 16px;
+}
+
+.home{
+    background-image: url('lostkeys.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
+
+.column-layout{
+    margin: 0px auto 30px 5%
+}
+
+.home-info{
+    margin: 80px 10px;
+}
+
+.home-input{
+    height: 600px;
+    padding: 40px;
+    font-weight: bold;
+    font-size: 20px;
+    background-color:antiquewhite;
+}
