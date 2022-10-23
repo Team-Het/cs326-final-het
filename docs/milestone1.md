@@ -28,5 +28,5 @@ Hand draft version.
 
 HTML version.
 
-![dashboard2 wireframe](dashboard_html_ver.png)
+![dashboard2 wireframe](../imgs/dashboard_html_ver.png)
 
