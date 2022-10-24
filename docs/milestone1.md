@@ -97,7 +97,7 @@ HTML version
 
 
 ## Division of Labor
-Kelly Chung: Created the HTML and CSS for Navigation Bar, Dashboard page, Login page, Create Account page, and also realigned Submit Lost Item page.  Also helped design the draft for the website.
+Kelly Chung: Created the HTML and CSS for Navigation Bar, Dashboard page, Login page, Create Account page.  Helped realign Submit Lost Item page and helped design the draft for the website.
 
 Yuqi Liu:
 
