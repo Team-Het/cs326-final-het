@@ -59,10 +59,9 @@ Hand draft version.
 
 ![dashboard wireframe](../imgs/submit_lost_item_page.png)
 
+HTML version
 
-
-
-
+![dashboard2 wireframe](../imgs/submit_lost_item_html_ver.png)
 
 ## Submit Found Item Page
 This is the submit found item page for users who found items but don't know the owner, and want to create posts to find the owner of the items they found.
@@ -71,6 +70,7 @@ Hand draft version.
 
 ![dashboard wireframe](../imgs/submit_found_item_page.png)
 
+HTML version
 
 
 
@@ -81,6 +81,7 @@ Hand draft version.
 
 ![dashboard wireframe](../imgs/view_posts.png)
 
+HTML version
 
 
 
@@ -90,3 +91,14 @@ This is view posts details page for users who wants to get more information abou
 Hand draft version.
 
 ![dashboard wireframe](../imgs/view_posts_details.png)
+
+HTML version
+
+
+
+## Division of Labor
+Kelly Chung: Created the HTML and CSS for Navigation Bar, Dashboard page, Login page, Create Account page, and also realigned Submit Lost Item page.  Also helped design the draft for the website.
+
+Yuqi Liu:
+
+Yujin Qin:
