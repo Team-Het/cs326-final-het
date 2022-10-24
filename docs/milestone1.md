@@ -72,6 +72,8 @@ Hand draft version.
 
 HTML version
 
+![dashboard2 wireframe](../imgs/submit_found_item_html_ver.png)
+
 
 
 ## View Posts Page
@@ -83,6 +85,8 @@ Hand draft version.
 
 HTML version
 
+![dashboard2 wireframe](../imgs/view_posts_html_ver.png)
+
 
 
 ## View Posts Details Page
@@ -93,6 +97,8 @@ Hand draft version.
 ![dashboard wireframe](../imgs/view_posts_details.png)
 
 HTML version
+
+![dashboard2 wireframe](../imgs/view_details_html_ver.png)
 
 
 
