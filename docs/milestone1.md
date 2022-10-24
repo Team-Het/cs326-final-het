@@ -101,4 +101,4 @@ Kelly Chung: Created the HTML and CSS for Navigation Bar, Dashboard page, Login 
 
 Yuqi Liu:
 
-Yujin Qin:
+Yujin Qin: Design and draw the raw frames of web pages. Rearrange Navigation Bar, Dashboard page, Login page, Create Account page, Submit Lost Item Page, Submit Found Item Page, View Posts Page, and View Details Page.
