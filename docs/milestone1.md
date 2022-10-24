@@ -28,7 +28,7 @@ Hand draft version.
 
 HTML version.
 
-![dashboard2 wireframe](../imgs/dashboard_html_ver.png)
+![dashboard2 wireframe](../imgs/dahsboard_html_ver.png)
 
 ## Login Page
 This is the login page for users who own an account to log in.
