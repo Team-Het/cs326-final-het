@@ -103,7 +103,7 @@ HTML version
 
 
 ## Division of Labor
-Kelly Chung: Created the HTML and CSS for Navigation Bar, Dashboard page, Login page, Create Account page.  Helped realign Submit Lost Item page, helped design the draft for the website and created base structure/style for webpages.
+Kelly Chung: Created the HTML and CSS for Navigation Bar, Dashboard page, Login page, Create Account page.  Helped realign Submit Lost Item page, helped design the draft for the website and created base code structure & style for webpages.
 
 Yuqi Liu: Created the HTML and CSS for Submit Lost Item Page, Submit Found Item Page, View Posts Page, and View Details Page. Constructed the initial version of milestone markdown file and webpages.
 
