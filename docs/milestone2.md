@@ -16,9 +16,7 @@ Het
 | password | Character |
 | user_name | Character |
 | email | Character |
-
-| item Objects | PostgreSQL Type |
-| :------------- | :------------- |
+| **item Objects** | |
 | user_id | Numeric |
 | item_id | Numeric |
 | item_name | Character |
