@@ -10,26 +10,37 @@ Het
 
 # Database Objects:
 
-user Objects: 
-user_id, first_name, last_name, password, login_name, email
+| user Objects | PostgreSQL Type |
+| :------------- | :------------- |
+| user_id | Numeric |
+| password | Character |
+| user_name | Character |
+| email | Character |
 
-item Objects: 
-item_id, item_name, item_desc, is_found, image, user_id
+| item Objects | PostgreSQL Type |
+| :------------- | :------------- |
+| user_id | Numeric |
+| item_id | Numeric |
+| item_name | Character |
+| item_desc | Character |
+| image | Character |
+| address | Character |
+| is_found | Boolean |
 
 # API CRUD Operations:
 
 | Path | Descriptions | Input | Output |
 | :------------- | :------------- | :------------- | :------------- |
-| \/login | Login | login_name, password | success with user_id or failure | 
-| \/user\/create | Create New User | login_name, password, email | success with user_id or failure | 
+| \/login | Login | user_name, password | success with user_id or failure | 
+| \/user\/create | Create New User | user_name, password, email | success with user_id or failure | 
 | \/user\/delete\/id | Delete User | user_id | success or failure | 
-| \/user\/update\/id | Update User | user_id, first_name, last_name, password, login_name, email | success or failure |
-| \/user\/view\/id | View User | user_id | user_id, first_name, last_name, password, login_name, email | 
+| \/user\/update\/id | Update User | user_id, password, user_name, email | success or failure |
+| \/user\/view\/id | View User | user_id | user_id, password, user_name, email | 
 | \/user\/getall | Get All Users | NA | list of all users | 
 | \/item\/create | Create Item | item_name, item_desc, is_found, image, user_id | success with item_id or failure |
 | \/item\/delete\/id | Delete Item | item_id | success or failure |
-| \/item\/update\/id | Update Item | item_id, item_name, item_desc, is_found, image, user_id | success or failure |
-| \/item\/view\/id | View Item | item_id | item_id, item_name, item_desc, is_found, image, user_id |
+| \/item\/update\/id | Update Item | user_id, item_id, item_name, item_desc, image, address, is_found,  | success or failure |
+| \/item\/view\/id | View Item | item_id | user_id, item_id, item_name, item_desc,  image, address, is_found |
 | \/item\/getall | Get All Items | NA | list of all items |
 
 ## Division of Labor
