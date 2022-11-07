@@ -2,6 +2,10 @@
     width: 25px;
 }
 
+.icon:hover{
+    cursor: pointer;
+}
+
 .second-nav{
     color: white;
     margin: 0px 8px;

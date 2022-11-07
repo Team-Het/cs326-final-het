@@ -1,7 +1,6 @@
-// Placeholder for RESTful API
+// Placeholder code for RESTful API
 
 'use strict';
-
 async function getStars() {
     // DO THIS
     // console.log("getStars is called");
@@ -14,5 +13,35 @@ async function getStars() {
         starsDiv.innerHTML = respJSON.watchers_count;
     } else {
         starsDiv.innerHTML = 'an error has occured';
+    }
+}
+
+// NavBar functions
+function goHome(){
+    window.location.href = "./index.html";
+}
+
+function profile(){
+    // to be done
+}
+
+// Index functions
+function submitLostItem(){
+    const item = document.getElementById("search_item");
+    const location = document.getElementById("search_location");
+    if((item && item.value.length > 0) && (location && location.value.length > 0)){
+        window.location.href = "./submit_lost_item.html";
+    } else {
+        alert("Please Enter the Above Queries");
+    }
+}
+
+function submitFoundItem(){
+    const item = document.getElementById("search_item");
+    const location = document.getElementById("search_location");
+    if((item && item.value.length > 0) && (location && location.value.length > 0)){
+        window.location.href = "./submit_found_item.html";
+    } else {
+        alert("Please Enter the Above Queries");
     }
 }
