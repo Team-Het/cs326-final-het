@@ -44,7 +44,7 @@ Het
 | \/item\/getall | Get All Items | NA | list of all items |
 
 ## Division of Labor
-Kelly Chung: Constructed the initial version of milestone markdown file, server.js, database.js, webpages.js, added express server, database objects and fields definitions, and RESTful API CRUD documentation.
+Kelly Chung: Constructed the initial version of milestone markdown file, server.js, database.js, webpages.js, added express server, database objects and fields definitions, RESTful API CRUD documentation and faker data.  Created events and logics functionality for Navigation Bar and Dashboard Page.
 
 Yuqi Liu:
 
