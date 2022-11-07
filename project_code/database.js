@@ -1,50 +1,36 @@
 // Sample Placeholder Template Code From Web
 // Will be changed to be adapted to our project later
 
-const { Pool } = require('pg');
+const db = require('./database.js');
 
-const config = {
-    db: { /* do not put password or any sensitive info here, done only for demo */
-        host: '',
-        port: '',
-        user: '',
-        password: '',
-        database: '',
-    },
-    listPerPage: LIST_PER_PAGE || 10,
-};
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 3000
 
-const pool = new Pool(config);
+app.use(express.static('project'))
 
-/**
- * Query the database using the pool
- * @param {*} query 
- * @param {*} params 
- * 
- * @see https://node-postgres.com/features/pooling#single-query
- **/
+server.get('/', (req, res) => {
+  // res.send('Hello World!')
+  app.get('/', function (req, res) {
+    res.sendFile(__dirname + '/index.html');
+  });
+})
 
-async function query(query, params) {
-    const { rows, fields } = await pool.query(query, params);
+app.get('/user/:id', (req, res) => {
+  console.log(req.params);
+  res.send(db.getUser(req.params));
+})
 
-    return rows;
-}
+app.get('/user/allusers', (req, res) => {
+  res.send(db.getAllUsers());
+})
 
-async function createUser(quote) {
-    const result = await query(
-        'INSERT INTO quote(quote, author) VALUES ($1, $2) RETURNING',
-        [quote.quote, quote.author]
-    );
-    let message = 'Error in creating quote';
+app.post('/user/update/:id', (req, res) => {
+  console.log(req.params);
+  console.log(req.body);
+  res.send(db.updateUser(req.body, req.params));
+})
 
-    if (result.length) {
-        message = 'Quote created successfully';
-    }
-
-    return { message };
-}
-
-module.exports = {
-    getMultiple,
-    create
-}
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
