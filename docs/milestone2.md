@@ -31,7 +31,8 @@ Het
 
 | Path | Descriptions | Input | Output |
 | :------------- | :------------- | :------------- | :------------- |
-| \/login | Login | user_name, password | success with user_id or failure | 
+| \/login | Login | user_name, password | success with user_id or failure |
+| \/logout | Logout | user_name, password | success with user_id or failure |
 | \/user\/create | Create New User | user_name, password, email | success with user_id or failure | 
 | \/user\/delete\/id | Delete User | user_id | success or failure | 
 | \/user\/update\/id | Update User | user_id, password, user_name, email | success or failure |
