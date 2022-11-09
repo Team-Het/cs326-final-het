@@ -46,13 +46,13 @@ app.post('/logout', (req, res) => {
 	res.send(db.logout(req));
 })
 
-app.post('/user/create', (req, res) => {
-	console.log(req.body);
-	res.send(db.createUser(req));
+app.post('/user/view/create', (req, res) => {
+	console.log(req.params);
+	res.send(db.getUser(req.params));
 })
 
-app.post('/user/view/delete/:id', (req, res) => {
-	res.send(db.deleteUser(req));
+app.post('/user/view/delete', (req, res) => {
+	res.send(db.getUser(req.params));
 })
 
 app.get('/user/view/getall', (req, res) => {
@@ -60,12 +60,14 @@ app.get('/user/view/getall', (req, res) => {
 	res.send(db.getUser(req.params));
 })
 
-app.post('/item/delete/:id', (req, res) => {
-	res.send(db.deleteItem(req));
+app.post('/item/view/delete', (req, res) => {
+	console.log(req.params);
+	res.send(db.getItem(req.params));
 })
 
-app.post('/item/update/:id', (req, res) => {
-	res.send(db.updateItem());
+app.post('/item/view/update', (req, res) => {
+	console.log(req.params);
+	res.send(db.getItem(req.params));
 })
 
 app.get('/item/view/:id', (req, res) => {
@@ -73,7 +75,7 @@ app.get('/item/view/:id', (req, res) => {
 	res.send(db.getItem(req.params));
 })
 
-app.get('/user/getall', (req, res) => {
+app.get('/item/view/getall', (req, res) => {
 	console.log(req.params);
-	res.send(db.getAllItem(req.params));
+	res.send(db.getItem(req.params));
 })
