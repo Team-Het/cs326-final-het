@@ -15,7 +15,7 @@ window.onload = async function () {
     localStorage.setItem('username', 'Kelly');
     localStorage.setItem('email', 'kechung@umass.edu');
     localStorage.setItem('userId', '12345');
-    localStorage.setItem('host', 'http://localhost:3000');
+    localStorage.setItem('host', window.location.origin);
     // localStorage.setItem('host', 'https://umass-lost-and-found.herokuapp.com'); 
 }
 
