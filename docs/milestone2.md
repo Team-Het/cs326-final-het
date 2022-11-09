@@ -23,7 +23,7 @@ Het
 | item_id | Numeric |
 | item_name | Character |
 | item_desc | Character |
-| image | Character |
+| image | Bytea |
 | address | Character |
 | is_found | Boolean |
 
