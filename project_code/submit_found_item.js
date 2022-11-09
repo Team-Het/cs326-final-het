@@ -35,6 +35,11 @@ async function submitFoundItem() {
 	const time_found = document.getElementById('time_found').value;
 	const where_you_found = document.getElementById('where_you_found').value;
 	const add_info = document.getElementById('add_info').value;
+
+	if (!title || !category || !date_found || !time_found || !where_you_found) {
+        alert("Please fillout the information with *, then submit your post.")
+    }
+	
 	const response = await fetch(localStorage.getItem('host') + '/item/create', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json;charset=utf-8' },
