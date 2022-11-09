@@ -1,0 +1,20 @@
+@import "lostfound.css";
+
+.profile-icon{
+    width: 100px;
+    filter: invert(15%) sepia(2%) saturate(3370%) hue-rotate(179deg) brightness(93%) contrast(100%);
+}
+
+.profile-info{
+    padding: 30px;
+}
+
+.profile-input{
+    max-width: 500px;
+    padding-bottom: 190px;
+    margin: auto;
+}
+
+.hidden{
+    visibility: hidden;
+}
