@@ -7,6 +7,11 @@ function profile() {
 	// to be done
 }
 
+function submitLost() {
+	localStorage.removeItem('item');
+	localStorage.removeItem('location');
+}
+
 // Submit Lost Item functions
 window.onload = async function () {
 	const item = localStorage.getItem('item');
@@ -19,11 +24,6 @@ window.onload = async function () {
 		}
 	}
 	console.log(window.location.origin);
-
-	// if (item && location) {
-	// 	document.getElementById('title').value = item;
-	// 	document.getElementById('where_you_lost').value = location;
-	// }
 }
 
 async function submitLostItem() {

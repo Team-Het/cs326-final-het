@@ -1,20 +1,4 @@
-// Placeholder code for RESTful API
-
 'use strict';
-async function getStars() {
-    // DO THIS
-    // console.log("getStars is called");
-    const starsDiv = document.getElementById('star_count');
-    const url = 'https://api.github.com/repos/' + document.getElementById('repo').value;
-    // console.log("url = " + url);
-    const response = await fetch(url);
-    if (response.ok) {
-        const respJSON = await response.json();
-        starsDiv.innerHTML = respJSON.watchers_count;
-    } else {
-        starsDiv.innerHTML = 'an error has occured';
-    }
-}
 
 // NavBar functions
 function goHome(){
@@ -26,6 +10,13 @@ function profile(){
 }
 
 // Index functions
+// Fake data for testing remove when go to production
+window.onload = async function () {
+    localStorage.setItem('username', 'Kelly');
+    localStorage.setItem('email', 'kechung@umass.edu');
+    localStorage.setItem('userId', '12345');
+}
+
 function submitLostItem(){
     const item = document.getElementById("search_item").value;
     const location = document.getElementById("search_location").value;
