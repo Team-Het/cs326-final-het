@@ -8,3 +8,4 @@ function profile(){
 }
 
 // Login functions
+function login(){}

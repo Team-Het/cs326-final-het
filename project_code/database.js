@@ -9,36 +9,39 @@ function getUser(params) {
 		return [
 			{
 				"id": faker.id,
-				"first_name": faker.name.firstName(),
-				"last_name": faker.name.lastName(),
+				"user_name": faker.name.firstName(),
 				"email": faker.internet.email()
 			},
 			{
 				"id": faker.id,
-				"first_name": faker.name.firstName(),
-				"last_name": faker.name.lastName(),
+				"user_name": faker.name.firstName(),
 				"email": faker.internet.email()
 			},
 			{
 				"id": faker.id,
-				"first_name": faker.name.firstName(),
-				"last_name": faker.name.lastName(),
+				"user_name": faker.name.firstName(),
 				"email": faker.internet.email()
 			},
 			{
 				"id": faker.id,
-				"first_name": faker.name.firstName(),
-				"last_name": faker.name.lastName(),
+				"user_name": faker.name.firstName(),
 				"email": faker.internet.email()
 			}
-		];
+		]
+	} else if (params.id === 'create') {
+		return {
+			"status": 'success',
+		}
+	} else if (params.id === 'delete') {
+		return {
+			"status": 'success',
+		}
 	} else {
 		return {
 			"id": params.id,
-			"first_name": faker.name.firstName(),
-			"last_name": faker.name.lastName(),
+			"user_name": faker.name.firstName(),
 			"email": faker.internet.email()
-		};
+		}
 	}
 }
 
@@ -48,7 +51,21 @@ function updateUser() {
 	};
 }
 
+function login(req){
+	console.log(req);
+
+}
+
+function createItem(req){
+	// console.log(req);
+	return {
+		"status": 'success',
+	};
+}
+
 module.exports = {
 	getUser,
 	updateUser,
+	login,
+	createItem,
 }

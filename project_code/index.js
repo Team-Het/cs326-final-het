@@ -27,9 +27,12 @@ function profile(){
 
 // Index functions
 function submitLostItem(){
-    const item = document.getElementById("search_item");
-    const location = document.getElementById("search_location");
-    if((item && item.value.length > 0) && (location && location.value.length > 0)){
+    const item = document.getElementById("search_item").value;
+    const location = document.getElementById("search_location").value;
+    if((item && item.length > 0) && (location && location.length > 0)){
+        localStorage.setItem('item', item);
+        localStorage.setItem('location', location);
+        localStorage.setItem('fromPage', 'index')
         window.location.href = "./submit_lost_item.html";
     } else {
         alert("Please Enter the Above Queries");
@@ -37,9 +40,9 @@ function submitLostItem(){
 }
 
 function submitFoundItem(){
-    const item = document.getElementById("search_item");
-    const location = document.getElementById("search_location");
-    if((item && item.value.length > 0) && (location && location.value.length > 0)){
+    const item = document.getElementById("search_item").value;
+    const location = document.getElementById("search_location").value;
+    if((item && item.length > 0) && (location && location.length > 0)){
         window.location.href = "./submit_found_item.html";
     } else {
         alert("Please Enter the Above Queries");
