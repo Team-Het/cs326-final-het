@@ -37,7 +37,8 @@ async function submitLostItem() {
 	const add_info = document.getElementById('add_info').value;
 
 	if (!title || !category || !date_lost || !time_lost || !where_you_lost) {
-        alert("Please fillout the information with *, then submit your post.")
+        alert("Please fillout the information with *, then submit your post.");
+		return;
     }
 
 	const response = await fetch(localStorage.getItem('host') + '/item/create', {
