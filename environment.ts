@@ -1,3 +1,3 @@
 export const environment = {
-    host: 'http://umass-lost-and-found.herokuapp.com',
+    host: 'https://umass-lost-and-found.herokuapp.com',
 };
