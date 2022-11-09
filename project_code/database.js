@@ -62,7 +62,7 @@ function createItem(req){
 		"status": 'success',
 	};
 }
-
+//Add functions
 function getItem(params) {
 	console.log(params)
 	if (params.id === 'getall') {
@@ -70,23 +70,34 @@ function getItem(params) {
 			{
 				"user_id": faker.id,
 				"item_id": faker.id,
-				"irem_name": faker.commerce.productName(),
+				"item_name": faker.commerce.productName(),
+				"item_desc": faker.commerce.productDescription(),
+				"image": faker.image.image(),
 				"address": faker.address.streetAddress()
 			},
 			{
-				"id": faker.id,
-				"user_name": faker.name.firstName(),
-				"email": faker.internet.email()
+				"user_id": faker.id,
+				"item_id": faker.id,
+				"item_name": faker.commerce.productName(),
+				"item_desc": faker.commerce.productDescription(),
+				"image": faker.image.image(),
+				"address": faker.address.streetAddress()
 			},
 			{
-				"id": faker.id,
-				"user_name": faker.name.firstName(),
-				"email": faker.internet.email()
+				"user_id": faker.id,
+				"item_id": faker.id,
+				"item_name": faker.commerce.productName(),
+				"item_desc": faker.commerce.productDescription(),
+				"image": faker.image.image(),
+				"address": faker.address.streetAddress()
 			},
 			{
-				"id": faker.id,
-				"user_name": faker.name.firstName(),
-				"email": faker.internet.email()
+				"user_id": faker.id,
+				"item_id": faker.id,
+				"item_name": faker.commerce.productName(),
+				"item_desc": faker.commerce.productDescription(),
+				"image": faker.image.image(),
+				"address": faker.address.streetAddress()
 			}
 		]
 	} else if (params.id === 'create') {
@@ -99,9 +110,12 @@ function getItem(params) {
 		}
 	} else {
 		return {
-			"id": params.id,
-			"user_name": faker.name.firstName(),
-			"email": faker.internet.email()
+			"user_id": faker.id,
+			"item_id": params.id,
+			"item_name": faker.commerce.productName(),
+			"item_desc": faker.commerce.productDescription(),
+			"image": faker.image.image(),
+			"address": faker.address.streetAddress()
 		}
 	}
 }
@@ -111,5 +125,5 @@ module.exports = {
 	updateUser,
 	login,
 	createItem,
-
+	getItem
 }
