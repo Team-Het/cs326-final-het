@@ -37,10 +37,6 @@ app.post('/item/create', (req, res) => {
 	res.send(db.createItem(req));
 })
 
-app.listen(port, () => {
-	console.log(`Example app listening on port ${port}`)
-})
-
 //Add more api
 app.post('/logout', (req, res) => {
 	res.send(db.logout(req));
@@ -78,4 +74,9 @@ app.get('/item/view/:id', (req, res) => {
 app.get('/item/view/getall', (req, res) => {
 	console.log(req.params);
 	res.send(db.getItem(req.params));
+})
+
+// Listen at Bottom
+app.listen(port, () => {
+	console.log(`Example app listening on port ${port}`)
 })
