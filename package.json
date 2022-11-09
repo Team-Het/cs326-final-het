@@ -4,15 +4,14 @@
   "license": "MIT",
   "appConfigs": {},
   "scripts": {
-      "start": "node project_code/server.js"
+    "start": "node project_code/server.js"
   },
   "private": true,
   "dependencies": {
-      "express": "^4.18.2",
-      "@faker-js/faker": "^7.6.0",
-      "pg": "^8.8.0"
+    "@faker-js/faker": "^7.6.0",
+    "express": "^4.18.2"
   },
   "engines": {
-      "node": "16.15.0"
+    "node": "16.15.0"
   }
 }
