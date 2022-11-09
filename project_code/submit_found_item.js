@@ -35,7 +35,7 @@ async function submitFoundItem() {
 	const time_found = document.getElementById('time_found').value;
 	const where_you_found = document.getElementById('where_you_found').value;
 	const add_info = document.getElementById('add_info').value;
-	const response = await fetch('http://localhost:3000/item/create', {
+	const response = await fetch(localStorage.getItem('host') + '/item/create', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json;charset=utf-8' },
 		body: JSON.stringify({
