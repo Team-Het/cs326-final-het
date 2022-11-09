@@ -27,6 +27,10 @@ window.onload = async function () {
 }
 
 async function submitLostItem() {
+	localStorage.removeItem('item');
+	localStorage.removeItem('location');
+	document.getElementById('title').value = '';
+	document.getElementById('where_you_lost').value = '';
 	const title = document.getElementById('title').value;
 	const category = document.getElementById('category').value;
 	const brand = document.getElementById('brand').value;
