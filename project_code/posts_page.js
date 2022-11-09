@@ -8,3 +8,6 @@ function profile(){
 }
 
 // Posts Page functions
+function gotoDetail(){
+    window.location.href = "./post_detail.html";
+}
