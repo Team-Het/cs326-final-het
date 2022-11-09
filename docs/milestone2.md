@@ -33,16 +33,16 @@ Het
 | :------------- | :------------- | :------------- | :------------- |
 | \/login | Login | user_name, password | success with user_id or failure |
 | \/logout | Logout | user_name, password | success with user_id or failure |
-| \/user\/create | Create New User | user_name, password, email | success with user_id or failure | 
-| \/user\/delete\/id | Delete User | user_id | success or failure | 
-| \/user\/update\/id | Update User | user_id, password, user_name, email | success or failure |
+| \/user\/view\/create | Create New User | user_name, password, email | success with user_id or failure | 
+| \/user\/view\/delete| Delete User | user_id | success or failure | 
+| \/user\/view\/update | Update User | user_id, password, user_name, email | success or failure |
 | \/user\/view\/id | View User | user_id | user_id, password, user_name, email | 
-| \/user\/getall | Get All Users | NA | list of all users | 
+| \/user\/view\/getall | Get All Users | NA | list of all users | 
 | \/item\/create | Create Item | item_name, item_desc, is_found, image, user_id | success with item_id or failure |
-| \/item\/delete\/id | Delete Item | item_id | success or failure |
-| \/item\/update\/id | Update Item | user_id, item_id, item_name, item_desc, image, address, is_found,  | success or failure |
+| \/item\/view\/delete | Delete Item | item_id | success or failure |
+| \/item\/view\/update | Update Item | user_id, item_id, item_name, item_desc, image, address, is_found,  | success or failure |
 | \/item\/view\/id | View Item | item_id | user_id, item_id, item_name, item_desc,  image, address, is_found |
-| \/item\/getall | Get All Items | NA | list of all items |
+| \/item\/view\/getall | Get All Items | NA | list of all items |
 
 ## Heroku Application Link
 https://umass-lost-and-found.herokuapp.com/
