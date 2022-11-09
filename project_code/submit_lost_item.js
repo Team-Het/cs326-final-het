@@ -35,6 +35,11 @@ async function submitLostItem() {
 	const time_lost = document.getElementById('time_lost').value;
 	const where_you_lost = document.getElementById('where_you_lost').value;
 	const add_info = document.getElementById('add_info').value;
+
+	if (!title || !category || !date_lost || !time_lost || !where_you_lost) {
+        alert("Please fillout the information with *, then submit your post.")
+    }
+
 	const response = await fetch(localStorage.getItem('host') + '/item/create', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json;charset=utf-8' },
