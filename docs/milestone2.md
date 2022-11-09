@@ -32,7 +32,7 @@ Het
 | Path | Descriptions | Input | Output |
 | :------------- | :------------- | :------------- | :------------- |
 | \/login | Login | user_name, password | success with user_id or failure |
-| \/logout | Logout | user_name, password | success with user_id or failure |
+| \/logout | Logout | NA | success or failure |
 | \/user\/view\/create | Create New User | user_name, password, email | success with user_id or failure | 
 | \/user\/view\/delete| Delete User | user_id | success or failure | 
 | \/user\/view\/update | Update User | user_id, password, user_name, email | success or failure |
