@@ -20,7 +20,7 @@ window.onload = async function () {
 	if(fromPage && fromPage === 'index') {
 		if (item && location) {
 			document.getElementById('title').value = item;
-			document.getElementById('where_you_lost').value = location;
+			document.getElementById('where_you_found').value = location;
 		}
 	}
 	console.log(window.location.origin);
@@ -33,7 +33,7 @@ async function submitFoundItem() {
 	const color = document.getElementById('color').value;
 	const date_found = document.getElementById('date_found').value;
 	const time_found = document.getElementById('time_found').value;
-	const where_you_dound = document.getElementById('where_you_dound').value;
+	const where_you_found = document.getElementById('where_you_found').value;
 	const add_info = document.getElementById('add_info').value;
 	const response = await fetch(localStorage.getItem('host') + '/item/create', {
 		method: 'POST',
@@ -45,7 +45,7 @@ async function submitFoundItem() {
 			color: color,
 			date_found: date_found,
 			time_found: time_found,
-			where_you_dound: where_you_dound,
+			where_you_found: where_you_found,
 			add_info: add_info
 		})
 	});
