@@ -94,6 +94,7 @@ async function postDetail() {
                 div2.appendChild(d);
                 div2.appendChild(e);
                 div1.appendChild(div2);
+                itemDiv.appendChild(div1);
             }
             else {
 
@@ -175,10 +176,8 @@ async function postDetail() {
                 div2.appendChild(d);
                 div2.appendChild(e);
                 div1.appendChild(div2);
-            }
-
                 itemDiv.appendChild(div1);
-            
+            }
         });
 }
 
