@@ -48,10 +48,30 @@ Het
 https://umass-lost-and-found.herokuapp.com/
 
 ## CRUD Screenshots
+Create
+
 ![Create](../imgs/Create.jpeg)
+
+This screen will make the API call to submit a new lost or a new found item
+
+Read
+
 ![Read](../imgs/Read.jpeg)
+
+This page will list all the lost or found items
+
+Update
+
 ![Update](../imgs/Update.jpeg)
+
+This page will update the detail of the lost or found items
+
+Delete
+
 ![Delete](../imgs/Delete.jpeg)
+
+This page can delete the user profile
+
 ## Division of Labor
 Kelly Chung: Constructed the initial version of milestone markdown file, server.js, database.js, webpages.js, added express server, database objects and fields definitions, RESTful API CRUD documentation and faker data.  Created events and logics functionality for Navigation Bar, Dashboard Page, Submit Lost Item Page, Profile Page, and, Post Pages Page.  Setup Heroku auto-deploy and Github Connection.
 
