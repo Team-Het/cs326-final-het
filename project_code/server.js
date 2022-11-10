@@ -47,8 +47,8 @@ app.post('/user/view/create', (req, res) => {
 	res.send(db.getUser(req.params));
 })
 
-app.post('/user/view/delete', (req, res) => {
-	res.send(db.getUser(req.params));
+app.post('/user/delete', (req, res) => {
+	res.send({'status': 'success'});
 })
 
 app.get('/user/view/getall', (req, res) => {
