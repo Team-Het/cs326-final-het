@@ -9,9 +9,11 @@ function profile() {
 
 // Post Detail functions
 async function postDetail() {
+
     fetch(localStorage.getItem('host') + '/item/view/id')
         .then((response) => response.json())
         .then((data) => {
+            const itemDiv = document.getElementById("detail");
             if (data.is_found === 'y') {
 
                 const div1 = document.createElement("div");
@@ -92,9 +94,91 @@ async function postDetail() {
                 div2.appendChild(d);
                 div2.appendChild(e);
                 div1.appendChild(div2);
-
-                foundDiv.appendChild(div1);
             }
+            else {
+
+                const div1 = document.createElement("div");
+                div1.classList.add("row");
+                div1.classList.add("g-0");
+                div1.classList.add("border");
+                div1.classList.add("rounded");
+                div1.classList.add("overflow-hidden");
+                div1.classList.add("flex-md-row");
+                div1.classList.add("my-4");
+                div1.classList.add("shadow-sm");
+                div1.classList.add("h-md-250");
+                div1.classList.add("position-relative");
+
+                const div2 = document.createElement("div");
+                div2.classList.add("col");
+                div2.classList.add("p-4");
+                div2.classList.add("d-flex");
+                div2.classList.add("flex-column");
+                div2.classList.add("position-static");
+
+                const strong = document.createElement("strong");
+                strong.classList.add("d-inline-block");
+                strong.classList.add("mb-2");
+                strong.classList.add("text-success");
+                strong.innerHTML = 'Lost an Item!';
+
+                const h3 = document.createElement("h3");
+                h3.classList.add("mb-0");
+                h3.innerHTML = data.item_name;
+
+                const div3 = document.createElement("div");
+                div3.classList.add("mb-auto");
+                div3.classList.add("text-muted");
+                const date = new Date(data.lost_date);
+                const newdate = (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear();
+                div3.innerHTML = newdate;
+
+                const p = document.createElement("p");
+                p.classList.add("mb-auto");
+                p.innerHTML = data.item_desc;
+
+                const a = document.createElement("a");
+                a.classList.add("mb-auto");
+                a.innerHTML = data.address;
+
+                const b = document.createElement("b");
+                b.classList.add("mb-auto");
+                b.innerHTML = data.category;
+
+                const c = document.createElement("c");
+                c.classList.add("mb-auto");
+                c.innerHTML = data.color;
+
+                const d = document.createElement("c");
+                d.classList.add("mb-auto");
+                d.innerHTML = data.brand;
+
+                const e = document.createElement("c");
+                e.classList.add("mb-auto");
+                e.innerHTML = data.additional;
+
+                // a.addEventListener('click', () => { readDetail(e) });
+                // const div4 = document.createElement("div");
+                // div4.classList.add("col-auto");
+                // div4.classList.add("d-none");
+                // div4.classList.add("d-lg-block");
+                // const svg = document.createElement("svg");
+                // svg.classList.add("bd-placeholder-img");
+
+                div2.appendChild(strong);
+                div2.appendChild(h3);
+                div2.appendChild(div3);
+                div2.appendChild(p);
+                div2.appendChild(a);
+                div2.appendChild(b);
+                div2.appendChild(c);
+                div2.appendChild(d);
+                div2.appendChild(e);
+                div1.appendChild(div2);
+            }
+
+                itemDiv.appendChild(div1);
+            
         });
 }
 // window.onload = async function () {
