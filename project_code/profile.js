@@ -19,10 +19,9 @@ window.onload = async function () {
         document.getElementById('email').value = email;
     }
     window.username = username;
-    
 }
 
-function usernameKeyup(){
+function usernameKeyup() {
     const button = document.getElementById('save_changes');
     const username = document.getElementById('username').value;
     if(window.username !== username) {
@@ -30,4 +29,29 @@ function usernameKeyup(){
     } else {
         button.classList.add('hidden');
     }
+}
+
+async function deleteUser() {
+	const response = await fetch(localStorage.getItem('host') + '/user/delete', {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json;charset=utf-8' },
+		body: JSON.stringify({
+            userId: localStorage.getItem('userId'),
+		})
+	});
+	if (response.ok) {
+		const resp = await response.json();
+		console.log(resp);
+		if (resp.status === 'success') {
+            alert('Account Successfully Deleted');
+            localStorage.removeItem('username');
+            localStorage.removeItem('email');
+            localStorage.removeItem('userId');
+			window.location.href = './index.html';
+		} else {
+			alert('error! one');
+		}
+	} else {
+		alert('error! two');
+	}
 }

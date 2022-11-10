@@ -38,11 +38,6 @@ async function submitFoundItem() {
 	const where_you_found = document.getElementById('where_you_found').value;
 	const add_info = document.getElementById('add_info').value;
 
-	console.log(title);
-	console.log(category);
-	console.log(date_found);
-	console.log(time_found);
-	console.log(where_you_found);
 	if (!title || !category || !date_found || !time_found || !where_you_found) {
         alert("Please fillout the information with *, then submit your post.");
 		return;
