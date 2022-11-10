@@ -79,9 +79,9 @@ function getItem(params) {
 				"time_lost": faker.date.recent(),
 				"found_date": faker.date.recent(),
 				"category": faker.commerce.productName(),
-				"color": faker.color(),
-				"brand": faker.company(),
-				"additional": faker.random()
+				"color": 'blue',
+				"brand": 'Apple',
+				"additional": 'abc'
 			},
 			{
 				"user_id": faker.id,
@@ -95,9 +95,9 @@ function getItem(params) {
 				"time_lost": faker.date.recent(),
 				"found_date": faker.date.recent(),
 				"category": faker.commerce.productName(),
-				"color": faker.color(),
-				"brand": faker.company(),
-				"additional": faker.random()
+				"color": 'blue',
+				"brand": 'Apple',
+				"additional": 'abc'
 			},
 			{
 				"user_id": faker.id,
@@ -111,9 +111,9 @@ function getItem(params) {
 				"time_lost": faker.date.recent(),
 				"found_date": faker.date.recent(),
 				"category": faker.commerce.productName(),
-				"color": faker.color(),
-				"brand": faker.company(),
-				"additional": faker.random()
+				"color": 'blue',
+				"brand": 'Apple',
+				"additional": 'abc'
 			},
 			{
 				"user_id": faker.id,
@@ -127,9 +127,9 @@ function getItem(params) {
 				"time_lost": faker.date.recent(),
 				"found_date": faker.date.recent(),
 				"category": faker.commerce.productName(),
-				"color": faker.color(),
-				"brand": faker.company(),
-				"additional": faker.random()
+				"color": 'blue',
+				"brand": 'Apple',
+				"additional": 'abc'
 			}
 		]
 	} else if (params.id === 'create') {
@@ -153,9 +153,9 @@ function getItem(params) {
 			"time_lost": faker.date.recent(),
 			"found_date": faker.date.recent(),
 			"category": faker.commerce.productName(),
-			"color": faker.color(),
-			"brand": faker.company(),
-			"additional": faker.random()
+			"color": 'blue',
+			"brand": 'Apple',
+			"additional": 'abc'
 		}
 	}
 }
