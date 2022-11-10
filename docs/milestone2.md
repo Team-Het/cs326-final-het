@@ -49,6 +49,6 @@ https://umass-lost-and-found.herokuapp.com/
 ## Division of Labor
 Kelly Chung: Constructed the initial version of milestone markdown file, server.js, database.js, webpages.js, added express server, database objects and fields definitions, RESTful API CRUD documentation and faker data.  Created events and logics functionality for Navigation Bar, Dashboard Page, Submit Lost Item Page.  Setup Heroku auto-deploy and Github Connection.
 
-Yuqi Liu: Accomplished functions in server.js, submit_found_item.js, submit_lost_item.js, database.js. Accomplished some of the RESTful API. Updated the API in milestone2.
+Yuqi Liu: Accomplished functions in server.js, submit_found_item.js, submit_lost_item.js, database.js. Accomplished some of the RESTful API. Accomplised some functionalify and format in .html for related page as well. Helped with login page. Updated the API CRUD Operations in milestone2.
 
 Yujin Qin: Completed post_detail.js, login.js, helped with submit_found_item.js and submit_lost_item.js
