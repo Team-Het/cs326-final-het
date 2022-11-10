@@ -3,3 +3,7 @@
 .extraSpace {
     height: 30px;
 }
+
+.cursor {
+    cursor: pointer;
+}

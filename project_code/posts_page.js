@@ -8,12 +8,13 @@ function profile(){
 }
 
 // Posts Page functions
-function gotoDetail(){
-    window.location.href = "./post_detail.html";
-}
-
 window.onload = async function () {
     this.getItems();
+}
+
+function readDetail(e) {
+    localStorage.setItem("item_detail", JSON.stringify(e));
+    window.location.href = './post_detail.html';
 }
 
 function getItems() {
@@ -58,11 +59,13 @@ function getItems() {
             div3.innerHTML = newdate;
             const p = document.createElement("p");
             p.classList.add("card-text");
-            p.classList.add("mb-auto");
+            p.classList.add("mb-2");
             p.innerHTML = e.item_desc;
             const a = document.createElement("a");
-            a.classList.add("stretched-link");
-            a.innerHTML = 'Read more details.';
+            a.classList.add("alert-primary");
+            a.classList.add("cursor");
+            a.innerHTML = 'Read more details';
+            a.addEventListener('click', ()=>{readDetail(e)});
             const div4 = document.createElement("div");
             div4.classList.add("col-auto");
             div4.classList.add("d-none");
@@ -115,11 +118,13 @@ function getItems() {
             div3.innerHTML = newdate;
             const p = document.createElement("p");
             p.classList.add("card-text");
-            p.classList.add("mb-auto");
+            p.classList.add("mb-2");
             p.innerHTML = e.item_desc;
             const a = document.createElement("a");
-            a.classList.add("stretched-link");
-            a.innerHTML = 'Read more details.';
+            a.classList.add("alert-primary");
+            a.classList.add("cursor");
+            a.innerHTML = 'Read more details';
+            a.addEventListener('click', ()=>{readDetail(e)});
             const div4 = document.createElement("div");
             div4.classList.add("col-auto");
             div4.classList.add("d-none");
