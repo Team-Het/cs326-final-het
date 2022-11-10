@@ -73,7 +73,10 @@ function getItem(params) {
 				"item_name": faker.commerce.productName(),
 				"item_desc": faker.commerce.productDescription(),
 				"image": faker.image.image(),
-				"address": faker.address.streetAddress()
+				"address": faker.address.streetAddress(),
+				"is_found": 'n',
+				"lost_date": faker.date.past(),
+				"found_date": faker.date.recent(),
 			},
 			{
 				"user_id": faker.id,
@@ -81,7 +84,10 @@ function getItem(params) {
 				"item_name": faker.commerce.productName(),
 				"item_desc": faker.commerce.productDescription(),
 				"image": faker.image.image(),
-				"address": faker.address.streetAddress()
+				"address": faker.address.streetAddress(),
+				"is_found": 'n',
+				"lost_date": faker.date.past(),
+				"found_date": faker.date.recent(),
 			},
 			{
 				"user_id": faker.id,
@@ -89,7 +95,10 @@ function getItem(params) {
 				"item_name": faker.commerce.productName(),
 				"item_desc": faker.commerce.productDescription(),
 				"image": faker.image.image(),
-				"address": faker.address.streetAddress()
+				"address": faker.address.streetAddress(),
+				"is_found": 'y',
+				"lost_date": faker.date.past(),
+				"found_date": faker.date.recent(),
 			},
 			{
 				"user_id": faker.id,
@@ -97,7 +106,10 @@ function getItem(params) {
 				"item_name": faker.commerce.productName(),
 				"item_desc": faker.commerce.productDescription(),
 				"image": faker.image.image(),
-				"address": faker.address.streetAddress()
+				"address": faker.address.streetAddress(),
+				"is_found": 'y',
+				"lost_date": faker.date.past(),
+				"found_date": faker.date.recent(),
 			}
 		]
 	} else if (params.id === 'create') {
