@@ -6,15 +6,24 @@
 }
 
 .login-info{
-    max-width: 500px;
-    padding-bottom: 268px;
-    margin: auto;
-}
-
-.login-input{
     padding: 30px;
 }
 
-.align-pass{
-    margin: 0px 16px 0px 61px;
+.login-input{
+    max-width: 500px;
+    padding-bottom: 107px;
+    margin: auto;
 }
+
+.login{
+    min-width: 156px;
+}
+
+.align-pass{
+    margin: 0px 16px 0px 7px;
+}
+
+.align-email{
+    margin: 0px 16px 0px 45px;
+}
+
