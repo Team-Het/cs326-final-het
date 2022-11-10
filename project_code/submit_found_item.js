@@ -29,8 +29,6 @@ window.onload = async function () {
 async function submitFoundItem() {
 	localStorage.removeItem('item');
 	localStorage.removeItem('location');
-	document.getElementById('title').value = '';
-	document.getElementById('where_you_lost').value = '';
 	const title = document.getElementById('title').value;
 	const category = document.getElementById('category').value;
 	const brand = document.getElementById('brand').value;
@@ -40,6 +38,11 @@ async function submitFoundItem() {
 	const where_you_found = document.getElementById('where_you_found').value;
 	const add_info = document.getElementById('add_info').value;
 
+	console.log(title);
+	console.log(category);
+	console.log(date_found);
+	console.log(time_found);
+	console.log(where_you_found);
 	if (!title || !category || !date_found || !time_found || !where_you_found) {
         alert("Please fillout the information with *, then submit your post.");
 		return;
@@ -73,4 +76,6 @@ async function submitFoundItem() {
 	}
 	localStorage.removeItem('item');
 	localStorage.removeItem('location');
+	document.getElementById('title').value = '';
+	document.getElementById('where_you_found').value = '';
 }
