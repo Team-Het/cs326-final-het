@@ -10,7 +10,7 @@ function profile() {
 // Post Detail functions
 async function postDetail() {
 
-    fetch(localStorage.getItem('host') + '/item/view/id')
+    fetch(localStorage.getItem('host') + '/item/view/item_id')
         .then((response) => response.json())
         .then((data) => {
             const itemDiv = document.getElementById("detail");
