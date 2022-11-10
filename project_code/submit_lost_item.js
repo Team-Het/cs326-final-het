@@ -64,6 +64,7 @@ async function submitLostItem() {
 		console.log(resp);
 		if (resp.status === 'success') {
 			window.location.href = './post_detail.html';
+			localStorage.setItem('fromPage', 'submit_lost_item');
 		} else {
 			alert('error!');
 		}
