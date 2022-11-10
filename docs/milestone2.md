@@ -77,4 +77,4 @@ Kelly Chung: Constructed the initial version of milestone markdown file, server.
 
 Yuqi Liu: Accomplished functions in server.js, submit_found_item.js, submit_lost_item.js, database.js. Accomplished some of the RESTful API. Accomplised some functionalify and format in .html for related page as well. Helped with login page. Updated the API CRUD Operations in milestone2.
 
-Yujin Qin: Completed post_detail.js, login.js, helped with submit_found_item.js and submit_lost_item.js
+Yujin Qin: Completed post_detail.js, login.js, helped with submit_found_item.js and submit_lost_item.js, helped construct milestone2.md.
