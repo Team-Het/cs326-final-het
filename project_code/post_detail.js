@@ -181,6 +181,40 @@ async function postDetail() {
             
         });
 }
+
+async function deletePost() {
+	const response = await fetch(localStorage.getItem('host') + '/item/view/delete', {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json;charset=utf-8' },
+		body: JSON.stringify({
+            itemId: localStorage.getItem('itemId'),
+		})
+	});
+	if (response.ok) {
+		const resp = await response.json();
+		console.log(resp);
+		if (resp.status === 'success') {
+            alert('Post Successfully Deleted');
+            localStorage.removeItem('item_id');
+            localStorage.removeItem('item_name');
+            localStorage.removeItem('item_desc');
+            localStorage.removeItem('image');
+            localStorage.removeItem('address');
+            localStorage.removeItem('is_found');
+            localStorage.removeItem('lost_date');
+            localStorage.removeItem('time_lost');
+            localStorage.removeItem('found_date');
+            localStorage.removeItem('category');
+            localStorage.removeItem('color');
+            localStorage.removeItem('brand');
+            localStorage.removeItem('additional');
+		} else {
+			alert('error! one');
+		}
+	} else {
+		alert('error! two');
+	}
+}
 // window.onload = async function () {
 //     const fromPage = localStorage.getItem('fromPage');
 //     const title = localStorage.getItem('title');
