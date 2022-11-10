@@ -76,7 +76,12 @@ function getItem(params) {
 				"address": faker.address.streetAddress(),
 				"is_found": 'n',
 				"lost_date": faker.date.past(),
+				"time_lost": faker.date.recent(),
 				"found_date": faker.date.recent(),
+				"category": faker.commerce.productName(),
+				"color": faker.color(),
+				"brand": faker.company(),
+				"additional": faker.random()
 			},
 			{
 				"user_id": faker.id,
@@ -87,7 +92,12 @@ function getItem(params) {
 				"address": faker.address.streetAddress(),
 				"is_found": 'n',
 				"lost_date": faker.date.past(),
+				"time_lost": faker.date.recent(),
 				"found_date": faker.date.recent(),
+				"category": faker.commerce.productName(),
+				"color": faker.color(),
+				"brand": faker.company(),
+				"additional": faker.random()
 			},
 			{
 				"user_id": faker.id,
@@ -98,7 +108,12 @@ function getItem(params) {
 				"address": faker.address.streetAddress(),
 				"is_found": 'y',
 				"lost_date": faker.date.past(),
+				"time_lost": faker.date.recent(),
 				"found_date": faker.date.recent(),
+				"category": faker.commerce.productName(),
+				"color": faker.color(),
+				"brand": faker.company(),
+				"additional": faker.random()
 			},
 			{
 				"user_id": faker.id,
@@ -109,7 +124,12 @@ function getItem(params) {
 				"address": faker.address.streetAddress(),
 				"is_found": 'y',
 				"lost_date": faker.date.past(),
+				"time_lost": faker.date.recent(),
 				"found_date": faker.date.recent(),
+				"category": faker.commerce.productName(),
+				"color": faker.color(),
+				"brand": faker.company(),
+				"additional": faker.random()
 			}
 		]
 	} else if (params.id === 'create') {
@@ -127,7 +147,15 @@ function getItem(params) {
 			"item_name": faker.commerce.productName(),
 			"item_desc": faker.commerce.productDescription(),
 			"image": faker.image.image(),
-			"address": faker.address.streetAddress()
+			"address": faker.address.streetAddress(),
+			"is_found": 'y',
+			"lost_date": faker.date.past(),
+			"time_lost": faker.date.recent(),
+			"found_date": faker.date.recent(),
+			"category": faker.commerce.productName(),
+			"color": faker.color(),
+			"brand": faker.company(),
+			"additional": faker.random()
 		}
 	}
 }
