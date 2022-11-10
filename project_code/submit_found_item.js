@@ -64,6 +64,7 @@ async function submitFoundItem() {
 		console.log(resp);
 		if (resp.status === 'success') {
 			window.location.href = './post_detail.html';
+			localStorage.setItem('fromPage', 'submit_found_item');
 		} else {
 			alert('error!');
 		}
