@@ -48,13 +48,33 @@ Het
 https://umass-lost-and-found.herokuapp.com/
 
 ## CRUD Screenshots
-![Create](../imgs/Create.jpeg)
-![Read](../imgs/Read.jpeg)
-![Update](../imgs/Update.jpeg)
-![Delete](../imgs/Delete.jpeg)
+Create
+
+![Create](../imgs/Create.jpg)
+
+This screen will make the API call to submit a new lost or a new found item
+
+Read
+
+![Read](../imgs/Read.jpg)
+
+This page will list all the lost or found items
+
+Update
+
+![Update](../imgs/Update.jpg)
+
+This page will update the detail of the lost or found items
+
+Delete
+
+![Delete](../imgs/Delete.jpg)
+
+This page can delete the user profile
+
 ## Division of Labor
 Kelly Chung: Constructed the initial version of milestone markdown file, server.js, database.js, webpages.js, added express server, database objects and fields definitions, RESTful API CRUD documentation and faker data.  Created events and logics functionality for Navigation Bar, Dashboard Page, Submit Lost Item Page, Profile Page, and, Post Pages Page.  Setup Heroku auto-deploy and Github Connection.
 
 Yuqi Liu: Accomplished functions in server.js, submit_found_item.js, submit_lost_item.js, database.js. Accomplished some of the RESTful API. Accomplised some functionalify and format in .html for related page as well. Helped with login page. Updated the API CRUD Operations in milestone2.
 
-Yujin Qin: Completed post_detail.js, login.js, helped with submit_found_item.js and submit_lost_item.js
+Yujin Qin: Completed post_detail.js, login.js, helped with submit_found_item.js and submit_lost_item.js, helped construct milestone2.md.
