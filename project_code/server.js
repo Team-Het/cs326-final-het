@@ -56,7 +56,7 @@ app.get('/user/view/getall', (req, res) => {
 	res.send(db.getUser(req.params));
 })
 
-app.post('/item/view/delete', (req, res) => {
+app.post('/item/delete', (req, res) => {
 	console.log(req.params);
 	res.send(db.getItem(req.params));
 })
