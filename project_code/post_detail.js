@@ -182,7 +182,7 @@ async function postDetail() {
 }
 
 async function deletePost() {
-	const response = await fetch(localStorage.getItem('host') + '/item/view/delete', {
+	const response = await fetch(localStorage.getItem('host') + '/item/delete', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json;charset=utf-8' },
 		body: JSON.stringify({
@@ -207,6 +207,7 @@ async function deletePost() {
             localStorage.removeItem('color');
             localStorage.removeItem('brand');
             localStorage.removeItem('additional');
+            window.location.href = './index.html';
 		} else {
 			alert('error! one');
 		}
