@@ -1,169 +1,124 @@
-// Sample Placeholder Template Code
-// Will be changed to be adapted to our project later
-
 const { faker } = require('@faker-js/faker');
+const { MongoClient } = require('mongodb');
+require('dotenv').config()
+const uri = process.env.MONGODB_URI;
+let db
 
-function getUser(params) {
-	console.log(params)
-	if (params.id === 'getall') {
-		return [
-			{
-				"id": faker.id,
-				"user_name": faker.name.firstName(),
-				"email": faker.internet.email()
-			},
-			{
-				"id": faker.id,
-				"user_name": faker.name.firstName(),
-				"email": faker.internet.email()
-			},
-			{
-				"id": faker.id,
-				"user_name": faker.name.firstName(),
-				"email": faker.internet.email()
-			},
-			{
-				"id": faker.id,
-				"user_name": faker.name.firstName(),
-				"email": faker.internet.email()
-			}
-		]
-	} else if (params.id === 'create') {
-		return {
-			"status": 'success',
-		}
-	} else if (params.id === 'delete') {
-		return {
-			"status": 'success',
-		}
+async function connectToCluster() {
+	try {
+		const mongoClient = new MongoClient(uri);
+		console.log('Connecting to MongoDB Atlas cluster...');
+		await mongoClient.connect();
+		console.log('Successfully connected to MongoDB Atlas!');
+		db = mongoClient.db();
+		console.log('Successfully connected to LostAndFound DB!');
+		return db;
+	} catch (error) {
+		console.error('Connection to MongoDB Atlas failed!', error);
+		process.exit();
+	}
+ }
+
+async function testData(req,res) {
+	const findResult = await db.collection('User').find().toArray();
+	res.send({findResult});
+}
+
+async function getUser(req,res) {
+	console.log(req.params)
+	if (req.params.id === 'getall') {
+		const cursor = (await db).collection('User').find();
+		const results = await cursor.toArray();
+		res.send(results.findResult);
 	} else {
-		return {
-			"id": params.id,
-			"user_name": faker.name.firstName(),
-			"email": faker.internet.email()
-		}
+		const cursor = (await db).collection('User').findOne({ username: req.params.id });
+		const user = await cursor;
+		res.send(user);
 	}
 }
 
-function updateUser() {
+function updateUser(req,res) {
 	return {
 		"status": 'success',
 	};
 }
 
-function login(req){
-	console.log(req);
-
+function createUser(req,res) {
+	return {
+		"status": 'success',
+	};
 }
 
-function createItem(req){
+function deleteUser(req,res) {
+	return {
+		"status": 'success',
+	};
+}
+
+function uploadItemImage(req,res) {
+	return {
+		"status": 'success',
+	};
+}
+
+function login(req,res){
+	console.log(req.body);
+	return {
+		"status": 'success',
+	};
+}
+
+function logout(req,res){
+	console.log(req.body);
+	return {
+		"status": 'success',
+	};
+}
+
+function createItem(req,res){
 	// console.log(req);
 	return {
 		"status": 'success',
 	};
 }
-//Add functions
-function getItem(params) {
-	console.log(params)
-	if (params.id === 'getall') {
-		return [
-			{
-				"user_id": faker.id,
-				"item_id": faker.id,
-				"item_name": faker.commerce.productName(),
-				"item_desc": faker.commerce.productDescription(),
-				"image": faker.image.image(),
-				"address": faker.address.streetAddress(),
-				"is_found": 'n',
-				"lost_date": faker.date.past(),
-				"time_lost": faker.date.recent(),
-				"found_date": faker.date.recent(),
-				"category": faker.commerce.productName(),
-				"color": 'blue',
-				"brand": 'Apple',
-				"additional": 'abc'
-			},
-			{
-				"user_id": faker.id,
-				"item_id": faker.id,
-				"item_name": faker.commerce.productName(),
-				"item_desc": faker.commerce.productDescription(),
-				"image": faker.image.image(),
-				"address": faker.address.streetAddress(),
-				"is_found": 'n',
-				"lost_date": faker.date.past(),
-				"time_lost": faker.date.recent(),
-				"found_date": faker.date.recent(),
-				"category": faker.commerce.productName(),
-				"color": 'blue',
-				"brand": 'Apple',
-				"additional": 'abc'
-			},
-			{
-				"user_id": faker.id,
-				"item_id": faker.id,
-				"item_name": faker.commerce.productName(),
-				"item_desc": faker.commerce.productDescription(),
-				"image": faker.image.image(),
-				"address": faker.address.streetAddress(),
-				"is_found": 'y',
-				"lost_date": faker.date.past(),
-				"time_lost": faker.date.recent(),
-				"found_date": faker.date.recent(),
-				"category": faker.commerce.productName(),
-				"color": 'blue',
-				"brand": 'Apple',
-				"additional": 'abc'
-			},
-			{
-				"user_id": faker.id,
-				"item_id": faker.id,
-				"item_name": faker.commerce.productName(),
-				"item_desc": faker.commerce.productDescription(),
-				"image": faker.image.image(),
-				"address": faker.address.streetAddress(),
-				"is_found": 'y',
-				"lost_date": faker.date.past(),
-				"time_lost": faker.date.recent(),
-				"found_date": faker.date.recent(),
-				"category": faker.commerce.productName(),
-				"color": 'blue',
-				"brand": 'Apple',
-				"additional": 'abc'
-			}
-		]
-	} else if (params.id === 'create') {
-		return {
-			"status": 'success',
-		}
-	} else if (params.id === 'delete') {
-		return {
-			"status": 'success',
-		}
+
+function updateItem(req,res){
+	// console.log(req);
+	return {
+		"status": 'success',
+	};
+}
+
+function deleteItem(req,res){
+	// console.log(req);
+	return {
+		"status": 'success',
+	};
+}
+
+async function getItem(req,res) {
+	console.log(req.params)
+	if (req.params.id === 'getall') {
+		const results = await db.collection('Items').find().toArray();
+		res.send({results});
 	} else {
-		return {
-			"user_id": faker.id,
-			"item_id": params.id,
-			"item_name": faker.commerce.productName(),
-			"item_desc": faker.commerce.productDescription(),
-			"image": faker.image.image(),
-			"address": faker.address.streetAddress(),
-			"is_found": 'y',
-			"lost_date": faker.date.past(),
-			"time_lost": faker.date.recent(),
-			"found_date": faker.date.recent(),
-			"category": faker.commerce.productName(),
-			"color": 'blue',
-			"brand": 'Apple',
-			"additional": 'abc'
-		}
+		const item = await db.collection('Items').findOne({ item_id: req.params.id });
+		res.send({item});
 	}
 }
 
 module.exports = {
 	getUser,
 	updateUser,
+	createUser,
+	deleteUser,
 	login,
 	createItem,
-	getItem
+	uploadItemImage,
+	getItem,
+	updateItem,
+	deleteItem,
+	testData,
+	connectToCluster,
+	logout,
 }

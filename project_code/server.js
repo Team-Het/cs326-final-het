@@ -1,82 +1,147 @@
-const db = require('./database.js');
+const database = require('./database.js');
+const express = require('express'); // server software
+const session = require('express-session');  // session middleware
+const passport = require('passport');  // authentication
+const LocalStrategy = require('passport-local');
+const db = database.connectToCluster();
+const minicrypt = require('./miniCrypt');
+const mc = new minicrypt.MiniCrypt();
 
-var express = require('express');
-var app = express();
+const app = express();
 const port = process.env.PORT || 3000
-
-var bodyParser = require('body-parser')
-app.use( bodyParser.json() );       // to support JSON-encoded bodies
-app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
-  extended: true
-}));
 
 app.use(express.json());       // to support JSON-encoded bodies
 app.use(express.urlencoded()); // to support URL-encoded bodies
-
 app.use(express.static('project_code'))
+app.use(session({
+	secret : process.env.SECRET,
+	resave: false,
+	saveUninitialized: true,
+	// cookie: { maxAge: 60 * 60 * 1000 } // 1 hour
+}));
+
+// App configuration
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(new LocalStrategy(
+	async (username, password, done) => {
+		console.log('LocalStrategy is called: username = ' + username + ', pass = ' + password);
+		try {
+			const cursor = (await db).collection('User').findOne({ username: username });
+			const user = await cursor;
+			console.log(user);
+			if (user) {
+				if (mc.check(password, user.salt, user.hash)) {
+					return done(null, username);
+				} else {
+					done(null, false);
+				}
+			} else {
+				return done(err);
+			}
+		} catch (err) {
+			return done(err);
+		}
+	}
+));
+
+passport.serializeUser((user, done) => {
+	console.log('serializeUser is called');
+	console.log(user);
+	return done(null, user);
+});
+
+passport.deserializeUser((uid, done) => {
+	console.log('DeserializeUser is called: ' + uid);
+	done(null, uid);
+});
+
+checkAuthenticated = (req, res, next) => {
+	if (req.isAuthenticated()) { return next() }
+	res.redirect("/login")
+}
+
+app.post("/login",
+	passport.authenticate('local', { failureMessage: true, failureRedirect: "/login.html" }),
+	(req, res) => {
+		res.send(database.login(req));
+	}
+)
+
+app.post("/logout", (req, res) => {
+	req.logout(req.user, err => {
+		if (err) return next(err);
+		res.send(database.logout(req, res));
+	})
+});
 
 app.get('/', function (req, res) {
+	console.log(req.params);
 	res.sendFile(__dirname + '/index.html');
 });
 
-app.get('/user/view/:id', (req, res) => {
+app.get('/test', checkAuthenticated, (req, res) => {
 	console.log(req.params);
-	res.send(db.getUser(req.params));
+	database.testData(req, res);
 })
 
-app.post('/user/update/:id', (req, res) => {
-	res.send(db.updateUser());
+app.get('/user/view/:id', checkAuthenticated, (req, res) => {
+	console.log(req.params);
+	res.send(database.getUser(req.params));
 })
 
-app.post('/login', (req, res) => {
-	res.send(db.login(req));
-})
-
-app.post('/item/create', (req, res) => {
+app.post('/user/update', checkAuthenticated, (req, res) => {
 	console.log(req.body);
-	res.send(db.createItem(req));
+	res.send(database.updateUser(req, res));
 })
 
-//Add more api
-app.post('/logout', (req, res) => {
-	res.send(db.logout(req));
+app.post('/user/create', checkAuthenticated, (req, res) => {
+	console.log(req.body);
+	res.send(database.createUser(req, res));
 })
 
-app.post('/user/view/create', (req, res) => {
+app.post('/user/delete', checkAuthenticated, (req, res) => {
+	console.log(req.body);
+	res.send(database.deleteUser(req, res));
+})
+
+app.get('/user/view/getall', checkAuthenticated, (req, res) => {
 	console.log(req.params);
-	res.send(db.getUser(req.params));
+	res.send(database.getUser(req, res));
 })
 
-app.post('/user/delete', (req, res) => {
-	res.send({'status': 'success'});
+app.post('/item/create', checkAuthenticated, (req, res) => {
+	console.log(req.body);
+	res.send(database.createItem(req, res));
 })
 
-app.get('/user/view/getall', (req, res) => {
-	console.log(req.params);
-	res.send(db.getUser(req.params));
+app.post('/item/delete', checkAuthenticated, (req, res) => {
+	console.log(req.body);
+	res.send(database.deleteItem(req, res));
 })
 
-app.post('/item/view/delete', (req, res) => {
-	console.log(req.params);
-	res.send(db.getItem(req.params));
+app.post('/item/update', checkAuthenticated, (req, res) => {
+	console.log(req.body);
+	res.send(database.updateItem(req, res));
 })
 
-app.post('/item/view/update', (req, res) => {
-	console.log(req.params);
-	res.send(db.getItem(req.params));
+app.post('/item/upload', checkAuthenticated, (req, res) => {
+	console.log(req.body);
+	res.send(database.uploadItemImage(req, res));
 })
 
 app.get('/item/view/:id', (req, res) => {
 	console.log(req.params);
-	res.send(db.getItem(req.params));
+	database.getItem(req, res);
 })
 
 app.get('/item/view/getall', (req, res) => {
 	console.log(req.params);
-	res.send(db.getItem(req.params));
+	database.getItem(req, res);
 })
 
 // Listen at Bottom
 app.listen(port, () => {
-	console.log(`Example app listening on port ${port}`)
+	console.log('App listening on port ${port}')
 })
