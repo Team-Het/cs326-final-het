@@ -5,6 +5,7 @@ const passport = require('passport');  // authentication
 const LocalStrategy = require('passport-local');
 const db = database.connectToCluster();
 const minicrypt = require('./miniCrypt');
+const { MongoDBNamespace } = require('mongodb');
 const mc = new minicrypt.MiniCrypt();
 
 const app = express();
@@ -112,8 +113,8 @@ app.get('/user/view/getall', checkAuthenticated, (req, res) => {
 })
 
 app.post('/item/create', checkAuthenticated, (req, res) => {
-	console.log(req.body);
-	res.send(database.createItem(req, res));
+	const response = database.createItem(req, res);
+	res.send(response);
 })
 
 app.post('/item/delete', checkAuthenticated, (req, res) => {

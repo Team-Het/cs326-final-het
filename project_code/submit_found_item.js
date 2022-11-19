@@ -57,17 +57,30 @@ async function submitFoundItem() {
 			add_info: add_info
 		})
 	});
+
+	const passBody = {
+		title: title,
+		category: category,
+		brand: brand,
+		color: color,
+		date_found: date_found,
+		time_found: time_found,
+		where_you_found: where_you_found,
+		add_info: add_info
+	};
+
 	if (response.ok) {
 		const resp = await response.json();
 		console.log(resp);
 		if (resp.status === 'success') {
 			window.location.href = './post_detail.html';
 			localStorage.setItem('fromPage', 'submit_found_item');
+			localStorage.setItem('passBody', JSON.stringify(passBody));
 		} else {
-			alert('error!');
+			alert('error!one');
 		}
 	} else {
-		alert('error!');
+		alert('error!two');
 	}
 	localStorage.removeItem('item');
 	localStorage.removeItem('location');

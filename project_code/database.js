@@ -27,11 +27,11 @@ async function testData(req,res) {
 async function getUser(req,res) {
 	console.log(req.params)
 	if (req.params.id === 'getall') {
-		const cursor = (await db).collection('User').find();
+		const cursor = await db.collection('User').find();
 		const results = await cursor.toArray();
 		res.send(results.findResult);
 	} else {
-		const cursor = (await db).collection('User').findOne({ username: req.params.id });
+		const cursor = await db.collection('User').findOne({ username: req.params.id });
 		const user = await cursor;
 		res.send(user);
 	}
@@ -75,11 +75,15 @@ function logout(req,res){
 	};
 }
 
-function createItem(req,res){
-	// console.log(req);
-	return {
-		"status": 'success',
-	};
+async function createItem(req,res){
+	try {
+		db.Items.insert(req.body);
+		return req.body;
+	} catch (error) {
+		return {
+			"status": 'error',
+		};
+	}
 }
 
 function updateItem(req,res){
