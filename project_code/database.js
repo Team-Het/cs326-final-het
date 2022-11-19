@@ -27,19 +27,12 @@ async function testData(req,res) {
 async function getUser(req,res) {
 	console.log(req.params)
 	if (req.params.id === 'getall') {
-<<<<<<< HEAD
 		const cursor = await db.collection('User').find();
 		const results = await cursor.toArray();
 		res.send(results.findResult);
 	} else {
 		const cursor = await db.collection('User').findOne({ username: req.params.id });
 		const user = await cursor;
-=======
-		const results = await db.coll('User').find().toArray();
-		res.send(results.findResult);
-	} else {
-		const user = await db.coll('User').findOne({ username: req.params.id });
->>>>>>> refs/remotes/origin/main
 		res.send(user);
 	}
 }
