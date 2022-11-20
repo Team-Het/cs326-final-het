@@ -36,8 +36,6 @@ async function submitLostItem(submitType) {
 		localStorage.setItem('nextPage', './submit_lost_item.html');
 		window.location.href = './login.html';
 	}
-	localStorage.removeItem('item');
-	localStorage.removeItem('location');
 	const title = document.getElementById('title').value;
 	const category = document.getElementById('category').value;
 	const brand = document.getElementById('brand').value;
@@ -46,6 +44,9 @@ async function submitLostItem(submitType) {
 	const time_lost = document.getElementById('time_lost').value;
 	const where_you_lost = document.getElementById('where_you_lost').value;
 	const add_info = document.getElementById('add_info').value;
+
+	localStorage.removeItem('item');
+	localStorage.removeItem('location');
 
 	if (!title || !category || !date_lost || !time_lost || !where_you_lost) {
         alert("Please fillout the information with *, then submit your post.");
@@ -68,8 +69,25 @@ async function submitLostItem(submitType) {
 			is_found: submitType==='lost'?'n':'y',
 		})
 	});
+
+	const passBody = {
+		username: username,
+		item_name: title,
+		category: category,
+		brand: brand,
+		color: color,
+		date_lost: date_lost,
+		time_lost: time_lost,
+		address: where_you_lost,
+		additonal: add_info,
+		is_found: submitType==='lost'?'n':'y',
+	};
+	
 	console.log(response);
 	if (response.ok) {
+		localStorage.setItem('passBody', JSON.stringify(passBody));
+		console.log(localStorage.getItem('passBody'));
+
 		localStorage.removeItem('item');
 		localStorage.removeItem('location');
 		document.getElementById('title').value = '';
