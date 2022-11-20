@@ -1,12 +1,27 @@
 'use strict';
 
 // NavBar functions
+function signOut() {
+	fetch(window.location.origin + '/logout')
+    .then((response)=>response.json())
+    .then((data)=>{});
+    // console.log("in signOut");
+    localStorage.removeItem("username");
+    localStorage.removeItem("email");
+    window.location.href = "./index.html";
+}
+
 function goHome(){
     window.location.href = "./index.html";
 }
 
 function goProfile(){
-    window.location.href = "./profile.html";
+    const username = localStorage.getItem('username');
+    if(username){
+        window.location.href = "./profile.html";
+    } else {
+        window.location.href = "./login.html";
+    }
 }
 
 // Index functions
@@ -36,7 +51,7 @@ async function deleteUser() {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json;charset=utf-8' },
 		body: JSON.stringify({
-            userId: localStorage.getItem('userId'),
+            username: localStorage.getItem('username'),
 		})
 	});
 	if (response.ok) {
@@ -44,9 +59,6 @@ async function deleteUser() {
 		console.log(resp);
 		if (resp.status === 'success') {
             alert('Account Successfully Deleted');
-            localStorage.removeItem('username');
-            localStorage.removeItem('email');
-            localStorage.removeItem('userId');
 			window.location.href = './index.html';
 		} else {
 			alert('error! one');

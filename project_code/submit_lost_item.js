@@ -3,6 +3,17 @@ function goLogin(){
     window.location.href = "./login.html";
 }
 
+function signOut() {
+	fetch(window.location.origin + '/logout')
+    .then((response)=>response.json())
+    .then((data)=>{});
+    // console.log("in signOut");
+    localStorage.removeItem("username");
+    localStorage.removeItem("email");
+    window.location.href = "./index.html";
+    refreshSign();
+}
+
 function goHome() {
 	window.location.href = "./index.html";
 }
@@ -16,8 +27,22 @@ function submitLost() {
 	localStorage.removeItem('location');
 }
 
+function refreshSign(){
+    const username = localStorage.getItem("username");
+    const signIn = document.getElementById("signIn");
+    const signOut = document.getElementById("signOut");
+    if(username){
+        signIn.classList.add('hidden');
+        signOut.classList.remove('hidden');
+    } else {
+        signIn.classList.remove('hidden');
+        signOut.classList.add('hidden');
+    }
+} 
+
 // Submit Lost Item functions
 window.onload = async function () {
+	refreshSign();
 	const item = localStorage.getItem('item');
 	const location = localStorage.getItem('location');
 	const fromPage = localStorage.getItem('fromPage');
@@ -34,6 +59,7 @@ async function submitLostItem(submitType) {
 	const username = localStorage.getItem('username');
 	if (!username) {
 		localStorage.setItem('nextPage', './submit_lost_item.html');
+		localStorage.setItem('submitType', submitType);
 		window.location.href = './login.html';
 	}
 	let tmp = "";

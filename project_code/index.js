@@ -9,8 +9,9 @@ function signOut() {
 	fetch(window.location.origin + '/logout')
     .then((response)=>response.json())
     .then((data)=>{});
-    console.log("in signOut");
+    // console.log("in signOut");
     localStorage.removeItem("username");
+    localStorage.removeItem("email");
     refreshSign();
 }
 
@@ -19,7 +20,13 @@ function goHome(){
 }
 
 function goProfile(){
-    window.location.href = "./profile.html";
+    const username = localStorage.getItem('username');
+    if(username){
+        window.location.href = "./profile.html";
+    } else {
+        localStorage.setItem('nextPage', 'profile');
+        window.location.href = "./login.html";
+    }
 }
 
 function refreshSign(){
@@ -36,7 +43,6 @@ function refreshSign(){
 }
 
 // Index functions
-// Fake data for testing remove when go to production
 window.onload = async function () {
     refreshSign();
 }
