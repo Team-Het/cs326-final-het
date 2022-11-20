@@ -2,7 +2,7 @@ const { faker } = require('@faker-js/faker');
 const { MongoClient } = require('mongodb');
 require('dotenv').config()
 const uri = process.env.MONGODB_URI;
-let db
+let db;
 
 async function connectToCluster() {
 	try {
@@ -25,15 +25,27 @@ async function testData(req, res) {
 }
 
 async function getUser(req, res) {
-	console.log(req.params)
-	if (req.params.id === 'getall') {
-		const cursor = await db.collection('User').find();
-		const results = await cursor.toArray();
-		res.send(results.findResult);
-	} else {
-		const cursor = await db.collection('User').findOne({ username: req.params.id });
-		const user = await cursor;
-		res.send(user);
+	try {
+		console.log('inside getUser');
+		console.log(req.params);
+		if (req.params.id === 'getall') {
+			console.log('inside getUser many');
+			const results = await db.collection('User').find().toArray();
+			res.send({ results });
+			// const cursor = await db.collection('User').find();
+			// const results = await cursor.toArray();
+			// return {results}
+			// res.send(results.findResult);
+		} else {
+			console.log('inside getUser 1');
+			const cursor = await db.collection('User').findOne({ username: req.params.id });
+			const user = await cursor;
+			res.send(user);
+		}
+	} catch (error) {
+		res.send({
+			"status": 'error',
+		});
 	}
 }
 
@@ -52,7 +64,7 @@ async function updateUser(req, res) {
 				},
 			};
 			await db.collection('User').updateOne(filter, updateDoc, options);
-		} 
+		}
 		if (req.body.email) {
 			updateDoc = {
 				$set: {

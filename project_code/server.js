@@ -5,7 +5,6 @@ const passport = require('passport');  // authentication
 const LocalStrategy = require('passport-local');
 const db = database.connectToCluster();
 const minicrypt = require('./miniCrypt');
-const { MongoDBNamespace } = require('mongodb');
 const mc = new minicrypt.MiniCrypt();
 
 const app = express();
@@ -59,14 +58,17 @@ passport.deserializeUser((uid, done) => {
 });
 
 checkAuthenticated = (req, res, next) => {
-	if (req.isAuthenticated()) { return next() }
-	res.status(401).redirect('../login.html');
+	if (req.isAuthenticated()) { 
+		return next();
+	} else {
+		res.status(401).redirect('../login.html');
+	}
 }
 
 app.post("/login",
 	passport.authenticate('local', { failureMessage: true, failureRedirect: "/login.html" }),
 	(req, res) => {
-		res.send(database.login(req));
+		res.send(database.login(req, res));
 	}
 )
 
@@ -87,9 +89,9 @@ app.get('/test', checkAuthenticated, (req, res) => {
 	database.testData(req, res);
 })
 
-app.get('/user/view/:id', checkAuthenticated, (req, res) => {
+app.get('/user/view/:id', (req, res) => {
 	console.log(req.params);
-	database.getUser(req.params);
+	database.getUser(req, res);
 })
 
 app.post('/user/update', checkAuthenticated, (req, res) => {
@@ -107,7 +109,7 @@ app.post('/user/delete', checkAuthenticated, (req, res) => {
 	database.deleteUser(req, res);
 })
 
-app.get('/user/view/getall', checkAuthenticated, (req, res) => {
+app.get('/user/view/getall', (req, res) => {
 	console.log(req.params);
 	database.getUser(req, res);
 })
