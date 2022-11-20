@@ -55,13 +55,23 @@ window.onload = function () {
     document.getElementById("color").innerHTML = "Color: " + body.color;
     document.getElementById("date_lost").innerHTML = "Date & Time: " + body.date_lost + " " + body.time_lost;
     document.getElementById("address").innerHTML = "Location: " + body.address;
-	var currentdate = new Date(); 
-	var datetime = currentdate.getDate() + "/"
-                + (currentdate.getMonth()+1)  + "/" 
+
+	var currentdate = new Date();
+    let hours = 0;
+    let string = '';
+    if(currentdate.getHours() > 12){
+        hours = currentdate.getHours() - 12;
+        string = "p.m.";
+    } 
+    else{
+        hours = currentdate.getHours();
+        string = "a.m.";
+    }
+    var datetime = (currentdate.getMonth()+1) + "/"
+                + currentdate.getDate()  + "/" 
                 + currentdate.getFullYear() + " "  
-                + currentdate.getHours() + ":"  
-                + currentdate.getMinutes() + ":" 
-                + currentdate.getSeconds();
+                + hours + ":"  
+                + currentdate.getMinutes() + string;
     document.getElementById("currentTime").innerHTML = datetime;
     
 

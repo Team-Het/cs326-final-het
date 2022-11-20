@@ -67,7 +67,7 @@ function submitFoundItem(){
         localStorage.setItem('item', item);
         localStorage.setItem('location', location);
         localStorage.setItem('fromPage', 'index')
-        window.location.href = "./submit_found_item.html";
+        window.location.href = "./submit_lost_item.html";
     } else {
         alert("Please Enter the Above Queries");
     }
