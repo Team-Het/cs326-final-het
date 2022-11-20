@@ -3,8 +3,8 @@ function goHome(){
     window.location.href = "./index.html";
 }
 
-function profile(){
-    // to be done
+function goProfile(){
+    window.location.href = "./profile.html";
 }
 
 // Login functions
@@ -21,4 +21,8 @@ function login() {
     } else {
         alert("Please enter valid username and password. If you don't have an account, please create one.");
     }
+}
+
+function createAccount(){
+    window.location.href = "./create_account.html";
 }

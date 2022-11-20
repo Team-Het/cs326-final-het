@@ -5,8 +5,8 @@ function goHome(){
     window.location.href = "./index.html";
 }
 
-function profile(){
-    // to be done
+function goProfile(){
+    window.location.href = "./profile.html";
 }
 
 // Index functions

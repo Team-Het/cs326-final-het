@@ -11,7 +11,6 @@
 
 .login-input{
     max-width: 500px;
-    padding-bottom: 107px;
     margin: auto;
 }
 
@@ -27,3 +26,6 @@
     margin: 0px 16px 0px 45px;
 }
 
+.createAccount{
+    cursor: pointer;
+}

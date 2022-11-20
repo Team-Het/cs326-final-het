@@ -14,13 +14,13 @@
 	<script src="./posts_page.js"></script>
 </head>
 
-<body class="bg-secondary">
+<body class="bg-light">
 	<div class="sticky-top">
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 			<div class="container-fluid">
 				<!-- Media breakpoint at width 546px in the future-->
 				<div class="d-flex">
-					<a class="navbar-brand fs-4 mx-2 pt-2" href="#" onclick="goHome()">UMass Lost and Found</a>
+					<a class="navbar-brand fs-4 mx-2 pt-2 umass" onclick="goHome()">UMass Lost and Found</a>
 					<form class="d-flex" role="search">
 						<img src="search.svg" alt="Search" class="icon m-2">
 						<input class="form-control m-2" type="search" placeholder="Search" aria-label="Search">
@@ -28,8 +28,9 @@
 				</div>
 				<!-- Center alignment based on page width in the future-->
 				<form class="d-flex">
+					<label class="nav-item sign-in fs-5" onclick="goLogin()">Sign In</label>
 					<img src="house.svg" alt="Home" class="icon ms-2 me-3" onclick="goHome()">
-					<img src="person-circle.svg" alt="User" class="icon mx-3" onclick="profile()">
+					<img src="person-circle.svg" alt="User" class="icon mx-3" onclick="goProfile()">
 				</form>
 			</div>
 		</nav>
@@ -107,6 +108,9 @@
 			<div class="bg-light extraSpace"></div>
 		</div>
 	</section>
+	<nav class="navbar fixed-bottom navbar-secondary bg-secondary">
+        <div class="container-fluid mt-4"></div>
+    </nav>
 </body>
 
 </html>

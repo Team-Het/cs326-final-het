@@ -103,10 +103,10 @@ function deleteItem(req,res){
 async function getItem(req,res) {
 	console.log(req.params)
 	if (req.params.id === 'getall') {
-		const results = await db.coll('Items').find().toArray();
+		const results = await db.collection('Items').find().toArray();
 		res.send({results});
 	} else {
-		const item = await db.coll('Items').findOne({ item_id: req.params.id });
+		const item = await db.collection('Items').findOne({ item_id: req.params.id });
 		res.send({item});
 	}
 }

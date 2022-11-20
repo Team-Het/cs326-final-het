@@ -112,7 +112,8 @@ app.get('/user/view/getall', checkAuthenticated, (req, res) => {
 	res.send(database.getUser(req, res));
 })
 
-app.post('/item/create', checkAuthenticated, (req, res) => {
+app.post('/item/create', (req, res) => {
+	console.log(req);
 	const response = database.createItem(req, res);
 	res.send(response);
 })
@@ -144,5 +145,5 @@ app.get('/item/view/getall', (req, res) => {
 
 // Listen at Bottom
 app.listen(port, () => {
-	console.log('App listening on port ${port}')
+	console.log('App listening on port ' + port);
 })

@@ -1,10 +1,14 @@
 // Navbar functions
+function goLogin(){
+    window.location.href = "./login.html";
+}
+
 function goHome() {
 	window.location.href = "./index.html";
 }
 
-function profile() {
-	// to be done
+function goProfile(){
+    window.location.href = "./profile.html";
 }
 
 function submitFound() {
@@ -80,6 +84,7 @@ async function submitFoundItem() {
 			alert('error!one');
 		}
 	} else {
+		console.log(response);
 		alert('error!two');
 	}
 	localStorage.removeItem('item');
