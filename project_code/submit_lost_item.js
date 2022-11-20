@@ -42,9 +42,8 @@ async function submitLostItem(submitType) {
 		headers: { 'Content-Type': 'application/json;charset=utf-8' },
 	});
 	if (user.ok) {
-		tmp = user.email;
-		console.log(tmp);
-		localStorage.setItem("email", tmp);
+		tmp = await user.json();
+		localStorage.setItem("email", tmp.email);
 	}
 	else {
 		alert('Server Error');
