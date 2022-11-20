@@ -5,6 +5,12 @@ function goLogin(){
     window.location.href = "./login.html";
 }
 
+function signOut() {
+	fetch(window.location.origin + '/logout')
+    .then((response)=>response.json())
+    .then((data)=>{});
+}
+
 function goHome(){
     window.location.href = "./index.html";
 }

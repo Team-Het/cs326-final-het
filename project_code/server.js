@@ -60,7 +60,7 @@ passport.deserializeUser((uid, done) => {
 
 checkAuthenticated = (req, res, next) => {
 	if (req.isAuthenticated()) { return next() }
-	res.redirect('../login.html');
+	res.status(401).redirect('../login.html');
 }
 
 app.post("/login",
@@ -70,7 +70,7 @@ app.post("/login",
 	}
 )
 
-app.post("/logout", (req, res) => {
+app.get("/logout", (req, res) => {
 	req.logout(req.user, err => {
 		if (err) return next(err);
 		res.send(database.logout(req, res));
@@ -89,48 +89,47 @@ app.get('/test', checkAuthenticated, (req, res) => {
 
 app.get('/user/view/:id', checkAuthenticated, (req, res) => {
 	console.log(req.params);
-	res.send(database.getUser(req.params));
+	database.getUser(req.params);
 })
 
 app.post('/user/update', checkAuthenticated, (req, res) => {
 	console.log(req.body);
-	res.send(database.updateUser(req, res));
+	database.updateUser(req, res);
 })
 
 app.post('/user/create', checkAuthenticated, (req, res) => {
 	console.log(req.body);
-	res.send(database.createUser(req, res));
+	database.createUser(req, res);
 })
 
 app.post('/user/delete', checkAuthenticated, (req, res) => {
 	console.log(req.body);
-	res.send(database.deleteUser(req, res));
+	database.deleteUser(req, res);
 })
 
 app.get('/user/view/getall', checkAuthenticated, (req, res) => {
 	console.log(req.params);
-	res.send(database.getUser(req, res));
+	database.getUser(req, res);
 })
 
 app.post('/item/create',checkAuthenticated, (req, res) => {
 	console.log(req.body);
-	const response = database.createItem(req, res);
-	res.send(response);
+	database.createItem(req, res);
 })
 
 app.post('/item/delete', checkAuthenticated, (req, res) => {
 	console.log(req.body);
-	res.send(database.deleteItem(req, res));
+	database.deleteItem(req, res);
 })
 
 app.post('/item/update', checkAuthenticated, (req, res) => {
 	console.log(req.body);
-	res.send(database.updateItem(req, res));
+	database.updateItem(req, res);
 })
 
 app.post('/item/upload', checkAuthenticated, (req, res) => {
 	console.log(req.body);
-	res.send(database.uploadItemImage(req, res));
+	database.uploadItemImage(req, res);
 })
 
 app.get('/item/view/:id', (req, res) => {

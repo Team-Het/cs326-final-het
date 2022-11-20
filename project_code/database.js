@@ -76,20 +76,24 @@ function logout(req,res){
 }
 
 async function createItem(req,res){
+	console.log('inside createItem');
 	try {
-		db.Items.insert(req.body);
-		return req.body;
+		await db.collection('Items').insertOne(req.body);
+		console.log('after insert');
+		res.send({
+			"status": "success",
+		});
 	} catch (error) {
-		return {
+		res.send({
 			"status": 'error',
-		};
+		});
 	}
 }
 
 function updateItem(req,res){
 	// console.log(req);
 	return {
-		"status": 'success',
+		"status": "success",
 	};
 }
 

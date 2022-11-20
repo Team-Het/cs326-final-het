@@ -30,7 +30,12 @@ window.onload = async function () {
 	console.log(window.location.origin);
 }
 
-async function submitLostItem() {
+async function submitLostItem(submitType) {
+	const username = localStorage.getItem('username');
+	if (!username) {
+		localStorage.setItem('nextPage', './submit_lost_item.html');
+		window.location.href = './login.html';
+	}
 	localStorage.removeItem('item');
 	localStorage.removeItem('location');
 	const title = document.getElementById('title').value;
@@ -51,34 +56,37 @@ async function submitLostItem() {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json;charset=utf-8' },
 		body: JSON.stringify({
-			title: title,
+			username: username,
+			item_name: title,
 			category: category,
 			brand: brand,
 			color: color,
 			date_lost: date_lost,
 			time_lost: time_lost,
-			where_you_lost: where_you_lost,
-			add_info: add_info
+			address: where_you_lost,
+			additonal: add_info,
+			is_found: submitType==='lost'?'n':'y',
 		})
 	});
 	console.log(response);
 	if (response.ok) {
-		if (response.url) {
+		localStorage.removeItem('item');
+		localStorage.removeItem('location');
+		document.getElementById('title').value = '';
+		document.getElementById('where_you_lost').value = '';
+		if (response.redirected) {
+			localStorage.setItem('nextPage', './post_detail.html');
 			window.location.href = response.url;
 		}
 		const resp = await response.json();
 		console.log(resp);
 		if (resp.status === 'success') {
 			window.location.href = './post_detail.html';
-			localStorage.setItem('fromPage', 'submit_lost_item');
+			// localStorage.setItem('nextPage', './post_detail.html');
 		} else {
 			alert('Error Processing Data');
 		}
 	} else {
 		alert('Server Error');
 	}
-	localStorage.removeItem('item');
-	localStorage.removeItem('location');
-	document.getElementById('title').value = '';
-	document.getElementById('where_you_lost').value = '';
 }
