@@ -36,6 +36,19 @@ async function submitLostItem(submitType) {
 		localStorage.setItem('nextPage', './submit_lost_item.html');
 		window.location.href = './login.html';
 	}
+	let tmp = "";
+	const user = await fetch(window.location.origin + '/user/view/' + username, {
+		method: 'GET',
+		headers: { 'Content-Type': 'application/json;charset=utf-8' },
+	});
+	if (user.ok) {
+		tmp = user.email;
+		console.log(tmp);
+		localStorage.setItem("email", tmp);
+	}
+	else {
+		alert('Server Error');
+	}
 	const title = document.getElementById('title').value;
 	const category = document.getElementById('category').value;
 	const brand = document.getElementById('brand').value;
@@ -44,6 +57,7 @@ async function submitLostItem(submitType) {
 	const time_lost = document.getElementById('time_lost').value;
 	const where_you_lost = document.getElementById('where_you_lost').value;
 	const add_info = document.getElementById('add_info').value;
+
 
 	localStorage.removeItem('item');
 	localStorage.removeItem('location');

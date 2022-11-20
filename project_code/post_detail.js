@@ -30,14 +30,23 @@ window.onload = async function () {
     document.getElementById("color").innerHTML = "Color: " + body.color;
     document.getElementById("date_lost").innerHTML = "Date & Time: " + body.date_lost + " " + body.time_lost;
     document.getElementById("address").innerHTML = "Location: " + body.address;
-
-    localStorage.removeItem('passBody');
+	var currentdate = new Date(); 
+	var datetime = currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + " "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
+    document.getElementById("currentTime").innerHTML = datetime;
+    
 
     if (username && email) {
         document.getElementById('username').innerHTML = body.username;
-        document.getElementById('email').innerHTML = "Please contact me through " + email;
+        document.getElementById('email').innerHTML = "Please contact me through " + localStorage.getItem("email");
     }
     window.username = username;
+
+    localStorage.removeItem('passBody');
 }
 
 async function deletePost() {
