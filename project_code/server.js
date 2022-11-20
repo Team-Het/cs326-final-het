@@ -89,6 +89,7 @@ app.get('/test', checkAuthenticated, (req, res) => {
 	database.testData(req, res);
 })
 
+// this is also /user/view/getall
 app.get('/user/view/:id', (req, res) => {
 	console.log(req.params);
 	database.getUser(req, res);
@@ -109,10 +110,10 @@ app.post('/user/delete', checkAuthenticated, (req, res) => {
 	database.deleteUser(req, res);
 })
 
-app.get('/user/view/getall', (req, res) => {
-	console.log(req.params);
-	database.getUser(req, res);
-})
+// app.get('/user/view/getall', (req, res) => {
+// 	console.log(req.params);
+// 	database.getUser(req, res);
+// })
 
 app.post('/item/create',checkAuthenticated, (req, res) => {
 	console.log(req.body);
@@ -134,15 +135,16 @@ app.post('/item/upload', checkAuthenticated, (req, res) => {
 	database.uploadItemImage(req, res);
 })
 
+// this is also /item/view/getall
 app.get('/item/view/:id', (req, res) => {
 	console.log(req.params);
 	database.getItem(req, res);
 })
 
-app.get('/item/view/getall', (req, res) => {
-	console.log(req.params);
-	database.getItem(req, res);
-})
+// app.get('/item/view/getall', (req, res) => {
+// 	console.log(req.params);
+// 	database.getItem(req, res);
+// })
 
 // Listen at Bottom
 app.listen(port, () => {
