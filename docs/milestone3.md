@@ -13,6 +13,8 @@ Het
 # Division of Labor
 Kelly Chung: Setup MongoDB, MongoDB Client, MongoDB database node.js framework, passport local strategy, authentication, hash and salt.  Create initial lost and found database, sample data, heroku environment variables for MongoDB and session SECRET.
 
+Kelly's Finetune Fixes: Fixed bottom alignment for all pages, add sign in link in all navbars and create account link in sign in.
+
 Yuqi Liu:
 
 Yujin Qin:
