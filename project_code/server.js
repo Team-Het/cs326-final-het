@@ -39,7 +39,7 @@ passport.use(new LocalStrategy(
 					done(null, false);
 				}
 			} else {
-				return done(err);
+				return done(null, false);
 			}
 		} catch (err) {
 			return done(err);

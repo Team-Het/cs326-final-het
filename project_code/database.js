@@ -102,6 +102,8 @@ async function deleteUser(req, res) {
 	}
 }
 
+// to do
+// https://www.bezkoder.com/node-js-upload-store-images-mongodb/
 function uploadItemImage(req, res) {
 	return {
 		"status": 'success',
