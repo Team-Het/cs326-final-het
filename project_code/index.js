@@ -9,6 +9,9 @@ function signOut() {
 	fetch(window.location.origin + '/logout')
     .then((response)=>response.json())
     .then((data)=>{});
+    console.log("in signOut");
+    localStorage.removeItem("username");
+    refreshSign();
 }
 
 function goHome(){
@@ -19,14 +22,23 @@ function goProfile(){
     window.location.href = "./profile.html";
 }
 
+function refreshSign(){
+    const username = localStorage.getItem("username");
+    const signIn = document.getElementById("signIn");
+    const signOut = document.getElementById("signOut");
+    if(username){
+        signIn.classList.add('hidden');
+        signOut.classList.remove('hidden');
+    } else {
+        signIn.classList.remove('hidden');
+        signOut.classList.add('hidden');
+    }
+}
+
 // Index functions
 // Fake data for testing remove when go to production
 window.onload = async function () {
-    // localStorage.setItem('username', 'Kelly');
-    // localStorage.setItem('email', 'kechung@umass.edu');
-    // localStorage.setItem('userId', '12345');
-    // localStorage.setItem('host', window.location.origin);
-    // localStorage.setItem('host', 'https://umass-lost-and-found.herokuapp.com'); 
+    refreshSign();
 }
 
 function submitLostItem(){
