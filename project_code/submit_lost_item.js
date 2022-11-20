@@ -47,7 +47,7 @@ async function submitLostItem() {
 		return;
     }
 
-	const response = await fetch(localStorage.getItem('host') + '/item/create', {
+	const response = await fetch(window.location.origin + '/item/create', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json;charset=utf-8' },
 		body: JSON.stringify({
@@ -61,17 +61,21 @@ async function submitLostItem() {
 			add_info: add_info
 		})
 	});
+	console.log(response);
 	if (response.ok) {
+		if (response.url) {
+			window.location.href = response.url;
+		}
 		const resp = await response.json();
 		console.log(resp);
 		if (resp.status === 'success') {
 			window.location.href = './post_detail.html';
 			localStorage.setItem('fromPage', 'submit_lost_item');
 		} else {
-			alert('error!');
+			alert('Error Processing Data');
 		}
 	} else {
-		alert('error!');
+		alert('Server Error');
 	}
 	localStorage.removeItem('item');
 	localStorage.removeItem('location');

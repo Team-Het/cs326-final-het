@@ -44,7 +44,7 @@ window.onload = async function () {
 }
 
 async function deletePost() {
-    const response = await fetch(localStorage.getItem('host') + '/item/delete', {
+    const response = await fetch(window.location.origin + '/item/delete', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json;charset=utf-8' },
         body: JSON.stringify({

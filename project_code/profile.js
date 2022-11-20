@@ -32,7 +32,7 @@ function usernameKeyup() {
 }
 
 async function deleteUser() {
-	const response = await fetch(localStorage.getItem('host') + '/user/delete', {
+	const response = await fetch(window.location.origin + '/user/delete', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json;charset=utf-8' },
 		body: JSON.stringify({

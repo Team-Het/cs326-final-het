@@ -60,7 +60,7 @@ passport.deserializeUser((uid, done) => {
 
 checkAuthenticated = (req, res, next) => {
 	if (req.isAuthenticated()) { return next() }
-	res.redirect("/login")
+	res.redirect('../login.html');
 }
 
 app.post("/login",
@@ -112,8 +112,8 @@ app.get('/user/view/getall', checkAuthenticated, (req, res) => {
 	res.send(database.getUser(req, res));
 })
 
-app.post('/item/create', (req, res) => {
-	console.log(req);
+app.post('/item/create',checkAuthenticated, (req, res) => {
+	console.log(req.body);
 	const response = database.createItem(req, res);
 	res.send(response);
 })
