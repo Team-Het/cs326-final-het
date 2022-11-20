@@ -37,11 +37,11 @@
         <nav class="navbar navbar-expand-lg bg-secondary">
             <ul class="navbar-nav flex-row ms-auto me-4">
                 <li class="nav-item">
-                    <a class="nav-link second-nav" href="./submit_lost_item.html">Submit Lost Item</a>
+                    <a class="nav-link second-nav" href="./submit_lost_item.html">Submit Lost & Found Item</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link second-nav" href="./submit_found_item.html">Submit Found Item</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a class="nav-link second-nav" href="./posts_page.html">View Posts</a>
                 </li>
@@ -60,17 +60,17 @@
 
                         <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                             <div class="col p-4 d-flex flex-column position-static">
-                                <strong class="d-inline-block mb-2 text-success">Lost&Found an item!</strong>
+                                <strong class="d-inline-block mb-2 text-success" id="lostorfound"></strong>
                                 <label class="mb-0">Item Detail: </label>
                                 <!-- <input id="password" class="form-control mb-3" readonly="readonly"> -->
                                 <h3 class="mb-0" id="title"></h3>
                                 <div class="mb-1 text-muted" id="date_grey"></div>
-                                <p class="mb-auto" id="add_info"></p>
+                                <p class="mb-auto" id="additonal"></p>
                                 <p class="mb-auto" id="category"></p>
                                 <p class="mb-auto" id="brand"></p>
                                 <p class="mb-auto" id="color"></p>
-                                <p class="mb-auto" id="date_found"></p>
-                                <p class="mb-auto" id="where_you_found"></p>
+                                <p class="mb-auto" id="date_lost"></p>
+                                <p class="mb-auto" id="address"></p>
 
                                 <a href="#" class="stretched-link">See the images.</a>
                             </div>
@@ -85,10 +85,10 @@
                             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative ">
                                 <div class="col p-4 d-flex flex-column position-static">
                                     <strong class="d-inline-block mb-2 text-success">Student</strong>
-                                    <h3 class="mb-0">Yuqi Liu</h3>
-                                    <div class="mb-1 text-muted">Oct 23</div>
-                                    <p class="mb-auto">Please contact me through phone number: ***-***-****</p>
-                                    <a href="#" class="stretched-link">More contact information.</a>
+                                    <h3 class="mb-0" id="username"></h3>
+                                    <div class="mb-1 text-muted" id="currentTime"></div>
+                                    <p class="mb-auto" id="email"></p>
+                                    <!-- <a href="#" class="stretched-link">More contact information.</a> -->
                                 </div>
                             </div> 
                     </div>

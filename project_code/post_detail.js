@@ -1,5 +1,5 @@
 // Navbar functions
-function goLogin(){
+function goLogin() {
     window.location.href = "./login.html";
 }
 
@@ -7,40 +7,46 @@ function goHome() {
     window.location.href = "./index.html";
 }
 
-function goProfile(){
+function goProfile() {
     window.location.href = "./profile.html";
 }
 
 // Post Detail functions
 window.onload = async function () {
     const body = JSON.parse(localStorage.getItem('passBody'));
-    // const item_id = localStorage.getItem('item_id');
-    // const item_name = localStorage.getItem('item_name');
-    // const item_desc = localStorage.getItem('item_desc');
-    // const image = localStorage.getItem('image');
-    // const address = localStorage.getItem('address');
-    // const category = localStorage.getItem('category');
-    // const color = localStorage.getItem('color');
-    // const brand = localStorage.getItem('brand');
-    // const additional = localStorage.getItem('addtional');
-    // const lost_date = localStorage.getItem('lost_date');
-    // const found_date = localStorage.getItem('found_date');
-    // const time_lost = localStorage.getItem('time_lost');
-    document.getElementById("title").value = body.title;
-    document.getElementById("date_grey").value = body.date_found + body.time_found;
-    document.getElementById("add_info").value = body.add_info;
-    document.getElementById("category").value = "Category: " + body.category;
-    document.getElementById("brand").value = "Brand: " + body.brand;
-    document.getElementById("color").value = "Color: " + body.color;
-    document.getElementById("date_found").value = body.date_found + body.time_found;
-    document.getElementById("where_you_found").value = body.where_you_found;
+    console.log(body);
 
+    if (body.is_found === 'n') {
+        document.getElementById('lostorfound').innerHTML = "Lost An Item!"
+    }
+    else {
+        document.getElementById('lostorfound').innerHTML = "Found An Item!"
+    }
+    document.getElementById("title").innerHTML = body.item_name;
+    //document.getElementById("date_grey").innerHTML = body.date_lost + " " + body.time_lost;
+    document.getElementById("additonal").innerHTML = body.additonal;
+    document.getElementById("category").innerHTML = "Category: " + body.category;
+    document.getElementById("brand").innerHTML = "Brand: " + body.brand;
+    document.getElementById("color").innerHTML = "Color: " + body.color;
+    document.getElementById("date_lost").innerHTML = "Date & Time: " + body.date_lost + " " + body.time_lost;
+    document.getElementById("address").innerHTML = "Location: " + body.address;
+	var currentdate = new Date(); 
+	var datetime = currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + " "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
+    document.getElementById("currentTime").innerHTML = datetime;
+    
 
     if (username && email) {
-        document.getElementById('username').value = username;
-        document.getElementById('email').value = email;
+        document.getElementById('username').innerHTML = body.username;
+        document.getElementById('email').innerHTML = "Please contact me through " + localStorage.getItem("email");
     }
     window.username = username;
+
+    localStorage.removeItem('passBody');
 }
 
 async function deletePost() {
