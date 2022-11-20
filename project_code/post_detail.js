@@ -31,8 +31,8 @@ window.onload = async function () {
     document.getElementById("date_lost").innerHTML = "Date & Time: " + body.date_lost + " " + body.time_lost;
     document.getElementById("address").innerHTML = "Location: " + body.address;
 	var currentdate = new Date(); 
-	var datetime = currentdate.getDate() + "/"
-                + (currentdate.getMonth()+1)  + "/" 
+	var datetime = (currentdate.getMonth()+1) + "/"
+                + currentdate.getDate()  + "/" 
                 + currentdate.getFullYear() + " "  
                 + currentdate.getHours() + ":"  
                 + currentdate.getMinutes() + ":" 
