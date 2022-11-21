@@ -17,4 +17,4 @@ Kelly's Finetune Fixes: Fixed bottom alignment for all pages, add sign in link i
 
 Yuqi Liu:
 
-Yujin Qin: Generated and completed the post detail page. Helped combine submit lost item page and submit found item page, modified nav bar.
+Yujin Qin: Generated and completed the post detail page. Helped combine submit lost item page and submit found item page, modified nav bar. Created and finished update_post.js, update_post.html. Helped create some Restful API.
