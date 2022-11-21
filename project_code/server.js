@@ -100,7 +100,7 @@ app.post('/user/update', checkAuthenticated, (req, res) => {
 	database.updateUser(req, res);
 })
 
-app.post('/user/create', checkAuthenticated, (req, res) => {
+app.post('/user/create', (req, res) => {
 	console.log(req.body);
 	database.createUser(req, res);
 })

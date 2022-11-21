@@ -1,6 +1,8 @@
 const { faker } = require('@faker-js/faker');
 const { MongoClient } = require('mongodb');
 require('dotenv').config()
+const minicrypt = require('./miniCrypt');
+const mc = new minicrypt.MiniCrypt();
 const uri = process.env.MONGODB_URI;
 let db;
 
@@ -56,7 +58,7 @@ async function updateUser(req, res) {
 		const options = { upsert: true };
 		let updateDoc = {};
 		if (req.body.password) {
-			const [salt, hash] = mc.hash('12345');
+			const [salt, hash] = mc.hash(req.body.password);
 			updateDoc = {
 				$set: {
 					salt: salt,
@@ -86,6 +88,10 @@ async function updateUser(req, res) {
 async function createUser(req, res) {
 	console.log('inside createUser');
 	try {
+		const [salt, hash] = mc.hash(req.body.password);
+		delete req.body.password;
+		req.body.salt = salt;
+		req.body.hash = hash;
 		await db.collection('User').insertOne(req.body);
 		console.log('after createUser');
 		res.send({
