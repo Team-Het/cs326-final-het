@@ -3,12 +3,42 @@ function goLogin() {
     window.location.href = "./login.html";
 }
 
+function signOut() {
+	fetch(window.location.origin + '/logout')
+    .then((response)=>response.json())
+    .then((data)=>{});
+    // console.log("in signOut");
+    localStorage.removeItem("username");
+    localStorage.removeItem("email");
+    window.location.href = "./index.html";
+    refreshSign();
+}
+
 function goHome() {
     window.location.href = "./index.html";
 }
 
 function goProfile() {
-    window.location.href = "./profile.html";
+    const username = localStorage.getItem('username');
+    if(username){
+        window.location.href = "./profile.html";
+    } else {
+        localStorage.setItem('nextPage', 'profile.html');
+        window.location.href = "./login.html";
+    }
+}
+
+function refreshSign(){
+    const username = localStorage.getItem("username");
+    const signIn = document.getElementById("signIn");
+    const signOut = document.getElementById("signOut");
+    if(username){
+        signIn.classList.add('hidden');
+        signOut.classList.remove('hidden');
+    } else {
+        signIn.classList.remove('hidden');
+        signOut.classList.add('hidden');
+    }
 }
 
 function goUpdate() {
@@ -16,7 +46,8 @@ function goUpdate() {
 }
 
 // Post Detail functions
-window.onload = async function () {
+window.onload = function () {
+    refreshSign();
     const body = JSON.parse(localStorage.getItem('passBody'));
     console.log(body);
 

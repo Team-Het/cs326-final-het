@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="learn_more.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
-    <script src="./profile.js"></script>
+    <script src="./learn_more.js"></script>
 </head>
 
-<body class="bg-light">
+<body class="bg-secondary">
     <div class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
@@ -28,6 +28,7 @@
                 </div>
                 <!-- Center alignment based on page width in the future-->
                 <form class="d-flex">
+                    <label id="signIn" class="nav-item sign-in fs-5" onclick="goLogin()">Sign In</label>
                     <label id="signOut" class="nav-item sign-in fs-5" onclick="signOut()">Sign Out</label>
                     <img src="house.svg" alt="Home" class="icon ms-2 me-3" onclick="goHome()">
                     <img src="person-circle.svg" alt="User" class="icon mx-3" onclick="goProfile()">
@@ -48,25 +49,24 @@
             </ul>
         </nav>
     </div>
-    <section class="bg-light p-responsive">
+    <section class="home">
         <!-- Fix media in the future -->
         <div class="container column-layout">
             <div class="row">
-                <div class="profile-info">
-                    <div class="profile-input">
+                <div class="col-7 home-info">
+                    <div class="home-input">
                         <div>
-                            <div class="d-flex flex-column justify-content-evenly mt-3">
-                                <h class="fs-2 mb-3 text-left">My Profile</h> 
-                                <img src="person-circle.svg" alt="Profile" class="profile-icon mb-3">
-                                    <label class="fs-5 my-3">Username</label>
-                                    <input id="username" class="form-control mb-3" onkeyup="usernameKeyup()">
-                                    <label class="fs-5 mb-3">Password</label>
-                                    <input id="password" class="form-control mb-3">
-                                    <label class="fs-5 mb-3">Email</label>
-                                    <input id="email" class="form-control mb-5">
-                                    <button id="save_changes" class="d-flex align-self-end btn btn-outline-dark btn-lg hidden">Save Changes</button>
-                                    <button id="delete_account" class="d-flex btn btn-danger btn-lg align-self-start mt-5" onclick="deleteUser()">Delete Account</button>
-                            </div>
+                            <h class="fs-2">Welcome To UMass Lost and Found!</h>
+                            <p class="mt-2 mb-4">We are aiming to help everyone who lost/found any item.<br>
+                                Enter the queries below and we will track what your looking for!</p>
+                            <label class="mb-2">Item Lost or Found:</label>
+                            <p class="fs-6 fw-normal">i.e. UMass Card, Keys, Phone, Wallet</p>
+                            <!-- change border color to better match the background in the future -->
+                            <input id="search_item" class="form-control">
+                            <label class="mb-2 mt-4">Where you Lost or Found it:</label>
+                            <p class="fs-6 fw-normal">i.e. Worcester Dining, Blue Wall, W.E.B. Du Bois Library, Specific
+                                Residential Hall</p>
+                            <input id="search_location" class="form-control">
                         </div>
                     </div>
                 </div>

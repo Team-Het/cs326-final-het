@@ -28,7 +28,8 @@
 				</div>
 				<!-- Center alignment based on page width in the future-->
 				<form class="d-flex">
-					<label class="nav-item sign-in fs-5" onclick="goLogin()">Sign In</label>
+                    <label id="signIn" class="nav-item sign-in fs-5" onclick="goLogin()">Sign In</label>
+                    <label id="signOut" class="nav-item sign-in fs-5" onclick="signOut()">Sign Out</label>
 					<img src="house.svg" alt="Home" class="icon ms-2 me-3" onclick="goHome()">
 					<img src="person-circle.svg" alt="User" class="icon mx-3" onclick="goProfile()">
 				</form>
@@ -58,7 +59,7 @@
 						<p class="lead my-3">Welcome to the UMass lost and found page. If you lost anything or found
 							anything on
 							campus, you can sipmly create a post of the item to help yourself and your alumni.</p>
-						<p class="lead mb-0"><a href="#" class="text-white fw-bold">Learn more about us...</a></p>
+						<p class="lead mb-0"><a href="learn_more.html" class="text-white fw-bold">Learn more about us...</a></p>
 					</div>
 				</div>
 

@@ -16,6 +16,10 @@
     font-size: 18px;
 }
 
+.hidden{
+    display: none;
+}
+
 .sign-in{
     color:white;
     margin-right: 20px;
