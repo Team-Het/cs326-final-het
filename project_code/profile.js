@@ -25,7 +25,6 @@ function goProfile(){
 }
 
 // Index functions
-// Fake data for testing remove when go to production
 window.onload = async function () {
     const username = localStorage.getItem('username');
     const email = localStorage.getItem('email');
@@ -33,7 +32,6 @@ window.onload = async function () {
         document.getElementById('username').value = username;
         document.getElementById('email').value = email;
     }
-    window.username = username;
 }
 
 function usernameKeyup() {

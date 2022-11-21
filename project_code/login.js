@@ -12,6 +12,7 @@ async function login() {
     const name = document.getElementById("username").value;
     const password = document.getElementById("password").value;
     // const user = { "id": name, "user_name": password };
+    console.log("login");
     if ((name && name.length > 0) && (password && password.length > 0)) {
         const response = await fetch(window.location.origin + '/login', {
             method: 'POST',
@@ -22,11 +23,6 @@ async function login() {
             })
         });
 
-        const body = {
-            username: name,
-            password: password,
-        };
-        localStorage.setItem("checkusername", body);
         console.log(response);
         if (response.ok) {
             if (response.redirected) {
@@ -35,6 +31,8 @@ async function login() {
             const resp = await response.json();
             console.log(resp);
             if (resp.status === 'success') {
+                localStorage.setItem('username', name);
+                localStorage.setItem("email", resp.email);
                 const nextPage = localStorage.getItem('nextPage');
                 if (nextPage) {
                     localStorage.removeItem('nextPage');
@@ -48,8 +46,6 @@ async function login() {
         } else {
             alert('Server Error');
         }
-    
-        localStorage.setItem('username', name);
     } else {
         alert("Please enter valid username and password. If you don't have an account, please create one.");
     }

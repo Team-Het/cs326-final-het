@@ -68,7 +68,7 @@ checkAuthenticated = (req, res, next) => {
 app.post("/login",
 	passport.authenticate('local', { failureMessage: true, failureRedirect: "/login.html" }),
 	(req, res) => {
-		res.send(database.login(req, res));
+		database.login(req, res);
 	}
 )
 

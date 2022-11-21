@@ -138,11 +138,16 @@ function uploadItemImage(req, res) {
 	};
 }
 
-function login(req, res) {
+async function login(req, res) {
 	console.log(req.body);
-	return {
-		"status": 'success',
-	};
+	const cursor = (await db).collection('User').findOne({ username: req.body.username });
+	const user = await cursor;
+	if(user){
+		res.send({
+			"status": 'success',
+			"email" : user.email
+		});
+	}
 }
 
 function logout(req, res) {
