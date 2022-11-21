@@ -37,9 +37,9 @@ In the previous milestone 1 and milestone 2, we designed the website to have sep
 
 
 # Division of Labor
-Kelly Chung: Setup MongoDB, MongoDB Client, MongoDB database node.js framework, passport local strategy, authentication, hash and salt.  Create initial lost and found database, sample data, heroku environment variables for MongoDB and session SECRET.  Fixed all the Restful API to be aysnc compatible.  Added CRUD for Items and Users collection.  Combined Submit Lost and Submit Found to Submit Lost/Found.  Checked if user not logged in, redirect to login page, then continue.  Implment Create Account and Login functionality.
+Kelly Chung: Setup MongoDB, MongoDB Client, MongoDB database node.js framework, passport local strategy, authentication, hash and salt.  Create initial lost and found database, sample data, heroku environment variables for MongoDB and session SECRET.  Fixed all the RESTful API to be aysnc compatible.  Added CRUD for Items and Users collection.  Combined Submit Lost and Submit Found to Submit Lost/Found.  Checked if user not logged in, redirect to login page, then continue.  Implment Create Account and Login functionality.
 
-Kelly's Finetune Fixes: Fixed bottom alignment for all pages, add sign in link in all navbars and create account link in sign in.  Redesigned login page.
+Kelly's Finetune Fixes: Fixed bottom alignment for all pages, add sign in and sign out link in all navbars and create account link in sign in.  Redesigned login page.
 
 Yuqi Liu:
 
