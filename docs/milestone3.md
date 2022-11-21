@@ -33,7 +33,7 @@ Het
 
 
 ## Note 
-We used to have seperate submit_lost_item and submit_found_item pages, we combined them this time for convenience, but kept using date_lost and time_lost in case some data mess up.
+In the previous milestone 1 and milestone 2, we designed the website to have seperate submit_lost_item and submit_found_item pages, which means the user have to go to different pages to submit lost or found items. This time, we combined two pages for convenience, but kept using old variable names in case some data mess up. Therefore, date_lost actually stands for the date that the item lost or found, time_lost stands for the approximate time that the item lost or found.
 
 
 # Division of Labor
