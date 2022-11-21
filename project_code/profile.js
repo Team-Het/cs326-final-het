@@ -28,19 +28,63 @@ function goProfile(){
 window.onload = async function () {
     const username = localStorage.getItem('username');
     const email = localStorage.getItem('email');
-    if (username && email) {
-        document.getElementById('username').value = username;
+    if (username) {
+        document.getElementById('username').innerHTML = username;
+    }
+    if (email){
         document.getElementById('email').value = email;
     }
 }
 
-function usernameKeyup() {
+function inputKeyup() {
     const button = document.getElementById('save_changes');
-    const username = document.getElementById('username').value;
-    if(window.username !== username) {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const currentEmail = localStorage.getItem("email");
+    if(currentEmail && currentEmail !== email || password && password.length > 0) {
         button.classList.remove('hidden');
     } else {
         button.classList.add('hidden');
+    }
+}
+
+async function saveChanges(){
+    const email = document.getElementById('email').value;
+    const name = document.getElementById("username").innerHTML;
+    const password = document.getElementById("password").value;
+    // const currentPass = document.getElementById("currentPass").value;
+    // const newPass = document.getElementById("newPass").value;
+    // const confirmPass = document.getElementById("confirmPass").value;
+    console.log("save changes");
+    if ((password && password.length > 0) || (email && email.length > 0)) {
+        const response = await fetch(window.location.origin + '/user/update', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json;charset=utf-8' },
+            body: JSON.stringify({
+                username: name,
+                password: password.length > 0 ? password : undefined,
+                email: email,
+            })
+        });
+
+        console.log(response);
+        if (response.ok) {
+            if (response.redirected) {
+                window.location.href = response.url;
+            }
+            const resp = await response.json();
+            console.log(resp);
+            if (resp.status === 'success') {
+                localStorage.setItem("email", email);
+                alert('Changes Saved Successfully');
+            } else {
+                alert('Failed to Save');
+            }
+        } else {
+            alert('Server Error');
+        }
+    } else {
+        alert("Server Error");
     }
 }
 

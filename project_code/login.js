@@ -26,7 +26,8 @@ async function login() {
         console.log(response);
         if (response.ok) {
             if (response.redirected) {
-                window.location.href = response.url;
+                alert('Incorrect Username or Password');
+                return;
             }
             const resp = await response.json();
             console.log(resp);
@@ -40,14 +41,12 @@ async function login() {
                 } else {
                     window.location.href = "./index.html";
                 }
-            } else {
-                alert('Incorrect Username or Password');
             }
         } else {
             alert('Server Error');
         }
     } else {
-        alert("Please enter valid username and password. If you don't have an account, please create one.");
+        alert("Server Error");
     }
 }
 

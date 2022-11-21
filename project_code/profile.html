@@ -55,17 +55,31 @@
                 <div class="profile-info">
                     <div class="profile-input">
                         <div>
-                            <div class="d-flex flex-column justify-content-evenly mt-3">
-                                <h class="fs-2 mb-3 text-left">My Profile</h> 
-                                <img src="person-circle.svg" alt="Profile" class="profile-icon mb-3">
-                                    <label class="fs-5 my-3">Username</label>
-                                    <input id="username" class="form-control mb-3" onkeyup="usernameKeyup()">
-                                    <label class="fs-5 mb-3">Email</label>
-                                    <input id="email" class="form-control mb-3">
-                                    <label class="fs-5 mb-3">Password</label>
-                                    <input id="password" class="form-control mb-5">
-                                    <button id="save_changes" class="d-flex align-self-end btn btn-outline-dark btn-lg hidden">Save Changes</button>
-                                    <button id="delete_account" class="d-flex btn btn-danger btn-lg align-self-start mt-5" onclick="deleteUser()">Delete Account</button>
+                            <div class="d-flex flex-column mt-3">
+                                <div class="d-flex justify-content-between">
+                                    <h class="fs-2 mb-2 text-left">My Profile</h>
+                                    <button id="delete_account" class="d-flex btn btn-danger btn-lg align-self-end mb-2" onclick="deleteUser()">Delete Account</button>
+                                </div>
+                                <img src="person-circle.svg" alt="Profile" class="profile-icon my-3">
+                                    <div class="d-flex align-self-start">
+                                        <label class="fs-5 my-3">Username:&nbsp;&nbsp;</label>
+                                        <label id="username" class="fs-5 mt-3"></label>
+                                    </div>
+                                    <label class="fs-5 my-3">Email</label>
+                                    <input id="email" class="form-control mb-3" onkeyup="inputKeyup()">
+                                    <label class="fs-5 my-3">Password</label>
+                                    <input id="password" type="password" class="form-control mb-5" onkeyup="inputKeyup()">
+                                    <!-- <label class="fs-5 mb-3">Email</label>
+                                    <input id="email" class="form-control mb-3" onkeyup="inputKeyup()"> -->
+
+                                    <!-- <label class="fs-5 my-3">Current Password</label>
+                                    <input id="currentPass" class="form-control mb-3">
+                                    <label class="fs-5 mb-3">New Password</label>
+                                    <input id="newPass" class="form-control mb-3">
+                                    <label class="fs-5 mb-3">Confirm Password</label>
+                                    <input id="confirmPass" class="form-control mb-4"> -->
+                                    <button id="save_changes" class="d-flex align-self-end btn btn-outline-dark btn-lg hidden mb-5" onclick="saveChanges()">Save Changes</button>
+                                    <!-- <button id="delete_account" class="d-flex btn btn-danger btn-lg align-self-start" onclick="deleteUser()">Delete Account</button> -->
                             </div>
                         </div>
                     </div>

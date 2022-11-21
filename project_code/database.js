@@ -52,12 +52,13 @@ async function getUser(req, res) {
 }
 
 async function updateUser(req, res) {
-	console.log('inside createUser');
+	console.log('inside updateUser');
 	try {
 		const filter = { username: req.body.username };
 		const options = { upsert: true };
 		let updateDoc = {};
 		if (req.body.password) {
+			console.log("changing password");
 			const [salt, hash] = mc.hash(req.body.password);
 			updateDoc = {
 				$set: {
@@ -68,6 +69,7 @@ async function updateUser(req, res) {
 			await db.collection('User').updateOne(filter, updateDoc, options);
 		}
 		if (req.body.email) {
+			console.log("changing email");
 			updateDoc = {
 				$set: {
 					email: req.body.email,
