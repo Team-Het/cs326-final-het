@@ -8,6 +8,15 @@
     margin: 29px 20px;
 }
 
+.labelInfo{
+    max-width: 200px;
+}
+
+.inputClass{
+    width: 500px;
+    margin-left: 15px;
+}
+
 .submitLost-input{
     height: 580px;
     padding: 40px;
@@ -24,38 +33,6 @@
     background-color:grey;
 }
 
-.atitle{
-    margin: 0px 16px 0px 106px;
-}
-
-.acategory{
-    margin: 0px 16px 0px 60px;
-}
-
-.abrand{
-    margin: 0px 16px 0px 102px;
-}
-
-.acolor{
-    margin: 0px 16px 0px 107px;
-}
-
-.ad{
-    margin: 0px 16px 0px -14px;
-}
-
-.at{
-    margin: 0px 16px 0px -17px;
-}
-
-.awy{
-    margin: 0px 16px 0px 66px;
-}
-
-.aai{
-    margin: 0px 16px 0px 20px;
-}
-
 .btn-submit{
-    margin-top: 40px;
+    margin-top: 25px;
 }
