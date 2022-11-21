@@ -41,6 +41,10 @@ function refreshSign(){
     }
 }
 
+function goUpdate() {
+    window.location.href = "./update_post.html";
+}
+
 // Post Detail functions
 window.onload = function () {
     refreshSign();
@@ -74,20 +78,32 @@ window.onload = function () {
         string = "a.m.";
     }
     var datetime = (currentdate.getMonth()+1) + "/"
-                + currentdate.getDate()  + "/" 
-                + currentdate.getFullYear() + " "  
-                + hours + ":"  
-                + currentdate.getMinutes() + string;
-    document.getElementById("currentTime").innerHTML = datetime;
+	+ currentdate.getDate()  + "/" 
+	+ currentdate.getFullYear() + " "  
+	+ hours + ":"  
+	+ currentdate.getMinutes() + string;
+	localStorage.setItem("currentTime", datetime);
+    document.getElementById("currentTime").innerHTML = localStorage.getItem("currentTime");
     
-
     if (username && email) {
         document.getElementById('username').innerHTML = body.username;
         document.getElementById('email').innerHTML = "Please contact me through " + localStorage.getItem("email");
     }
     window.username = username;
+    localStorage.setItem("updateBody", JSON.stringify(body));
+    console.log(localStorage.getItem("updateBody"));
+    // localStorage.removeItem('passBody');
 
-    localStorage.removeItem('passBody');
+    const button = document.getElementById('update_post');
+    if(window.username !== body.username) {
+        button.classList.remove('hidden');
+    } else {
+        button.classList.add('hidden');
+    }
+
+    // if(localStorage.getItem("checkusername").username === body.username){
+
+    // }
 }
 
 async function deletePost() {
@@ -124,3 +140,4 @@ async function deletePost() {
         alert('error! two');
     }
 }
+
