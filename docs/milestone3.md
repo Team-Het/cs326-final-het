@@ -7,9 +7,10 @@ Het
 | ![](https://avatars.githubusercontent.com/u/71847172?s=48&v=4) | Yujin Qin | [nenevadera](https://github.com/nenevadera) |
 | ![]() | Kelly Chung | [Kelly2c](https://github.com/Kelly2c) |
 | ![](https://avatars.githubusercontent.com/u/58710754?s=40&v=4) | Yuqi Liu| [ZephyrusLiu](https://github.com/ZephyrusLiu) |
+
 # Documentation
 | Name | Data Type | Description |
-| ------------- |------------- | ------------- |
+| :------------- | :------------- | :------------- |
 | username | string | Username created by user |
 | item_name | string | Name of the item, also the title |
 | category | string | Category of the item |
