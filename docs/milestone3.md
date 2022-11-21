@@ -31,7 +31,6 @@ Het
 | hash | string | Hashed value of password |
 | email | string | Email of the user |
 
-
 ## Note 
 In the previous milestone 1 and milestone 2, we designed the website to have seperate submit_lost_item and submit_found_item pages, which means the user have to go to different pages to submit lost or found items. This time, we combined two pages for convenience, but kept using old variable names in case some data mess up. Therefore, date_lost actually stands for the date that the item lost or found, time_lost stands for the approximate time that the item lost or found.
 
@@ -46,9 +45,7 @@ https://umass-lost-and-found.herokuapp.com/
 
 
 # Division of Labor
-Kelly Chung: Setup MongoDB, MongoDB Client, MongoDB database node.js framework, passport local strategy, authentication, hash and salt.  Create initial lost and found database, sample data, heroku environment variables for MongoDB and session SECRET.  Fixed all the RESTful API to be aysnc compatible.  Added CRUD for Items and Users collection.  Combined Submit Lost and Submit Found to Submit Lost/Found.  Checked if user not logged in, redirect to login page, then continue.  Implment Create Account and Login functionality.
-
-Kelly's Finetune Fixes: Fixed bottom alignment for all pages, add sign in and sign out link in all navbars and create account link in sign in.  Redesigned login page.
+Kelly Chung: Setup MongoDB, MongoDB Client, MongoDB database node.js framework, passport local strategy, authentication, hash and salt.  Create initial lost and found database, sample data, heroku environment variables for MongoDB and session SECRET.  Fixed all the RESTful API to be aysnc compatible.  Added CRUD for Items and Users collection.  Helped combined Submit Lost and Submit Found to Submit Lost/Found.  Checked if user not logged in, redirect to login page, then continue.  Implment Create Account, Login, and User delete functionality. Finetune Fixes: Fixed bottom alignment for all pages, add sign in and sign out link in all navbars and create account link in sign in.  Redesigned login and profile page.
 
 Yuqi Liu: Come up with the initial version of login functionality. Created lean_more page. Imported map and accomplised the basic functinality. Accomplieshed basic functionality of upload image. Helped with milestone3 markdown file.
 
