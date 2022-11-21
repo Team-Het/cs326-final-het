@@ -47,6 +47,24 @@ window.onload = async function () {
     this.getItems();
     localStorage.setItem('nextPage', './posts_page.html');
     console.log("post detail next")
+    const responsePost = await fetch('/item/view');
+    const post = await responsePost.json();
+    for(let i = 0; i < responsePost.length; i++){
+        let body = responsePost[responsePost.length - i]
+        if(body.is_found === 'n'){
+            document.getElementById('postTitle1').innerHTML = body.title;
+            document.getElementById('postDate1').innerHTML = body.date_lost + " " + body.time_lost;
+            document.getElementById('description1').innerHTML = "I lost " + body.color + " " + body.brand + " " + body.title + " at " + body.address;
+        }
+
+        else{
+            document.getElementById('postTitle2').innerHTML = body.title;
+            document.getElementById('postDate2').innerHTML = body.date_lost + " " + body.time_lost;
+            document.getElementById('description2').innerHTML = "I found " + body.color + " " + body.brand + " " + body.title + " at " + body.address;
+        }
+    }
+
+    
 }
 
 function readDetail(e) {
