@@ -62,8 +62,23 @@ async function updatePost() {
 		})
 	});
 
+    const passBody = {
+		username: username,
+		item_name: title,
+		category: category,
+		brand: brand,
+		color: color,
+		date_lost: date_lost,
+		time_lost: time_lost,
+		address: where_you_lost,
+		additonal: add_info,
+		// is_found: submitType==='lost'?'n':'y',
+	};
+
     console.log(response);
 	if (response.ok) {
+		localStorage.setItem('passBody', JSON.stringify(passBody));
+		console.log(localStorage.getItem('passBody'));
 
 		localStorage.removeItem('item');
 		localStorage.removeItem('location');
