@@ -41,3 +41,7 @@ function refreshSign(){
         signOut.classList.add('hidden');
     }
 }
+
+window.onload = async function () {
+    refreshSign();
+}
