@@ -9,6 +9,7 @@ Het
 | ![](https://avatars.githubusercontent.com/u/58710754?s=40&v=4) | Yuqi Liu| [ZephyrusLiu](https://github.com/ZephyrusLiu) |
 
 # Documentation
+## Items Database
 | Name | Data Type | Description |
 | :------------- | :------------- | :------------- |
 | username | string | Username created by user |
@@ -21,7 +22,18 @@ Het
 | address | string | Where the item lost or found |
 | additonal | string | Additional information add by post owner |
 | is_found | string | Check the item is lost or found |
-Note: We used to have seperate submit_lost_item and submit_found_item pages, we combined them this time for convenience, but kept using date_lost and time_lost in case some data mess up.
+
+## User Database
+| Name | Data Type | Description |
+| :------------- | :------------- | :------------- |
+| username | string | Username of the user |
+| salt | string | Secret random key to hash |
+| hash | string | Hashed value of password |
+| email | string | Email of the user |
+
+
+## Note 
+We used to have seperate submit_lost_item and submit_found_item pages, we combined them this time for convenience, but kept using date_lost and time_lost in case some data mess up.
 
 
 # Division of Labor
