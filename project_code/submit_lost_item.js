@@ -131,8 +131,8 @@ async function submitLostItem(submitType) {
 	
 	console.log(response);
 	if (response.ok) {
-		localStorage.setItem('passBody', JSON.stringify(passBody));
-		console.log(localStorage.getItem('passBody'));
+		localStorage.setItem('item_detail', JSON.stringify(passBody));
+		console.log(localStorage.getItem('item_detail'));
 
 		localStorage.removeItem('item');
 		localStorage.removeItem('location');
