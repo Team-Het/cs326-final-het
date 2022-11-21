@@ -48,7 +48,7 @@ function goUpdate() {
 // Post Detail functions
 window.onload = function () {
     refreshSign();
-    const body = JSON.parse(localStorage.getItem('passBody'));
+    const body = JSON.parse(localStorage.getItem('item_detail'));
     console.log(body);
 
     if (body.is_found === 'n') {
