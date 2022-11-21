@@ -39,6 +39,8 @@ async function signUp(){
             const resp = await response.json();
             console.log(resp);
             if (resp.status === 'success') {
+                localStorage.setItem('username', username);
+                localStorage.setItem('email', email);
                 const nextPage = localStorage.getItem('nextPage');
                 if (nextPage) {
                     localStorage.removeItem('nextPage');

@@ -96,11 +96,14 @@ async function deleteUser() {
             username: localStorage.getItem('username'),
 		})
 	});
+    console.log("delete");
 	if (response.ok) {
 		const resp = await response.json();
 		console.log(resp);
 		if (resp.status === 'success') {
             alert('Account Successfully Deleted');
+            localStorage.removeItem("username");
+            localStorage.removeItem("email");
 			window.location.href = './index.html';
 		} else {
 			alert('error! one');
