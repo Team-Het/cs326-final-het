@@ -36,10 +36,7 @@ In the previous milestone 1 and milestone 2, we designed the website to have sep
 
 
 ## How to test?
-If you are a new user to this website, first click the "Sign In" button, this will lead you to the log in page, if you don't have an account, you could create one and after that it will show in the User Database. If you don't want to create a new one, you could use { username: "Yujin", password: "12345" } to test. Then you could create a post for the item you lost or found. After creating, the post will appear in the Items Database. If you found the item you lost, or the owner found the item you picked up, you could choose to delete the post. Then the post will disappear in the Items Database.
-If you don't want your account anymore, you can delete your account by clicking the person-circle on the top right corner and finding the delete button. After deleting, the account will be removed from User Database. You could try to delete { username: "Yuqi", password: "12345" }.
-
-
+If you are a new user to this website, first click the "Sign In" button, this will lead you to the log in page, if you don't have an account, you could create one and after that it will show in the User Database. If you don't want to create a new one, you could just use { username: "testuser", password: "123" } to test. Then you could create a post for the item you lost or found. After creating, the post will appear in the Items Database. If you found the item you lost, or the owner found the item you picked up, you could choose to delete the post. Then the post will disappear in the Items Database.  If you don't want your account anymore, you can delete your account by clicking the person-circle icon on the top right corner and finding the delete button. After deleting, the account will be removed from User Database. 
 # Heroku Application Link
 https://umass-lost-and-found.herokuapp.com/
 
