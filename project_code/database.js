@@ -88,6 +88,16 @@ async function updateUser(req, res) {
 async function createUser(req, res) {
 	console.log('inside createUser');
 	try {
+		const cursor = await db.collection('User').findOne({ username: req.body.username });
+		const user = await cursor;
+		console.log(user);
+		if(user){
+			res.send({
+				"status": 'failed',
+				"reason": 'user exists'
+			});
+			return;
+		}
 		const [salt, hash] = mc.hash(req.body.password);
 		delete req.body.password;
 		req.body.salt = salt;
