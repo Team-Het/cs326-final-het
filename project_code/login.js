@@ -21,6 +21,12 @@ async function login() {
                 password: password,
             })
         });
+
+        const body = {
+            username: name,
+            password: password,
+        };
+        localStorage.setItem("checkusername", body);
         console.log(response);
         if (response.ok) {
             if (response.redirected) {
