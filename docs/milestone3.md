@@ -41,6 +41,6 @@ Kelly Chung: Setup MongoDB, MongoDB Client, MongoDB database node.js framework, 
 
 Kelly's Finetune Fixes: Fixed bottom alignment for all pages, add sign in and sign out link in all navbars and create account link in sign in.  Redesigned login page.
 
-Yuqi Liu: Link post pages and and post detail pages together. Come up with the initial version of login functionality. Add Imported map and accomplised the basic functinality. Accomplieshed basic functionality of upload image. Helped with milestone3 markdown file
+Yuqi Liu: Link post pages and and post detail pages together. Come up with the initial version of login functionality. Created lean_more page. Imported map and accomplised the basic functinality. Accomplieshed basic functionality of upload image. Helped with milestone3 markdown file
 
 Yujin Qin: Generated and completed the post detail page. Helped combine submit lost item page and submit found item page, modified nav bar. Created and finished update_post.js, update_post.html. Helped create some Restful API. Wrote the documentation of milestone3 markdown file.
