@@ -44,6 +44,7 @@ function refreshSign(){
 
 // Index functions
 window.onload = async function () {
+    localStorage.setItem('nextPage', './index.html');
     refreshSign();
 }
 
