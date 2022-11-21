@@ -24,7 +24,7 @@ function goProfile(){
     if(username){
         window.location.href = "./profile.html";
     } else {
-        localStorage.setItem('nextPage', 'profile');
+        localStorage.setItem('nextPage', 'profile.html');
         window.location.href = "./login.html";
     }
 }

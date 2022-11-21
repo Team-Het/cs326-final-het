@@ -32,7 +32,7 @@ async function login() {
                 const nextPage = localStorage.getItem('nextPage');
                 if (nextPage) {
                     localStorage.removeItem('nextPage');
-                    window.location.href = nextPage + ".html";
+                    window.location.href = nextPage;
                 } else {
                     window.location.href = "./index.html";
                 }

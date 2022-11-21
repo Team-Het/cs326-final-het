@@ -19,7 +19,13 @@ function goHome() {
 }
 
 function goProfile(){
-    window.location.href = "./profile.html";
+    const username = localStorage.getItem('username');
+    if(username){
+        window.location.href = "./profile.html";
+    } else {
+        localStorage.setItem('nextPage', 'profile.html');
+        window.location.href = "./login.html";
+    }
 }
 
 function submitLost() {
@@ -46,7 +52,7 @@ window.onload = async function () {
 	const item = localStorage.getItem('item');
 	const location = localStorage.getItem('location');
 	const fromPage = localStorage.getItem('fromPage');
-	localStorage.setItem('nextPage', './submit_lost_item');
+	localStorage.setItem('nextPage', './submit_lost_item.html');
 	if(fromPage && fromPage === 'index') {
 		if (item && location) {
 			document.getElementById('title').value = item;
@@ -59,8 +65,8 @@ window.onload = async function () {
 async function submitLostItem(submitType) {
 	const username = localStorage.getItem('username');
 	if (!username) {
-		localStorage.setItem('nextPage', './post_detail');
-		localStorage.setItem('submitType', submitType);
+		localStorage.setItem('nextPage', './post_detail.html');
+		// localStorage.setItem('submitType', submitType);
 		window.location.href = './login.html';
 	}
 	let tmp = "";
@@ -133,7 +139,7 @@ async function submitLostItem(submitType) {
 		document.getElementById('title').value = '';
 		document.getElementById('where_you_lost').value = '';
 		if (response.redirected) {
-			localStorage.setItem('nextPage', './post_detail');
+			localStorage.setItem('nextPage', './post_detail.html');
 			window.location.href = response.url;
 		}
 		const resp = await response.json();
