@@ -47,22 +47,22 @@ window.onload = async function () {
     this.getItems();
     localStorage.setItem('nextPage', './posts_page.html');
     console.log("post detail next")
-    const responsePost = await fetch('/item/view');
-    const post = await responsePost.json();
-    for(let i = 0; i < responsePost.length; i++){
-        let body = responsePost[responsePost.length - i]
-        if(body.is_found === 'n'){
-            document.getElementById('postTitle1').innerHTML = body.title;
-            document.getElementById('postDate1').innerHTML = body.date_lost + " " + body.time_lost;
-            document.getElementById('description1').innerHTML = "I lost " + body.color + " " + body.brand + " " + body.title + " at " + body.address;
-        }
+    // const responsePost = await fetch('/item/view');
+    // const post = await responsePost.json();
+    // for(let i = 0; i < responsePost.length; i++){
+    //     let body = responsePost[responsePost.length - i]
+    //     if(body.is_found === 'n'){
+    //         document.getElementById('postTitle1').innerHTML = body.title;
+    //         document.getElementById('postDate1').innerHTML = body.date_lost + " " + body.time_lost;
+    //         document.getElementById('description1').innerHTML = "I lost " + body.color + " " + body.brand + " " + body.title + " at " + body.address;
+    //     }
 
-        else{
-            document.getElementById('postTitle2').innerHTML = body.title;
-            document.getElementById('postDate2').innerHTML = body.date_lost + " " + body.time_lost;
-            document.getElementById('description2').innerHTML = "I found " + body.color + " " + body.brand + " " + body.title + " at " + body.address;
-        }
-    }
+    //     else{
+    //         document.getElementById('postTitle2').innerHTML = body.title;
+    //         document.getElementById('postDate2').innerHTML = body.date_lost + " " + body.time_lost;
+    //         document.getElementById('description2').innerHTML = "I found " + body.color + " " + body.brand + " " + body.title + " at " + body.address;
+    //     }
+    // }
 
     
 }
@@ -73,12 +73,12 @@ function readDetail(e) {
 }
 
 function getItems() {
-	fetch(localStorage.getItem('host') + '/item/view/getall')
+	fetch(window.location.origin + '/item/view/getall')
     .then((response)=>response.json())
     .then((data)=>{
         console.log(data)
-        const lostItems = data.filter(v=>v.is_found==='n');
-        const foundItems = data.filter(v=>v.is_found==='y');
+        const lostItems = data.results.filter(v=>v.is_found==='n');
+        const foundItems = data.results.filter(v=>v.is_found==='y');
         const lostDiv = document.getElementById("lost");
         lostItems.forEach( e => {
             const div1 = document.createElement("div");
@@ -109,13 +109,13 @@ function getItems() {
             const div3 = document.createElement("div");
             div3.classList.add("mb-1");
             div3.classList.add("text-muted");
-            const date = new Date(e.lost_date);
+            const date = new Date(e.date_lost);
             const newdate= (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear();
             div3.innerHTML = newdate;
             const p = document.createElement("p");
             p.classList.add("card-text");
             p.classList.add("mb-2");
-            p.innerHTML = e.item_desc;
+            p.innerHTML = e.additonal;
             const a = document.createElement("a");
             a.classList.add("alert-primary");
             a.classList.add("cursor");
@@ -168,13 +168,13 @@ function getItems() {
             const div3 = document.createElement("div");
             div3.classList.add("mb-1");
             div3.classList.add("text-muted");
-            const date = new Date(e.found_date);
+            const date = new Date(e.date_lost);
             const newdate= (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear();
             div3.innerHTML = newdate;
             const p = document.createElement("p");
             p.classList.add("card-text");
             p.classList.add("mb-2");
-            p.innerHTML = e.item_desc;
+            p.innerHTML = e.additonal;
             const a = document.createElement("a");
             a.classList.add("alert-primary");
             a.classList.add("cursor");
