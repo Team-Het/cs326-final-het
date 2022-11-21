@@ -206,8 +206,8 @@ async function updateItem(req, res) {
 async function deleteItem(req, res) {
 	console.log('inside deleteItem');
 	try {
-		const query = { item_name: req.body.username, username: req.body.username };
-		await db.collection('User').deleteOne(query);
+		const query = { item_name: req.body.item_name, username: req.body.username };
+		await db.collection('Items').deleteOne(query);
 		console.log('after deleteItem');
 		res.send({
 			"status": "success",
