@@ -107,11 +107,13 @@ window.onload = function () {
 }
 
 async function deletePost() {
+    const body = JSON.parse(localStorage.getItem('passBody'));
     const response = await fetch(window.location.origin + '/item/delete', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json;charset=utf-8' },
         body: JSON.stringify({
-            itemId: localStorage.getItem('itemId'),
+            item_name: body.item_name,
+            username: body.username
         })
     });
     if (response.ok) {
