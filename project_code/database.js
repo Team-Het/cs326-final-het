@@ -175,10 +175,10 @@ async function uploadItemImage(req, res) {
 				});
 			});
 		console.log(req.files);
-		// fs.unlink('./tempFiles/' + filename.name, (err) => {
-		// 	if (err) throw err;
-		// 	console.log('path/file.txt was deleted');
-		// });
+		fs.unlink('./tempFiles/' + filename.name, (err) => {
+			// if (err) throw err;
+			console.log(filename.name + ' was deleted');
+		});
 
 	} catch (error) {
 		console.log(error);
