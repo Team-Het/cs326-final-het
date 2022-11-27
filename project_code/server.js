@@ -1,6 +1,7 @@
 const database = require('./database.js');
 const express = require('express'); // server software
 const session = require('express-session');  // session middleware
+const fileUpload = require('express-fileupload');
 const passport = require('passport');  // authentication
 const LocalStrategy = require('passport-local');
 const db = database.connectToCluster();
@@ -18,6 +19,10 @@ app.use(session({
 	resave: false,
 	saveUninitialized: true,
 	// cookie: { maxAge: 60 * 60 * 1000 } // 1 hour
+}));
+
+app.use(fileUpload({
+    createParentPath: true
 }));
 
 // App configuration
@@ -133,6 +138,11 @@ app.post('/item/update', checkAuthenticated, (req, res) => {
 app.post('/item/upload', checkAuthenticated, (req, res) => {
 	console.log(req.body);
 	database.uploadItemImage(req, res);
+})
+
+app.get('/item/download/:name',  (req, res) => {
+	console.log(req.body);
+	database.downloadImage(req, res);
 })
 
 // this is also /item/view/getall

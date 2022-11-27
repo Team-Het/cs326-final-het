@@ -154,3 +154,28 @@ async function submitLostItem(submitType) {
 		alert('Server Error');
 	}
 }
+
+function uploadFile() {
+    let formData = new FormData();           
+	const fileUpload = document.getElementById("fileUpload");
+    formData.append("metadata", JSON.stringify({username: 'testuser', item_name: 'Laptop'}));
+    formData.append("filename", fileUpload.files[0]);
+	console.log(formData);
+    fetch('/item/upload/', {
+      method: "POST",
+      body: formData})
+	.then((response)=>{
+		if (response.redirected) {
+			window.location.href = response.url;
+		}
+		return response.json();})
+    .then((resp)=>{
+		console.log(resp);
+		if (resp.status === 'success') {
+			const img = document.getElementById('itemImage');
+			img.src = resp.image;
+		} else {
+			alert('Error uploading file');
+		}
+	})
+}
