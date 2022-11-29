@@ -11,8 +11,8 @@ const mc = new minicrypt.MiniCrypt();
 const app = express();
 const port = process.env.PORT || 3000
 
-app.use(express.json());       // to support JSON-encoded bodies
-app.use(express.urlencoded()); // to support URL-encoded bodies
+app.use(express.json({limit : '50mb',extended : true}))
+app.use(express.urlencoded({limit : '50mb',extended : true}))
 app.use(express.static('project_code'))
 app.use(session({
 	secret : process.env.SECRET,
