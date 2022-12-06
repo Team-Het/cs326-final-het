@@ -40,7 +40,7 @@ window.onload = async function () {
 	document.getElementById('date_lost').value = updateBody.date_lost;
 	document.getElementById('time_lost').value = updateBody.time_lost;
 	document.getElementById('where_you_lost').value = updateBody.address;
-    document.getElementById('add_info').value = updateBody.additonal;
+    document.getElementById('add_info').value = updateBody.additional;
 
 	console.log(window.location.origin);
 
@@ -77,7 +77,7 @@ async function updatePost() {
 			date_lost: date_lost,
 			time_lost: time_lost,
 			address: where_you_lost,
-			additonal: add_info,
+			additional: add_info,
 			//is_found: submitType==='lost'?'n':'y',
 		})
 	});
@@ -91,14 +91,20 @@ async function updatePost() {
 		date_lost: date_lost,
 		time_lost: time_lost,
 		address: where_you_lost,
-		additonal: add_info,
+		additional: add_info,
 		// is_found: submitType==='lost'?'n':'y',
 	};
 
     console.log(response);
 	if (response.ok) {
-		localStorage.setItem('passBody', JSON.stringify(passBody));
-		console.log(localStorage.getItem('passBody'));
+		// 
+		// 
+		localStorage.setItem('item_detail', JSON.stringify(passBody));
+		console.log(localStorage.getItem('item_detail'));
+		// If it's passbody then the post detail won't upload so I changed.
+		// 
+		// localStorage.setItem('passBody', JSON.stringify(passBody));
+		// console.log(localStorage.getItem('passBody'));
 
 		localStorage.removeItem('item');
 		localStorage.removeItem('location');

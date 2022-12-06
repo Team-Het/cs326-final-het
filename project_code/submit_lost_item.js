@@ -111,7 +111,7 @@ async function submitLostItem(submitType) {
 			date_lost: date_lost,
 			time_lost: time_lost,
 			address: where_you_lost,
-			additonal: add_info,
+			additional: add_info,
 			is_found: submitType==='lost'?'n':'y',
 		})
 	});
@@ -125,7 +125,7 @@ async function submitLostItem(submitType) {
 		date_lost: date_lost,
 		time_lost: time_lost,
 		address: where_you_lost,
-		additonal: add_info,
+		additional: add_info,
 		is_found: submitType==='lost'?'n':'y',
 	};
 	
