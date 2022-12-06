@@ -115,7 +115,7 @@ function getItems() {
             const p = document.createElement("p");
             p.classList.add("card-text");
             p.classList.add("mb-2");
-            p.innerHTML = e.additonal;
+            p.innerHTML = e.additional;
             const a = document.createElement("a");
             a.classList.add("alert-primary");
             a.classList.add("cursor");
@@ -174,7 +174,7 @@ function getItems() {
             const p = document.createElement("p");
             p.classList.add("card-text");
             p.classList.add("mb-2");
-            p.innerHTML = e.additonal;
+            p.innerHTML = e.additional;
             const a = document.createElement("a");
             a.classList.add("alert-primary");
             a.classList.add("cursor");

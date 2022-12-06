@@ -48,7 +48,17 @@ function goUpdate() {
 // Post Detail functions
 window.onload = function () {
     refreshSign();
+    // 
+    // 
+    // 
+    
     const body = JSON.parse(localStorage.getItem('item_detail'));
+    
+    // 
+    // 
+    // 
+    // 
+
     console.log(body);
 
     if (body.is_found === 'n') {
@@ -59,7 +69,7 @@ window.onload = function () {
     }
     document.getElementById("title").innerHTML = body.item_name;
     //document.getElementById("date_grey").innerHTML = body.date_lost + " " + body.time_lost;
-    document.getElementById("additonal").innerHTML = body.additonal;
+    document.getElementById("additional").innerHTML = body.additional;
     document.getElementById("category").innerHTML = "Category: " + body.category;
     document.getElementById("brand").innerHTML = "Brand: " + body.brand;
     document.getElementById("color").innerHTML = "Color: " + body.color;
