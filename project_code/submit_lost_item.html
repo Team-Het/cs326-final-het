@@ -38,7 +38,8 @@
         <nav class="navbar navbar-expand-lg bg-secondary">
             <ul class="navbar-nav flex-row ms-auto me-4">
                 <li class="nav-item">
-                    <a class="nav-link second-nav" id="nav_submit_lost" href="./submit_lost_item.html" onclick="submitLost()">Submit Lost & Found Item</a>
+                    <a class="nav-link second-nav" id="nav_submit_lost" href="./submit_lost_item.html"
+                        onclick="submitLost()">Submit Lost & Found Item</a>
                 </li>
                 <!-- <li class="nav-item">
                     <a class="nav-link second-nav" id="nav_submit_found" href="./submit_found_item.html">Submit Found Item</a>
@@ -57,39 +58,52 @@
                     <h class="fs-1">Welcome To UMass Lost and Found!</h>
                 </div> -->
                 <div class="col-12 text-center mt-4">
-                    <h class="fs-1">Submit&nbsp;Your&nbsp;Lost&nbsp;or&nbsp;Found&nbsp;Item&nbsp;Information</h>
+                    <h class="fs-1">Submit&nbsp;Your&nbsp;Lost&nbsp;&&nbsp;Found&nbsp;Item&nbsp;Information</h>
                 </div>
-                <div class="col-7 submitLost-info">
-                    <div class="submitLost-input">
-                            <div class="d-flex flex-row">
-                                <div class="d-flex flex-column align-items-end labelInfo">
-                                    <label class="fs-5 mb-4">*Title:</label>
-                                    <label class="fs-5 mb-4">*Category:</label>
-                                    <label class="fs-5 mb-4">Brand:</label>
-                                    <label class="fs-5 mb-4">Color:</label>
-                                    <label class="fs-5 mb-4">*Date&nbsp;Lost&nbsp;or&nbsp;Found:</label>
-                                    <label class="fs-5 mb-4">*Time&nbsp;Lost&nbsp;or&nbsp;Found:</label>
-                                    <label class="fs-5 mb-4">*Location:</label>
-                                    <label class="fs-5 mb-4">Additional&nbsp;Info:</label>
-                                </div>
-                                <div class="d-flex flex-column inputClass">
-                                    <input id="title" class="form-control mb-3">
-                                    <input id="category" class="form-control mb-3">
-                                    <input id="brand" class="form-control mb-3">
-                                    <input id="color" class="form-control mb-3">
-                                    <input id="date_lost" class="form-control mb-3">
-                                    <input id="time_lost" class="form-control mb-3">
-                                    <input id="where_you_lost" class="form-control mb-3">
-                                    <input id="add_info" class="form-control mb-3">
-                                </div>
+                <div class="col-10 submit-info">
+                    <div class="submit-input rounded">
+                        <div class="d-flex flex-row submit-inner">
+                            <div class="d-flex flex-column align-items-end labelInfo">
+                                <label class="fs-5 mb-4">*Title:</label>
+                                <label class="fs-5 mb-4">*Category:</label>
+                                <label class="fs-5 mb-4">Brand:</label>
+                                <label class="fs-5 mb-4">Color:</label>
+                                <label class="fs-5 mb-4">*Date&nbsp;Lost&nbsp;or&nbsp;Found:</label>
+                                <label class="fs-5 mb-4">*Time&nbsp;Lost&nbsp;or&nbsp;Found:</label>
+                                <label class="fs-5 mb-4">*Location:</label>
+                                <label class="fs-5 mb-4">Additional&nbsp;Info:</label>
                             </div>
-                        <div class="d-flex flex-row justify-content-evenly btn-submit">
-                            <button id="submit_lost" class="btn btn-dark btn-lg" onclick="submitLostItem('lost')">Submit Lost Item!</button>
-                            <button id="submit_found" class="btn btn-dark btn-lg" onclick="submitLostItem('found')">Submit Found Item!</button>
+                            <div class="d-flex flex-column inputClass">
+                                <input id="title" class="form-control mb-3">
+                                <input id="category" class="form-control mb-3">
+                                <input id="brand" class="form-control mb-3">
+                                <input id="color" class="form-control mb-3">
+                                <input id="date_lost" class="form-control mb-3">
+                                <input id="time_lost" class="form-control mb-3">
+                                <input id="where_you_lost" class="form-control mb-3">
+                                <input id="add_info" class="form-control mb-3">
+                            </div>
+                        </div>
+                        <div class="d-flex flex-columns justify-content-evenly mt-3">
+                            <div class="row">
+                                <div class="upload-button">
+                                    <span class="uploadText">Upload a picture of the item</picture></span>
+                                    <input id="fileUpload" class="photo-input file:mr-4 hover:file:cursor-pointer"
+                                        type="file" onchange="uploadFile()">
+                                </div>
+                                <!-- <div class="col-6"> -->
+                                    <img id="itemImage" class="submit-img" src="" />
+                                <!-- </div> -->
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-3 m-5">
+                    <div class="d-flex flex-row justify-content-evenly btn-submit">
+                        <button id="submit_lost" class="btn btn-dark btn-lg me-2"
+                            onclick="submitLostItem('lost')">Submit Lost Item!</button>
+                        <button id="submit_found" class="btn btn-dark btn-lg ms-2"
+                            onclick="submitLostItem('found')">Submit Found Item!</button>
+                    </div>
+                    <!-- <div class="col-3 m-5">
                     <div class="d-flex flex-columns justify-content-evenly mt-3">
                         <div>
                          <div class="upload-button">
@@ -98,9 +112,9 @@
                              <input id="fileUpload" class="photo-input" type="file" onchange="uploadFile()">
                          </div>
                         </div>
+                </div> -->
                 </div>
             </div>
-        </div>
     </section>
     <nav class="navbar fixed-bottom navbar-secondary bg-secondary">
         <div class="container-fluid mt-4"></div>

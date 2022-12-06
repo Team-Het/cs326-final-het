@@ -4,8 +4,13 @@
     margin: 0px auto 30px
 }
 
-.submitLost-info{
+.submit-info{
     margin: 29px 20px;
+    padding-left: 15%;
+}
+
+.submit-inner{
+    padding-left: 5%;
 }
 
 .labelInfo{
@@ -17,22 +22,43 @@
     margin-left: 15px;
 }
 
-.submitLost-input{
-    height: 580px;
+.submit-input{
+    min-height: 580px;
     padding: 40px;
     font-weight: bold;
     font-size: 20px;
     background-color:lightblue;
 }
 
-.submitLost-img{
-    height: 300px;
-    padding: 50px;
+.upload-image{
+
+}
+
+.upload-button{
+    padding-right: 0px;
+    max-width: 300px;
+}
+
+.uploadText{
+    padding-left: 10px;
+}
+
+.photo-input{
+    padding-left: 7%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    max-width: 290px;
+}
+
+.submit-img{
+    max-height: 400px;
+    max-width: 400px;
+    /* padding: 10px;
     font-weight: bold;
-    font-size: 20px;
-    background-color:grey;
+    font-size: 20px; */
+    /* background-color:grey; */
 }
 
 .btn-submit{
-    margin-top: 25px;
+    margin: 45px 0px 20px;
 }
