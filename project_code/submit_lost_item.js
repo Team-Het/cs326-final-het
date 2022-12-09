@@ -28,7 +28,7 @@ function goProfile(){
     }
 }
 
-function submitLost() {
+function submitItem() {
 	localStorage.removeItem('item');
 	localStorage.removeItem('location');
 }
@@ -62,7 +62,7 @@ window.onload = async function () {
 	console.log(window.location.origin);
 }
 
-async function submitLostItem(submitType) {
+async function submitItem(submitType) {
 	const username = localStorage.getItem('username');
 	if (!username) {
 		localStorage.setItem('nextPage', './post_detail.html');
