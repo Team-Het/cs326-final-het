@@ -49,7 +49,7 @@ async function signUp(){
                     window.location.href = "./index.html";
                 }
             } else if(resp.status === 'failed' && resp.reason === 'user exists') {
-                alert('Username Already Exists Please enter a Another Username');
+                alert('Username already exists please enter different username');
             } else {
                 alert('Error Proccessing Data');
             }  
