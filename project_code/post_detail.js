@@ -4,9 +4,9 @@ function goLogin() {
 }
 
 function signOut() {
-	fetch(window.location.origin + '/logout')
-    .then((response)=>response.json())
-    .then((data)=>{});
+    fetch(window.location.origin + '/logout')
+        .then((response) => response.json())
+        .then((data) => { });
     // console.log("in signOut");
     localStorage.removeItem("username");
     localStorage.removeItem("email");
@@ -20,7 +20,7 @@ function goHome() {
 
 function goProfile() {
     const username = localStorage.getItem('username');
-    if(username){
+    if (username) {
         window.location.href = "./profile.html";
     } else {
         localStorage.setItem('nextPage', 'profile.html');
@@ -28,11 +28,11 @@ function goProfile() {
     }
 }
 
-function refreshSign(){
+function refreshSign() {
     const username = localStorage.getItem("username");
     const signIn = document.getElementById("signIn");
     const signOut = document.getElementById("signOut");
-    if(username){
+    if (username) {
         signIn.classList.add('hidden');
         signOut.classList.remove('hidden');
     } else {
@@ -48,16 +48,7 @@ function goUpdate() {
 // Post Detail functions
 window.onload = function () {
     refreshSign();
-    // 
-    // 
-    // 
-    
     const body = JSON.parse(localStorage.getItem('item_detail'));
-    
-    // 
-    // 
-    // 
-    // 
 
     console.log(body);
 
@@ -76,25 +67,25 @@ window.onload = function () {
     document.getElementById("date_lost").innerHTML = "Date & Time: " + body.date_lost + " " + body.time_lost;
     document.getElementById("address").innerHTML = "Location: " + body.address;
 
-	var currentdate = new Date();
+    var currentdate = new Date();
     let hours = 0;
     let string = '';
-    if(currentdate.getHours() > 12){
+    if (currentdate.getHours() > 12) {
         hours = currentdate.getHours() - 12;
         string = "p.m.";
-    } 
-    else{
+    }
+    else {
         hours = currentdate.getHours();
         string = "a.m.";
     }
-    var datetime = (currentdate.getMonth()+1) + "/"
-	+ currentdate.getDate()  + "/" 
-	+ currentdate.getFullYear() + " "  
-	+ hours + ":"  
-	+ currentdate.getMinutes() + string;
-	localStorage.setItem("currentTime", datetime);
+    var datetime = (currentdate.getMonth() + 1) + "/"
+        + currentdate.getDate() + "/"
+        + currentdate.getFullYear() + " "
+        + hours + ":"
+        + currentdate.getMinutes() + string;
+    localStorage.setItem("currentTime", datetime);
     document.getElementById("currentTime").innerHTML = localStorage.getItem("currentTime");
-    
+
     if (username && email) {
         document.getElementById('username').innerHTML = body.username;
         document.getElementById('email').innerHTML = "Please contact me through " + localStorage.getItem("email");
@@ -105,7 +96,7 @@ window.onload = function () {
     // localStorage.removeItem('passBody');
 
     const button = document.getElementById('update_post');
-    if(window.username !== body.username) {
+    if (window.username !== body.username) {
         button.classList.remove('hidden');
     } else {
         button.classList.add('hidden');
@@ -151,5 +142,16 @@ async function deletePost() {
     } else {
         alert('error! two');
     }
+}
+
+async function createComment() {
+    const body = JSON.parse(localStorage.getItem('item_detail'));
+    const comment = document.getElementById("userComment");
+    body.newComment = comment;
+    const response = await fetch(window.location.origin + '/item/comment/create', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json;charset=utf-8' },
+        body: JSON.stringify(body)
+    });
 }
 
