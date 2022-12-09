@@ -151,6 +151,15 @@ app.get('/item/view/:id', (req, res) => {
 	database.getItem(req, res);
 })
 
+app.post('/item/comment/create', checkAuthenticated, (req, res) => {
+	console.log(req.body);
+	database.createComment(req, res);
+})
+
+app.get('/item/comment/view', checkAuthenticated, (req, res) => {
+	database.getComment(req, res);
+})
+
 // app.get('/item/view/getall', (req, res) => {
 // 	console.log(req.params);
 // 	database.getItem(req, res);

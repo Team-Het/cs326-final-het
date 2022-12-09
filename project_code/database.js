@@ -321,6 +321,14 @@ async function getItem(req, res) {
 	}
 }
 
+async function createComment(req, res) {
+
+}
+
+async function getComment(req, res) {
+	
+}
+
 module.exports = {
 	getUser,
 	updateUser,
@@ -336,4 +344,6 @@ module.exports = {
 	testData,
 	connectToCluster,
 	logout,
+	createComment,
+	getComment
 }
