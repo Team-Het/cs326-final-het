@@ -1,46 +1,46 @@
 // Navbar functions
-function goLogin(){
-    window.location.href = "./login.html";
+function goLogin() {
+	window.location.href = "./login.html";
 }
 
 function goHome() {
 	window.location.href = "./index.html";
 }
 
-function goProfile(){
-    const username = localStorage.getItem('username');
-    if(username){
-        window.location.href = "./profile.html";
-    } else {
-        localStorage.setItem('nextPage', 'profile.html');
-        window.location.href = "./login.html";
-    }
+function goProfile() {
+	const username = localStorage.getItem('username');
+	if (username) {
+		window.location.href = "./profile.html";
+	} else {
+		localStorage.setItem('nextPage', 'profile.html');
+		window.location.href = "./login.html";
+	}
 }
 
-function refreshSign(){
-    const username = localStorage.getItem("username");
-    const signIn = document.getElementById("signIn");
-    const signOut = document.getElementById("signOut");
-    if(username){
-        signIn.classList.add('hidden');
-        signOut.classList.remove('hidden');
-    } else {
-        signIn.classList.remove('hidden');
-        signOut.classList.add('hidden');
-    }
-} 
+function refreshSign() {
+	const username = localStorage.getItem("username");
+	const signIn = document.getElementById("signIn");
+	const signOut = document.getElementById("signOut");
+	if (username) {
+		signIn.classList.add('hidden');
+		signOut.classList.remove('hidden');
+	} else {
+		signIn.classList.remove('hidden');
+		signOut.classList.add('hidden');
+	}
+}
 
 window.onload = async function () {
 	refreshSign();
 	const updateBody = JSON.parse(localStorage.getItem('updateBody'));
-    document.getElementById('title').value = updateBody.item_name;
+	document.getElementById('title').value = updateBody.item_name;
 	document.getElementById('category').value = updateBody.category;
 	document.getElementById('brand').value = updateBody.brand;
 	document.getElementById('color').value = updateBody.color;
 	document.getElementById('date_lost').value = updateBody.date_lost;
 	document.getElementById('time_lost').value = updateBody.time_lost;
 	document.getElementById('where_you_lost').value = updateBody.address;
-    document.getElementById('add_info').value = updateBody.additional;
+	document.getElementById('add_info').value = updateBody.additional;
 
 	console.log(window.location.origin);
 
@@ -59,13 +59,13 @@ async function updatePost() {
 	const where_you_lost = document.getElementById('where_you_lost').value;
 	const add_info = document.getElementById('add_info').value;
 
-    const username = localStorage.getItem('username');
+	const username = localStorage.getItem('username');
 	if (!username) {
 		localStorage.setItem('nextPage', './submit_lost_item.html');
 		window.location.href = './login.html';
 	}
 
-    const response = await fetch(window.location.origin + '/item/update', {
+	const response = await fetch(window.location.origin + '/item/update', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json;charset=utf-8' },
 		body: JSON.stringify({
@@ -82,7 +82,7 @@ async function updatePost() {
 		})
 	});
 
-    const passBody = {
+	const passBody = {
 		username: username,
 		item_name: title,
 		category: category,
@@ -95,7 +95,7 @@ async function updatePost() {
 		// is_found: submitType==='lost'?'n':'y',
 	};
 
-    console.log(response);
+	console.log(response);
 	if (response.ok) {
 		// 
 		// 
@@ -125,4 +125,32 @@ async function updatePost() {
 	} else {
 		alert('Server Error');
 	}
+}
+
+
+function uploadFile() {
+	let formData = new FormData();
+	const fileUpload = document.getElementById("fileUpload");
+	formData.append("metadata", JSON.stringify({ username: 'testuser', item_name: 'Laptop' }));
+	formData.append("filename", fileUpload.files[0]);
+	console.log(formData);
+	fetch('/item/upload/', {
+		method: "POST",
+		body: formData
+	})
+		.then((response) => {
+			if (response.redirected) {
+				window.location.href = response.url;
+			}
+			return response.json();
+		})
+		.then((resp) => {
+			console.log(resp);
+			if (resp.status === 'success') {
+				const img = document.getElementById('itemImage');
+				img.src = resp.image;
+			} else {
+				alert('Error uploading file');
+			}
+		})
 }

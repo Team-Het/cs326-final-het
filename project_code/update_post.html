@@ -38,7 +38,8 @@
         <nav class="navbar navbar-expand-lg bg-secondary">
             <ul class="navbar-nav flex-row ms-auto me-4">
                 <li class="nav-item">
-                    <a class="nav-link second-nav" id="nav_submit_lost" href="./submit_lost_item.html" onclick="submitLost()">Submit Lost & Found Item</a>
+                    <a class="nav-link second-nav" id="nav_submit_lost" href="./submit_lost_item.html"
+                        onclick="submitLost()">Submit Lost & Found Item</a>
                 </li>
                 <!-- <li class="nav-item">
                     <a class="nav-link second-nav" id="nav_submit_found" href="./submit_found_item.html">Submit Found Item</a>
@@ -53,63 +54,50 @@
         <!-- Fix media in the future -->
         <div class="container column-layout">
             <div class="row">
-                <div class="col-12 text-center mt-3">
-                    <h class="fs-1">Welcome To UMass Lost and Found!</h>
+                <div class="col-12 text-center mt-4">
+                    <h class="fs-1">Update&nbsp;Your&nbsp;Post&nbsp;Information</h>
                 </div>
-                <div class="col-12 text-center mt-1">
-                    <h class="fs-3">Lost&Found Item Information</h>
-                </div>
-                <div class="col-7 submitLost-info">
-                    <div class="submitLost-input">
-                        <div>
-                            <div class="d-flex flex-columns justify-content-evenly mb-3">
-                                <label class="atitle fs-5 ">*Title:</label>
-                                <input id="title" class="form-control" readonly="readonly">
+                <div class="col-10 submit-info">
+                    <div class="submit-input rounded">
+                        <div class="d-flex flex-row submit-inner">
+                            <div class="d-flex flex-column align-items-end labelInfo">
+                                <label class="fs-5 mb-4">*&nbsp;Title:</label>
+                                <label class="fs-5 mb-4">*&nbsp;Category:</label>
+                                <label class="fs-5 mb-4">*&nbsp;Location:</label>
+                                <label class="fs-5 mb-4">*&nbsp;Date&nbsp;Lost&nbsp;or&nbsp;Found:</label>
+                                <label class="fs-5 mb-4">*&nbsp;Time&nbsp;Lost&nbsp;or&nbsp;Found:</label>
+                                <label class="fs-5 mb-4">Brand:</label>
+                                <label class="fs-5 mb-4">Color:</label>
+                                <label class="fs-5 mb-4">Additional&nbsp;Info:</label>
                             </div>
-                            <div class="d-flex flex-columns justify-content-evenly mb-3">
-                                <label class="acategory fs-5 ">*Category:</label>
-                                <input id="category" class="form-control">
-                            </div>
-                            <div class="d-flex flex-columns justify-content-evenly mb-3">
-                                <label class="abrand fs-5 ">Brand:</label>
-                                <input id="brand" class="form-control">
-                            </div>
-                            <div class="d-flex flex-columns justify-content-evenly mb-3">
-                                <label class="acolor fs-5 ">Color:</label>
-                                <input id="color" class="form-control">
-                            </div>
-                            <div class="d-flex flex-columns justify-content-evenly mb-3">
-                                <label class="ad fs-5 ">*Date&nbsp;Lost&Found:</label>
-                                <input id="date_lost" class="form-control">
-                            </div>
-                            <div class="d-flex flex-columns justify-content-evenly mb-3">
-                                <label class="at fs-5 ">*Time&nbsp;Lost&Found:</label>
-                                <input id="time_lost" class="form-control">
-                            </div>
-                            <div class="d-flex flex-columns justify-content-evenly mb-3">
-                                <label class="awy fs-5 ">*Location:</label>
-                                <input id="where_you_lost" class="form-control">
-                            </div>
-                            <div class="d-flex flex-columns justify-content-evenly mb-3">
-                                <label class="aai fs-5 ">Additional&nbsp;Info:</label>
-                                <input id="add_info" class="form-control">
+                            <div class="d-flex flex-column inputClass">
+                                <input id="title" class="form-control mb-3" readonly="readonly">
+                                <input id="category" class="form-control mb-3">
+                                <input id="where_you_lost" class="form-control mb-3">
+                                <input id="date_lost" class="form-control mb-3">
+                                <input id="time_lost" class="form-control mb-3">
+                                <input id="brand" class="form-control mb-3">
+                                <input id="color" class="form-control mb-3">
+                                <input id="add_info" class="form-control mb-3">
                             </div>
                         </div>
-                        <div class="d-flex flex-row justify-content-evenly btn-submit">
-                            <button id="submit_lost" class="btn btn-dark btn-lg" onclick="updatePost()">Update my post!</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3 m-5">
-                    <div class="submitLost-img"></div>
                         <div class="d-flex flex-columns justify-content-evenly mt-3">
-                           <div>
-                                <label class="fs-5 ">Upload Your Image Here!</label>
-                           </div>
+                            <div class="row">
+                                <div class="upload-button">
+                                    <span class="uploadText">Upload a picture of the item</picture></span>
+                                    <input id="fileUpload" class="photo-input file:mr-4 hover:file:cursor-pointer"
+                                        type="file" onchange="uploadFile()">
+                                </div>
+                                <!-- <div class="col-6"> -->
+                                <img id="itemImage" class="submit-img" src="" />
+                                <!-- </div> -->
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
+                    <div class="d-flex flex-row justify-content-evenly btn-submit">
+                        <button id="submit_lost" class="btn btn-dark btn-lg me-2"
+                            onclick="updatePost()">Update your post!</button>
+                    </div>
     </section>
     <nav class="navbar fixed-bottom navbar-secondary bg-secondary">
         <div class="container-fluid mt-4"></div>
