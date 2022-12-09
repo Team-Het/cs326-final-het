@@ -5,6 +5,7 @@ const fs = require('fs');
 const mime = require('mime');
 require('dotenv').config();
 const minicrypt = require('./miniCrypt');
+const { request } = require('http');
 const mc = new minicrypt.MiniCrypt();
 const uri = process.env.MONGODB_URI;
 let db;
@@ -97,7 +98,7 @@ async function createUser(req, res) {
 		const cursor = await db.collection('User').findOne({ username: req.body.username });
 		const user = await cursor;
 		console.log(user);
-		if(user){
+		if (user) {
 			res.send({
 				"status": 'failed',
 				"reason": 'user exists'
@@ -176,8 +177,8 @@ async function uploadItemImage(req, res) {
 			});
 		console.log(req.files);
 		// fs.unlink('./tempFiles/' + filename.name, (err) => {
-			// if (err) throw err;
-			// console.log(filename.name + ' was deleted');
+		// if (err) throw err;
+		// console.log(filename.name + ' was deleted');
 		// });
 
 	} catch (error) {
@@ -224,10 +225,10 @@ async function login(req, res) {
 	console.log(req.body);
 	const cursor = (await db).collection('User').findOne({ username: req.body.username });
 	const user = await cursor;
-	if(user){
+	if (user) {
 		res.send({
 			"status": 'success',
-			"email" : user.email
+			"email": user.email
 		});
 	}
 }
@@ -292,10 +293,10 @@ async function deleteItem(req, res) {
 		if (req.body.delete_image === 'y') {
 			const bucket = new GridFSBucket(db);
 			const image = await db.collection('Items').findOne(query);
-			const obj_id = image.substring(image.lastIndexOf('/')+1, image.length); 
+			const obj_id = image.substring(image.lastIndexOf('/') + 1, image.length);
 			console.log(obj_id);
 			bucket.delete(ObjectId(obj_id));
-			await db.collection('Items').updateOne(query,{ upsert: true }, {$set: {image: '',},});
+			await db.collection('Items').updateOne(query, { upsert: true }, { $set: { image: '', }, });
 		} else {
 			await db.collection('Items').deleteOne(query);
 		}
@@ -322,11 +323,40 @@ async function getItem(req, res) {
 }
 
 async function createComment(req, res) {
-
+	console.log(req.body);
+	try {
+		if ("comment" in req.body) {
+			req.body.comment.push({
+				"user": req.body.username,
+				"comment": req.body.newComment
+			});
+		} else {
+			req.body.comment = [...{
+				"user": req.body.username,
+				"comment": req.body.newComment
+			}];
+		}
+		delete req.body.newComment;
+		const filter = { username: req.body.username, item_name: req.body.item_name };
+		const options = { upsert: true };
+		const updateDoc = {
+			$set: {
+				comment: req.body.comment
+			},
+		};
+		await db.collection('Items').updateOne(filter, options, updateDoc);
+		res.send({
+			"status": "success",
+		});
+	} catch (error) {
+		res.send({
+			"status": 'error',
+		});
+	}
 }
 
 async function getComment(req, res) {
-	
+
 }
 
 module.exports = {

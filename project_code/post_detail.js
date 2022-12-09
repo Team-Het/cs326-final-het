@@ -147,5 +147,11 @@ async function deletePost() {
 async function createComment() {
     const body = JSON.parse(localStorage.getItem('item_detail'));
     const comment = document.getElementById("userComment");
+    body.newComment = comment;
+    const response = await fetch(window.location.origin + '/item/comment/create', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json;charset=utf-8' },
+        body: JSON.stringify(body)
+    });
 }
 
