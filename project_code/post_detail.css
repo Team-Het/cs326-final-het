@@ -8,4 +8,12 @@
     margin-top: 10px;
     margin-left: 10%;
     margin-right: 10%;
-  }
+}
+
+.comment {
+    margin-bottom: 80px;
+}
+
+.inputComment {
+    width: 1190px;
+}
