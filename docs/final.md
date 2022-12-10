@@ -14,10 +14,16 @@ A website like this doesn't exist at UMass Amherst, so it will be innovative and
 | ![](https://avatars.githubusercontent.com/u/58710754?s=40&v=4) | Yuqi Liu| [ZephyrusLiu](https://github.com/ZephyrusLiu) |
 
 ## User Interface
-| Name | Purpose |
-| :------------- | :------------- | 
-| index | ![dashboard wireframe](../imgs/dashboard.jpeg) |
-| create_account | Page For User to Create Account |
+| Name | Purpose | Screenshot |
+| :------------- | :------------- | :------------- |
+| index | Home Page | ![dashboard wireframe](../imgs/index.jpeg) |
+| create_account | Page For User To Create Account |
+| learn_more | Information About Us Page |
+| login | Page For User To Login In | 
+| post_detail | Page Contains Details About Certain Item |
+| post_page | Page To View All Posts | 
+| profile | User's Profile With Personal Information |
+| submit_lost_item | Page For Submitting Lost Or Found Items |
 
 
 ## APIs
