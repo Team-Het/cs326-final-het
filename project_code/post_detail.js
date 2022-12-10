@@ -42,7 +42,8 @@ function refreshSign() {
 }
 
 function goUpdate() {
-    window.location.href = "./update_post.html";
+    window.location.href = "./submit_lost_item.html";
+    localStorage.setItem('update_click', true);
 }
 
 // Post Detail functions
@@ -78,7 +79,7 @@ window.onload = function () {
         hours = currentdate.getHours();
         string = "a.m.";
     }
-    var datetime = (currentdate.getMonth() + 1) + "/"
+    var datetime = "Most recent visit: " + (currentdate.getMonth() + 1) + "/"
         + currentdate.getDate() + "/"
         + currentdate.getFullYear() + " "
         + hours + ":"

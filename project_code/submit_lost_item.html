@@ -58,7 +58,9 @@
                     <h class="fs-1">Welcome To UMass Lost and Found!</h>
                 </div> -->
                 <div class="col-12 text-center mt-4">
-                    <h class="fs-1">Submit&nbsp;Your&nbsp;Lost&nbsp;&&nbsp;Found&nbsp;Item&nbsp;Information</h>
+                    <h class="fs-1" id="notupdate">Submit&nbsp;Your&nbsp;Lost&nbsp;&&nbsp;Found&nbsp;Item&nbsp;Information</h>
+                    <h class="fs-1" id="yesupdate">Update&nbsp;Your&nbsp;Item&nbsp;Information</h>
+
                 </div>
                 <div class="col-10 submit-info">
                     <div class="submit-input rounded">
@@ -75,7 +77,8 @@
                             </div>
                             <div class="d-flex flex-column inputClass">
                                 <input id="title" class="form-control mb-3" placeholder="Please fill this out...">
-                                <input id="where_you_lost" class="form-control mb-3" placeholder="Please fill this out...">
+                                <input id="where_you_lost" class="form-control mb-3"
+                                    placeholder="Please fill this out...">
                                 <input id="category" class="form-control mb-3" placeholder="Please fill this out...">
                                 <input id="date_lost" class="form-control mb-3" placeholder="Example: 12/23/2022">
                                 <input id="time_lost" class="form-control mb-3" placeholder="Example: 10:45p.m.">
@@ -93,16 +96,19 @@
                                         type="file" onchange="uploadFile()">
                                 </div>
                                 <!-- <div class="col-6"> -->
-                                    <img id="itemImage" class="submit-img" src="" />
+                                <img id="itemImage" class="submit-img" src="" />
                                 <!-- </div> -->
                             </div>
                         </div>
                     </div>
                     <div class="d-flex flex-row justify-content-evenly btn-submit">
-                        <button id="submit_lost" class="btn btn-dark btn-lg me-2"
-                            onclick="submitItem('lost')">Submit Lost Item!</button>
-                        <button id="submit_found" class="btn btn-dark btn-lg ms-2"
-                            onclick="submitItem('found')">Submit Found Item!</button>
+                        <button id="submit_lost" class="btn btn-dark btn-lg me-2" onclick="submitItem('lost')">Submit
+                            Lost Item!</button>
+                        <button id="update" class="btn btn-dark btn-lg ms-2" onclick="updatePost()">Update
+                            Item!</button>
+                        <button id="submit_found" class="btn btn-dark btn-lg ms-2" onclick="submitItem('found')">Submit
+                            Found Item!</button>
+
                     </div>
                     <!-- <div class="col-3 m-5">
                     <div class="d-flex flex-columns justify-content-evenly mt-3">

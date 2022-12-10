@@ -59,3 +59,7 @@
 .btn-submit{
     margin: 45px 0px 20px;
 }
+
+.hidden{
+    visibility: hidden;
+}
