@@ -8,16 +8,22 @@ A website like this doesn't exist at UMass Amherst, so it will be innovative and
 
 ## Team Members
 | | Name | GitHub |
-| ------------- |------------- | ------------- |
+| :------------- | :------------- | :------------- |
 | ![](https://avatars.githubusercontent.com/u/71847172?s=48&v=4) | Yujin Qin | [nenevadera](https://github.com/nenevadera) |
 | ![]() | Kelly Chung | [Kelly2c](https://github.com/Kelly2c) |
 | ![](https://avatars.githubusercontent.com/u/58710754?s=40&v=4) | Yuqi Liu| [ZephyrusLiu](https://github.com/ZephyrusLiu) |
 
 ## User Interface
-| Name | Purpose |
-| :------------- | :------------- | 
-| index | ![dashboard wireframe](../imgs/dashboard.jpeg) |
-| create_account | Page For User to Create Account |
+| Name | Purpose | Screenshot |
+| :------------- | :-------------------- | :------------- |
+| index | Home Page | ![dashboard wireframe](../imgs/index.png) |
+| create_account | Page For User To Create Account | ![dashboard wireframe](../imgs/create_account.png) |
+| learn_more | Information About Us Page | ![dashboard wireframe](../imgs/learn_more.png) |
+| login | Page For User To Login In | ![dashboard wireframe](../imgs/login.png) |
+| post_detail | Page Contains Details About Certain Item | not sure yet |
+| post_page | Page To View All Posts | ![dashboard wireframe](../imgs/post_page.png) |
+| profile | User's Profile With Personal Information | ![dashboard wireframe](../imgs/profile.png) |
+| submit_lost_item | Page For Submitting Lost Or Found Items | ![dashboard wireframe](../imgs/submit_lost_item.png) |
 
 
 ## APIs
