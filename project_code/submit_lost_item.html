@@ -80,7 +80,25 @@
                                 <input id="where_you_lost" class="form-control mb-3"
                                     placeholder="Please fill this out...">
                                 <input id="category" class="form-control mb-3" placeholder="Please fill this out...">
-                                <input id="date_lost" class="form-control mb-3" placeholder="Example: 12/23/2022">
+                                <!-- <input id="date_lost" class="form-control mb-3" placeholder="Example: 12/23/2022"> -->
+                                <input type="date" id="date_lost" class="form-control mb-3">
+
+                                <script>
+                                // Get the start_date input field
+                                var startDateInput = document.getElementById("start_date");
+
+                                // Listen for changes in the start_date field
+                                startDateInput.addEventListener("change", function() {
+                                    // Get the selected date
+                                    var selectedDate = startDateInput.value;
+
+                                    // Convert the date to the desired format (xx/xx/xxxx)
+                                    var formattedDate = selectedDate.split("-").reverse().join("/");
+
+                                    // Update the value of the start_date field with the formatted date
+                                    startDateInput.value = formattedDate;
+                                });
+                                </script>
                                 <input id="time_lost" class="form-control mb-3" placeholder="Example: 10:45p.m.">
                                 <input id="brand" class="form-control mb-3" placeholder="Optional information">
                                 <input id="color" class="form-control mb-3" placeholder="Optional information">
