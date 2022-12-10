@@ -50,7 +50,7 @@ function refreshSign() {
 window.onload = async function () {
 	refreshSign();
 	const update_clicked = localStorage.getItem('update_click');
-	if (localStorage.getItem("updateBody") === null || !update_clicked) {	
+	if (localStorage.getItem("updateBody") === null || (update_clicked === null || !update_clicked)) {	
 		const item = localStorage.getItem('item');
 		const location = localStorage.getItem('location');
 		const fromPage = localStorage.getItem('fromPage');
@@ -82,7 +82,7 @@ window.onload = async function () {
 		document.getElementById('notupdate').classList.add('hidden');
 		localStorage.removeItem("updateBody");
 		document.getElementById('title').setAttribute("readonly","true");
-		localStorage.setItem('update_click', false);
+		localStorage.removeItem('update_click');
 	}
 }
 
