@@ -21,9 +21,9 @@ A website like this doesn't exist at UMass Amherst, so it will be innovative and
 | learn_more | Information About Us Page | ![dashboard wireframe](../imgs/learn_more.png) |
 | login | Page For User To Login In | ![dashboard wireframe](../imgs/login.png) |
 | post_detail | Page Contains Details About Certain Item | not sure yet |
-| post_page | Page To View All Posts | [dashboard wireframe](../imgs/post_page.png) |
-| profile | User's Profile With Personal Information | [dashboard wireframe](../imgs/profile.png) |
-| submit_lost_item | Page For Submitting Lost Or Found Items | [dashboard wireframe](../imgs/submit_lost_item.png) |
+| post_page | Page To View All Posts | ![dashboard wireframe](../imgs/post_page.png) |
+| profile | User's Profile With Personal Information | ![dashboard wireframe](../imgs/profile.png) |
+| submit_lost_item | Page For Submitting Lost Or Found Items | ![dashboard wireframe](../imgs/submit_lost_item.png) |
 
 
 ## APIs
