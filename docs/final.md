@@ -14,6 +14,11 @@ A website like this doesn't exist at UMass Amherst, so it will be innovative and
 | ![](https://avatars.githubusercontent.com/u/58710754?s=40&v=4) | Yuqi Liu| [ZephyrusLiu](https://github.com/ZephyrusLiu) |
 
 ## User Interface
+| Name | Purpose |
+| :------------- | :------------- | 
+| index | ![dashboard wireframe](../imgs/dashboard.jpeg) |
+| create_account | Page For User to Create Account |
+
 
 ## APIs
 
