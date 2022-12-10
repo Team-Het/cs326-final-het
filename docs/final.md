@@ -8,14 +8,14 @@ A website like this doesn't exist at UMass Amherst, so it will be innovative and
 
 ## Team Members
 | | Name | GitHub |
-| ------------- |------------- | ------------- |
+| :------------- | :------------- | :------------- |
 | ![](https://avatars.githubusercontent.com/u/71847172?s=48&v=4) | Yujin Qin | [nenevadera](https://github.com/nenevadera) |
 | ![]() | Kelly Chung | [Kelly2c](https://github.com/Kelly2c) |
 | ![](https://avatars.githubusercontent.com/u/58710754?s=40&v=4) | Yuqi Liu| [ZephyrusLiu](https://github.com/ZephyrusLiu) |
 
 ## User Interface
 | Name | Purpose | Screenshot |
-| :------------- | :------------- | :------------- |
+| :------------- | :-------------------- | :------------- |
 | index | Home Page | ![dashboard wireframe](../imgs/index.png) |
 | create_account | Page For User To Create Account |
 | learn_more | Information About Us Page |
