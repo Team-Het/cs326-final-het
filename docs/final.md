@@ -46,7 +46,7 @@ A website like this doesn't exist at UMass Amherst, so it will be innovative and
 
 ## Database
 
-### Item
+### Items
 | Name | Data Type | Description |
 | :------------- | :------------- | :------------- |
 | username | string | Username created by user |
