@@ -94,6 +94,10 @@ window.onload = async function () {
 		localStorage.removeItem("updateBody");
 		document.getElementById('title').setAttribute("readonly","true");
 		localStorage.removeItem('update_click');
+		if (updateBody.image && updateBody.image.length > 0) {
+			const deleteButton = document.getElementById("deleteButton");
+			deleteButton.classList.remove('hidden');
+		}
 	}
 }
 
@@ -152,6 +156,11 @@ async function submitItem(submitType) {
 		})
 	});
 
+	let src = document.getElementById("itemImage").src
+	if (src.includes("html")){
+		src = "";
+	}
+
 	const passBody = {
 		username: username,
 		item_name: title,
@@ -163,7 +172,7 @@ async function submitItem(submitType) {
 		address: where_you_lost,
 		additional: add_info,
 		is_found: submitType === 'lost' ? 'n' : 'y',
-		image: document.getElementById("itemImage").src
+		image: src
 	};
 
 	console.log(response);
@@ -226,6 +235,11 @@ async function updatePost() {
 		})
 	});
 
+	let src = document.getElementById("itemImage").src
+	if (src.includes("html")){
+		src = "";
+	}
+
 	const passBody = {
 		username: username,
 		item_name: title,
@@ -237,15 +251,14 @@ async function updatePost() {
 		address: where_you_lost,
 		additional: add_info,
 		is_found: is_found,
-		image: document.getElementById("itemImage").src
-
+		image: src
 	};
 
 	console.log(response);
 	if (response.ok) {
 		localStorage.setItem('item_detail', JSON.stringify(passBody));
 		console.log(localStorage.getItem('item_detail'));
-		// If it's passbody then the post detail won't upload so I changed. - Kelly
+		// If it's passbody then the post detail won't upload so I changed it. - Kelly
 		// 
 		// localStorage.setItem('passBody', JSON.stringify(passBody));
 		// console.log(localStorage.getItem('passBody'));
@@ -322,6 +335,7 @@ function deleteImage() {
 			if (resp.status === 'success') {
 				const img = document.getElementById('itemImage');
 				img.src = "";
+				localStorage.removeItems("item_detail");
 				const deleteButton = document.getElementById("deleteButton");
 				deleteButton.classList.add('hidden');
 				const fileUpload = document.getElementById("fileUpload");
