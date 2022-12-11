@@ -20,7 +20,7 @@ A website like this doesn't exist at UMass Amherst, so it will be innovative and
 | create_account | Page For User To Create Account | ![dashboard wireframe](../imgs/create_account.png) |
 | learn_more | Information About Us Page | ![dashboard wireframe](../imgs/learn_more.png) |
 | login | Page For User To Login In | ![dashboard wireframe](../imgs/login.png) |
-| post_detail | Page Contains Details About Certain Item | not sure yet |
+| post_detail | Page Contains Details About Certain Item | ![dashboard wireframe](../imgs/post_detail.png) |
 | post_page | Page To View All Posts | ![dashboard wireframe](../imgs/post_page.png) |
 | profile | User's Profile With Personal Information | ![dashboard wireframe](../imgs/profile.png) |
 | submit_lost_item | Page For Submitting Lost Or Found Items | ![dashboard wireframe](../imgs/submit_lost_item.png) |
@@ -45,6 +45,28 @@ A website like this doesn't exist at UMass Amherst, so it will be innovative and
 | \/item\/download\/:name | Upload Image | filename | success with filename or failure |
 
 ## Database
+
+### Items
+| Name | Data Type | Description |
+| :------------- | :------------- | :------------- |
+| username | string | Username created by user |
+| item_name | string | Name of the item, also the title |
+| category | string | Category of the item |
+| brand | string | Brand of the item |
+| color | string | Color of the item |
+| date_lost | string | Date that the item lost or found |
+| time_lost | string | Time that the item lost or found |
+| address | string | Where the item lost or found |
+| additional | string | Additional information add by post owner |
+| is_found | string | Check the item is lost or found |
+
+### User
+| Name | Data Type | Description |
+| :------------- | :------------- | :------------- |
+| username | string | Username of the user |
+| salt | string | Secret random key to hash |
+| hash | string | Hashed value of password |
+| email | string | Email of the user |
 
 ## URL Routes / Mappings
 
