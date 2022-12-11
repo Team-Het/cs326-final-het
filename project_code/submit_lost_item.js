@@ -49,6 +49,17 @@ function refreshSign() {
 // Submit Lost Item functions
 window.onload = async function () {
 	refreshSign();
+	const dic = await fetch("dictionary.json");
+	window.dictionary = await dic.json();
+	const select = document.getElementById('where_you_lost');
+	
+	for (let address of dictionary) {
+		const optionElement = document.createElement('option');
+  		optionElement.value = address;
+  		optionElement.text = address;
+  		select.appendChild(optionElement);
+	}
+
 	const update_clicked = localStorage.getItem('update_click');
 	if (localStorage.getItem("updateBody") === null || (update_clicked === null || !update_clicked)) {	
 		const item = localStorage.getItem('item');
