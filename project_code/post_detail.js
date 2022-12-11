@@ -48,6 +48,9 @@ function goUpdate() {
 
 // Post Detail functions
 window.onload = function () {
+    const username = localStorage.getItem("username");
+    const email = localStorage.getItem("email");
+
     refreshSign();
     const body = JSON.parse(localStorage.getItem('item_detail'));
 
@@ -96,13 +99,38 @@ window.onload = function () {
     console.log(localStorage.getItem("updateBody"));
     // localStorage.removeItem('passBody');
 
-    const button = document.getElementById('update_post');
-    if (window.username !== body.username) {
-        button.classList.remove('hidden');
+    const update = document.getElementById('update_post');
+    const found = document.getElementById('found_post');
+    const deleteP = document.getElementById('delete_post');
+    if (username && username === body.username) {
+        update.classList.remove('hidden');
+        deleteP.classList.remove('hidden');
+        // found.classList.add('hidden');
+        // if(body.is_found = "y"){
+        //     found.innerHTML = "Claim Item";
+        // } else {
+        //     found.innerHTML = "Found Item";
+        // }
     } else {
-        button.classList.add('hidden');
+        update.classList.add('hidden');
+        deleteP.classList.add('hidden');
+        found.classList.remove('hidden');
+        if(body.is_found = "y"){
+            found.innerHTML = "Claim Item";
+        } else {
+            found.innerHTML = "Found Item";
+        }
     }
 
+    // if (window.username) {
+    //     update.classList.remove('hidden');
+    //     found.classList.remove('hidden');
+    //     deleteP.classList.remove('hidden');
+    // } else {
+    //     update.classList.add('hidden');
+    //     found.classList.add('hidden');
+    //     deleteP.classList.add('hidden');
+    // }
     document.getElementById('itemImage').src = body.image;
 }
 
