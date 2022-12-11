@@ -75,8 +75,7 @@ window.onload = async function () {
 		console.log(window.location.origin);
 		document.getElementById('update').classList.add('hidden');
 		document.getElementById('yesupdate').classList.add('hidden');
-	}
-	else{
+	} else {
 		const updateBody = JSON.parse(localStorage.getItem("updateBody"));
 		document.getElementById('title').value = updateBody.item_name;
 		document.getElementById('where_you_lost').value = updateBody.address;
@@ -86,6 +85,7 @@ window.onload = async function () {
 		document.getElementById('brand').value = updateBody.brand;
 		document.getElementById('color').value = updateBody.color;
 		document.getElementById('add_info').value = updateBody.additional;	
+		document.getElementById('itemImage').src = updateBody.image;
 
 		document.getElementById('submit_lost').classList.add("hidden");
 		document.getElementById('submit_found').classList.add('hidden');
@@ -135,7 +135,7 @@ async function submitItem(submitType) {
 		return;
 	}
 
-	const response = await fetch(window.location.origin + '/item/create', {
+	const response = await fetch(window.location.origin + '/item/update', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json;charset=utf-8' },
 		body: JSON.stringify({
@@ -163,6 +163,7 @@ async function submitItem(submitType) {
 		address: where_you_lost,
 		additional: add_info,
 		is_found: submitType === 'lost' ? 'n' : 'y',
+		image: document.getElementById("itemImage").src
 	};
 
 	console.log(response);
@@ -236,6 +237,8 @@ async function updatePost() {
 		address: where_you_lost,
 		additional: add_info,
 		is_found: is_found,
+		image: document.getElementById("itemImage").src
+
 	};
 
 	console.log(response);
@@ -271,7 +274,8 @@ async function updatePost() {
 function uploadFile() {
 	let formData = new FormData();
 	const fileUpload = document.getElementById("fileUpload");
-	formData.append("metadata", JSON.stringify({ username: 'testuser', item_name: 'Laptop' }));
+
+	formData.append("metadata", JSON.stringify({ username: localStorage.getItem('username'), item_name: document.getElementById('title').value}));
 	formData.append("filename", fileUpload.files[0]);
 	console.log(formData);
 	fetch('/item/upload/', {
