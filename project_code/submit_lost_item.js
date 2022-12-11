@@ -240,11 +240,9 @@ async function updatePost() {
 
 	console.log(response);
 	if (response.ok) {
-		// 
-		// 
 		localStorage.setItem('item_detail', JSON.stringify(passBody));
 		console.log(localStorage.getItem('item_detail'));
-		// If it's passbody then the post detail won't upload so I changed.
+		// If it's passbody then the post detail won't upload so I changed. - Kelly
 		// 
 		// localStorage.setItem('passBody', JSON.stringify(passBody));
 		// console.log(localStorage.getItem('passBody'));
@@ -291,8 +289,41 @@ function uploadFile() {
 			if (resp.status === 'success') {
 				const img = document.getElementById('itemImage');
 				img.src = resp.image;
+				const deleteButton = document.getElementById("deleteButton");
+				deleteButton.classList.remove('hidden');
 			} else {
 				alert('Error uploading file');
+			}
+		})
+}
+
+function deleteImage() {
+	const body = {
+		delete_image: "y",
+		item_name: document.getElementById('title').value,
+		username: localStorage.getItem('username'),
+	}
+	fetch('/item/update/', {
+		method: "POST",
+		body: body
+	})
+		.then((response) => {
+			if (response.redirected) {
+				window.location.href = response.url;
+			}
+			return response.json();
+		})
+		.then((resp) => {
+			console.log(resp);
+			if (resp.status === 'success') {
+				const img = document.getElementById('itemImage');
+				img.src = "";
+				const deleteButton = document.getElementById("deleteButton");
+				deleteButton.classList.add('hidden');
+				const fileUpload = document.getElementById("fileUpload");
+				fileUpload.value = "";	
+			} else {
+				alert('Error deleting file');
 			}
 		})
 }

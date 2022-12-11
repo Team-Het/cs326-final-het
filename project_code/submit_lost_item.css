@@ -1,28 +1,28 @@
 @import "lostfound.css";
 
-.column-layout{
+.column-layout {
     margin: 0px auto 30px
 }
 
-.submit-info{
+.submit-info {
     margin: 29px 20px;
     padding-left: 15%;
 }
 
-.submit-inner{
+.submit-inner {
     padding-left: 5%;
 }
 
-.labelInfo{
+.labelInfo {
     max-width: 200px;
 }
 
-.inputClass{
+.inputClass {
     width: 500px;
     margin-left: 15px;
 }
 
-.submit-input{
+.submit-input {
     min-height: 580px;
     padding: 40px;
     padding-bottom: 30px;
@@ -31,33 +31,33 @@
     background-color:lightblue;
 }
 
-.upload-button{
+.upload-button {
     padding-right: 0px;
     max-width: 300px;
 }
 
-.uploadText{
+.uploadText {
     padding-left: 10px;
 }
 
-.photo-input{
+.photo-input {
     padding-left: 7%;
     padding-top: 20px;
     padding-bottom: 20px;
     max-width: 290px;
 }
 
-.submit-img{
+.submit-img {
     max-height: 400px;
     max-width: 400px;
-    /* padding: 10px;
-    font-weight: bold;
-    font-size: 20px; */
-    /* background-color:grey; */
 }
 
-.btn-submit{
+.btn-submit {
     margin: 45px 0px 20px;
+}
+
+.btn-delete {
+    margin-left: 20%;
 }
 
 .hidden{
