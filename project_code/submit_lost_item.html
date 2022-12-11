@@ -101,12 +101,12 @@
 
                                 <script>
                                 // Get the start_date input field
-                                var startDateInput = document.getElementById("start_date");
+                                var date_lost = document.getElementById("date_lost");
 
                                 // Listen for changes in the start_date field
-                                startDateInput.addEventListener("change", function() {
+                                date_lost.addEventListener("change", function() {
                                     // Get the selected date
-                                    var selectedDate = startDateInput.value;
+                                    var selectedDate = date_lost.value;
 
                                     // Convert the date to the desired format (xx/xx/xxxx)
                                     var formattedDate = selectedDate.split("-").reverse().join("/");
