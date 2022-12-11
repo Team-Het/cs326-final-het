@@ -54,6 +54,7 @@ function submitItem(){
     if((item && item.length > 0) && (location && location.length > 0)){
         localStorage.setItem('item', item);
         localStorage.setItem('location', location);
+        localStorage.setItem('nextPage', './submit_lost_item.html');
         localStorage.setItem('fromPage', 'index')
         window.location.href = "./submit_lost_item.html";
     } else {

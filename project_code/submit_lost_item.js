@@ -41,8 +41,9 @@ function refreshSign() {
 		signIn.classList.add('hidden');
 		signOut.classList.remove('hidden');
 	} else {
-		signIn.classList.remove('hidden');
-		signOut.classList.add('hidden');
+		// signIn.classList.remove('hidden');
+		// signOut.classList.add('hidden');
+		window.location.href = 'login.html';
 	}
 }
 
