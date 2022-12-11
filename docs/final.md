@@ -36,7 +36,7 @@ A website like this doesn't exist at UMass Amherst, so it will be innovative and
 | \/user\/delete| Delete User | user_id | success or failure | 
 | \/user\/update | Update User | user_id, password, user_name, email | success or failure |
 | \/user\/view\/id | View User | user_id | user_id, password, user_name, email | 
-| \/user\/view\/getall | Get All Users, Same as \/user\/view\/id | NA | list of all users | 
+| \/user\/view\/getall | Get All Users | NA | list of all users | 
 | \/item\/create | Create Item | item_name, item_desc, is_found, image, user_id | success with item_id or failure |
 | \/item\/delete | Delete Item | item_id | success or failure |
 | \/item\/update | Update Item | user_id, item_id, item_name, item_desc, image, address, is_found,  | success or failure |
@@ -69,7 +69,22 @@ A website like this doesn't exist at UMass Amherst, so it will be innovative and
 | email | string | Email of the user |
 
 ## URL Routes / Mappings
-
+| URL Path | Description | Authentication |
+| :------------- | :------------- | :------------- |
+| \/login | Login | not required |
+| \/logout | Logout | required |
+| \/user\/create | Create New User | not required |
+| \/user\/delete| Delete User | required |
+| \/user\/update | Update User | required |
+| \/user\/view\/id | View User | not required |
+| \/user\/view\/getall | Get All Users | not required |
+| \/item\/create | Create Item | required |
+| \/item\/delete | Delete Item | required |
+| \/item\/update | Update Item | required |
+| \/item\/view\/id | View Item | not required |
+| \/item\/view\/getall | Get All Items | not required |
+| \/item\/upload | Upload Image | required |
+| \/item\/download\/:name | Download Image | not required |
 ## Authentication / Authorization
 
 ## Division of Labor
