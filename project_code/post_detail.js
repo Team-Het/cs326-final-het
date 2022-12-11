@@ -115,9 +115,9 @@ window.onload = function () {
         update.classList.add('hidden');
         deleteP.classList.add('hidden');
         found.classList.remove('hidden');
-        if(body.is_found = "y"){
+        if (body.is_found === "y") {
             found.innerHTML = "Claim Item";
-        } else {
+        } else if (body.is.found === "n") {
             found.innerHTML = "Found Item";
         }
     }
