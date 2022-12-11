@@ -103,13 +103,11 @@ window.onload = function () {
         button.classList.add('hidden');
     }
 
-    // if(localStorage.getItem("checkusername").username === body.username){
-
-    // }
+    document.getElementById('itemImage').src = body.image;
 }
 
 async function deletePost() {
-    const body = JSON.parse(localStorage.getItem('passBody'));
+    const body = JSON.parse(localStorage.getItem('item_detail'));
     const response = await fetch(window.location.origin + '/item/delete', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json;charset=utf-8' },
