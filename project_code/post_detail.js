@@ -131,6 +131,12 @@ window.onload = function () {
     //     found.classList.add('hidden');
     //     deleteP.classList.add('hidden');
     // }
+
+    if (!body.additional) {
+        document.getElementById('additional').classList.add("mb-auto");
+        document.getElementById('additional').classList.remove("mb-2");
+    }
+
     document.getElementById('itemImage').src = body.image;
     if (body.image && body.image.includes("download")) {
         document.getElementById('itemImage').classList.add("mt-3");
