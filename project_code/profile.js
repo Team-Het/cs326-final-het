@@ -89,26 +89,34 @@ async function saveChanges(){
 }
 
 async function deleteUser() {
-	const response = await fetch(window.location.origin + '/user/delete', {
-		method: 'POST',
-		headers: { 'Content-Type': 'application/json;charset=utf-8' },
-		body: JSON.stringify({
-            username: localStorage.getItem('username'),
-		})
-	});
-    console.log("delete");
-	if (response.ok) {
-		const resp = await response.json();
-		console.log(resp);
-		if (resp.status === 'success') {
-            alert('Account Successfully Deleted');
-            localStorage.removeItem("username");
-            localStorage.removeItem("email");
-			window.location.href = './index.html';
-		} else {
-			alert('error! one');
-		}
-	} else {
-		alert('error! two');
-	}
+    let res = confirm("Do you REALLY want to delete your account?")
+    
+    if(res){
+        const response = await fetch(window.location.origin + '/user/delete', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json;charset=utf-8' },
+            body: JSON.stringify({
+                username: localStorage.getItem('username'),
+            })
+        });
+        console.log("delete");
+        if (response.ok) {
+            const resp = await response.json();
+            console.log(resp);
+            if (resp.status === 'success') {
+                alert('Account Successfully Deleted');
+                localStorage.removeItem("username");
+                localStorage.removeItem("email");
+                window.location.href = './index.html';
+            } else {
+                alert('error! one');
+            }
+        } else {
+            alert('error! two');
+        }
+    }
+    else{
+        alert('Account is NOT Deleted')
+    }
+	
 }
