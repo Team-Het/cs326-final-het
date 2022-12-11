@@ -96,6 +96,8 @@ Yujin Qin:
 
 ## Conclusion
 
+We had a good experience working together and all learned how to use HTML, css, and JavaScript to build up a website and make it be able to use. We communicated well and everyone tired to do his/her best in the group work. The most difficult thing is absolutely the coding part and debugging part. we found it's more difficult to rearrange existing webpages rather than build new ones. So for the next time and for our future group project, we need to fix existing bugs right away before going to another part. Also, we need to make sure everyone has their own branch before we start working because if two people are working on the same file at the same time, one of the unlucky guy will get him/her code be covered by the other one. 
+
 
 ## Heroku Application Link
 https://umass-lost-and-found.herokuapp.com/
