@@ -100,7 +100,7 @@ window.onload = function () {
     // localStorage.removeItem('passBody');
 
     const update = document.getElementById('update_post');
-    const found = document.getElementById('found_post');
+    // const found = document.getElementById('found_post');
     const deleteP = document.getElementById('delete_post');
     if (username && username === body.username) {
         update.classList.remove('hidden');
@@ -114,12 +114,12 @@ window.onload = function () {
     } else {
         update.classList.add('hidden');
         deleteP.classList.add('hidden');
-        found.classList.remove('hidden');
-        if (body.is_found === "y") {
-            found.innerHTML = "Claim Item";
-        } else if (body.is.found === "n") {
-            found.innerHTML = "Found Item";
-        }
+        // found.classList.remove('hidden');
+        // if (body.is_found === "y") {
+        //     found.innerHTML = "Claim Item";
+        // } else if (body.is.found === "n") {
+        //     found.innerHTML = "Found Item";
+        // }
     }
 
     // if (window.username) {
@@ -132,6 +132,9 @@ window.onload = function () {
     //     deleteP.classList.add('hidden');
     // }
     document.getElementById('itemImage').src = body.image;
+    if (body.image && body.image.includes("download")) {
+        document.getElementById('itemImage').classList.add("mt-3");
+    }
 }
 
 async function deletePost() {
