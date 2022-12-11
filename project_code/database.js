@@ -266,7 +266,7 @@ async function updateItem(req, res) {
 				// image: req.body.image,
 				address: req.body.address,
 				is_found: req.body.is_found,
-				lost_date: req.body.lost_date,
+				date_lost: req.body.date_lost,
 				time_lost: req.body.time_lost,
 				found_date: req.body.found_date,
 				category: req.body.category,
