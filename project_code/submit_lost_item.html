@@ -97,24 +97,7 @@
                                     <option value="bananas">Accessories</option>
                                   </select>
                                 <!-- <input id="date_lost" class="form-control mb-3" placeholder="Example: 12/23/2022"> -->
-                                <input type="date" id="date_lost" class="form-control mb-3">
-
-                                <script>
-                                // Get the start_date input field
-                                var date_lost = document.getElementById("date_lost");
-
-                                // Listen for changes in the start_date field
-                                date_lost.addEventListener("change", function() {
-                                    // Get the selected date
-                                    var selectedDate = date_lost.value;
-
-                                    // Convert the date to the desired format (xx/xx/xxxx)
-                                    var formattedDate = selectedDate.split("-").reverse().join("/");
-
-                                    // Update the value of the start_date field with the formatted date
-                                    date_lost.value = formattedDate;
-                                });
-                                </script>
+                                <input type="date" id="date_lost" class="form-control mb-3" />
                                 <input type="time" id="time_lost" class="form-control mb-3">
                                 <input id="brand" class="form-control mb-3" placeholder="Optional information">
                                 <input id="color" class="form-control mb-3" placeholder="Optional information">
