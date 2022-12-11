@@ -21,4 +21,6 @@
 .item-img {
     max-height: 400px;
     max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
 }

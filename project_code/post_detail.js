@@ -127,7 +127,7 @@ async function deletePost() {
             localStorage.removeItem('image');
             localStorage.removeItem('address');
             localStorage.removeItem('is_found');
-            localStorage.removeItem('lost_date');
+            localStorage.removeItem('date_lost');
             localStorage.removeItem('time_lost');
             localStorage.removeItem('found_date');
             localStorage.removeItem('category');
