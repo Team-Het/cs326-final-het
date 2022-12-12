@@ -1,14 +1,15 @@
 # Team Het
 UMass Lost and Found, Fall 2022
 ## Overview
-This website is created for UMass students, faculty, and residents that live around Amherst to find their lost items or give them a place to post found items. The user of this website will be asked to create an account if they don't have one. Once the account is created, they could feel free to submit the lost or found items by creating posts, and be able to contact with other users through email by seeing all posts. They will also be able to update their posts, delete their posts, and upload images.<br/>
+This website is created for UMass students, faculty, and residents that live around Amherst to find their lost items or give them a place to post items they found. Users create item posts by creating an account or logging into an existing one. Once the user is logged in they can submit a lost or found item by creating posts. Our users can communicate with each other through their email when they have found or want to claim an item. Users are able to update/delete their posts, attach/remove images to their posts, change their email, or change their password.
+
 A website like this doesn't exist at UMass Amherst, so it will be innovative and helpful for our town if this website could be put in use.
 ## Team Members
 | | Name | GitHub |
 | :------------- | :------------- | :------------- |
 | ![](https://avatars.githubusercontent.com/u/71847172?s=48&v=4) | Yujin Qin | [nenevadera](https://github.com/nenevadera) |
 | ![]() | Kelly Chung | [Kelly2c](https://github.com/Kelly2c) |
-| ![](https://avatars.githubusercontent.com/u/58710754?s=40&v=4) | Yuqi Liu| [ZephyrusLiu](https://github.com/ZephyrusLiu) |
+| ![](https://avatars.githubusercontent.com/u/58710754?s=40&v=4) | Yuqi Liu | [ZephyrusLiu](https://github.com/ZephyrusLiu) |
 ## User Interface
 | Name | Purpose | Screenshot |
 | :------------- | :-------------------- | :------------- |
