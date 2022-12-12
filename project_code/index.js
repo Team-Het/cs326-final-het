@@ -59,17 +59,34 @@ function goSubmit(){
 window.onload = async function () {
     localStorage.setItem('nextPage', './index.html');
     refreshSign();
+
+    const dic = await fetch("dictionary.json");
+	window.dictionary = await dic.json();
+	const select = document.getElementById('where_you_lost');
+	
+	for (let address of dictionary) {
+		const optionElement = document.createElement('option');
+  		optionElement.value = address;
+  		optionElement.text = address;
+  		select.appendChild(optionElement);
+	}
 }
 
 function submitItem(){
     const item = document.getElementById("search_item").value;
-    const location = document.getElementById("search_location").value;
+    const location = document.getElementById("where_you_lost").value;
+    const username = localStorage.getItem("username");
+
     if((item && item.length > 0) && (location && location.length > 0)){
         localStorage.setItem('item', item);
         localStorage.setItem('location', location);
         localStorage.setItem('nextPage', './submit_lost_item.html');
-        localStorage.setItem('fromPage', 'index')
-        window.location.href = "./submit_lost_item.html";
+        localStorage.setItem('fromPage', 'index');   
+        if(username){
+            window.location.href = "./submit_lost_item.html";
+        } else {
+            window.location.href = "./login.html";
+        }
     } else {
         alert("Please Enter the Above Queries");
     }
