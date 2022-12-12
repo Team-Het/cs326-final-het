@@ -13,7 +13,7 @@ A website like this doesn't exist at UMass Amherst, so it will be innovative and
 ## User Interface
 | Name | Purpose | Screenshot |
 | :------------- | :-------------------- | :------------- |
-| index | Home Page | ![dashboard wireframe](../imgs/index.png) |
+| index | Home Page | ![dashboard wireframe](../imgs/index.jpg) |
 | create_account | Page For User To Create Account | ![dashboard wireframe](../imgs/create_account.png) |
 | learn_more | Information About Us Page | ![dashboard wireframe](../imgs/learn_more.png) |
 | login | Page For User To Login In | ![dashboard wireframe](../imgs/login.png) |
