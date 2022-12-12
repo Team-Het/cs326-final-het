@@ -41,7 +41,15 @@ function refreshSign(){
     }
 } 
 
-
+function goSubmit(){
+    const username = localStorage.getItem('username');
+    if(username){
+        window.location.href = "./submit_lost_item.html";
+    } else {
+        localStorage.setItem('nextPage', 'submit_lost_item.html');
+        window.location.href = "./login.html";
+    }
+}
 
 // Posts Page functions
 window.onload = async function () {
@@ -65,16 +73,16 @@ window.onload = async function () {
     //         document.getElementById('description2').innerHTML = "I found " + body.color + " " + body.brand + " " + body.title + " at " + body.address;
     //     }
     // }
-    const dic = await fetch("dictionary.json");
-	window.dictionary = await dic.json();
-	const select = document.getElementById('where_you_lost');
+    // const dic = await fetch("dictionary.json");
+	// window.dictionary = await dic.json();
+	// const select = document.getElementById('where_you_lost');
 	
-	for (let address of dictionary) {
-		const optionElement = document.createElement('option');
-  		optionElement.value = address;
-  		optionElement.text = address;
-  		select.appendChild(optionElement);
-	}
+	// for (let address of dictionary) {
+	// 	const optionElement = document.createElement('option');
+  	// 	optionElement.value = address;
+  	// 	optionElement.text = address;
+  	// 	select.appendChild(optionElement);
+	// }
     
 }
 
@@ -89,32 +97,32 @@ function getItems() {
     .then((data)=>{
         console.log(data)
 
-        const add = document.getElementById("where_you_lost").value
-        const cat = document.getElementById("category").value
+        // const add = document.getElementById("where_you_lost").value
+        // const cat = document.getElementById("category").value
 
-        // const lostItems = data.results.filter(v=>v.is_found==='n');
-        const lostItems = data.results.filter(v=>{
-            if(add === "null" && cat === "null"){
-                return v.is_found==='n'
-            }
+        const lostItems = data.results.filter(v=>v.is_found==='n');
+        // const lostItems = data.results.filter(v=>{
+        //     if(add === "null" && cat === "null"){
+        //         return v.is_found==='n'
+        //     }
 
-            else{
-                return v.is_found==='n' && v.where_you_lost === add && v.category === cat
-            }
+        //     else{
+        //         return v.is_found==='n' && v.where_you_lost === add && v.category === cat
+        //     }
             
-        });
+        // });
 
-        // const foundItems = data.results.filter(v=>v.is_found==='y');
-        const foundItems = data.results.filter(v=>{
-            if(add === "null" && cat === "null"){
-                return v.is_found==='y'
-            }
+        const foundItems = data.results.filter(v=>v.is_found==='y');
+        // const foundItems = data.results.filter(v=>{
+        //     if(add === "null" && cat === "null"){
+        //         return v.is_found==='y'
+        //     }
 
-            else{
-                return v.is_found==='y' && v.where_you_lost === add && v.category === cat
-            }
+        //     else{
+        //         return v.is_found==='y' && v.where_you_lost === add && v.category === cat
+        //     }
             
-        });
+        // });
 
         const lostDiv = document.getElementById("lost");
         lostItems.forEach( e => {
