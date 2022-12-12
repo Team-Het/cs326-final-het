@@ -92,9 +92,9 @@ function getItems() {
         const add = document.getElementById("where_you_lost").value
         const cat = document.getElementById("category").value
 
-        // const lostitems = data.results.filter(v=>v.is_found==='n');
+        // const lostItems = data.results.filter(v=>v.is_found==='n');
         const lostItems = data.results.filter(v=>{
-            if(add === null && cat === null){
+            if(add === "null" && cat === "null"){
                 return v.is_found==='n'
             }
 
@@ -103,17 +103,19 @@ function getItems() {
             }
             
         });
+
         // const foundItems = data.results.filter(v=>v.is_found==='y');
         const foundItems = data.results.filter(v=>{
-            if(add === null && cat === null){
-                return v.is_found==='n'
+            if(add === "null" && cat === "null"){
+                return v.is_found==='y'
             }
 
             else{
-                return v.is_found==='n' && v.where_you_lost === add && v.category === cat
+                return v.is_found==='y' && v.where_you_lost === add && v.category === cat
             }
             
         });
+
         const lostDiv = document.getElementById("lost");
         lostItems.forEach( e => {
             const div1 = document.createElement("div");
