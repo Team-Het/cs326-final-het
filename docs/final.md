@@ -112,6 +112,23 @@ However only the post owner can modify or delete their post.
 
 ## Division of Labor
 ### Kelly Chung:
+Created website initial framework style for JS, HTML, and CSS
+Helped create UI/UX for website, design wireframe, and raw frames of web pages
+Architected and Implemented MongoDB Database and connect with Express Server
+Architected and Implemented Heroku environment for auto-deployment and securities
+Architected and Implemented Database Structure for user, item, and images
+Architected and Implemented CRUD for MongoDB on user, item, and images
+Architected and Implemented back-end routes for Restful API and CRUD for user, item, and images
+Architected and Implemented security structure, passport, local strategy
+Code Image upload and download functionality in both front and back-end
+Created MongoDB GridFs file database
+Created client side RESTful API call and fetch for both sync and async calls
+Created dynamic client site website based on MongoDB data (i.e. post page)
+Created client side CRUD for index, login, create account, profile, post page, submit form, image, and helped fix bugs for post detail.
+Created to-do list for the team and help manage project workflow
+Revised alignments on all pages of the website
+Used Bootstrap to create navbar, index, submit item, login, create account, and profile page.
+Cleaned up project code with ESLint and checked over every file for cleanup
 
 ### Yuqi Liu:
 Come up with the project idea and the initial design. 
