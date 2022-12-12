@@ -37,6 +37,14 @@ A website like this doesn't exist at UMass Amherst, so it will be innovative and
 | \/item\/view\/getall | Get All Items, Same as \/item\/view\/id | NA | list of all items |
 | \/item\/download\/:name | Upload Image | filename | success with filename or failure |
 ## Database
+
+### User
+| Name | Data Type | Description |
+| :------------- | :------------- | :------------- |
+| username | string | Username of the user |
+| salt | string | Secret random key to hash |
+| hash | string | Hashed value of password |
+| email | string | Email of the user |
 ### Items
 | Name | Data Type | Description |
 | :------------- | :------------- | :------------- |
@@ -50,13 +58,25 @@ A website like this doesn't exist at UMass Amherst, so it will be innovative and
 | address | string | Where the item lost or found |
 | additional | string | Additional information add by post owner |
 | is_found | string | Check the item is lost or found |
-### User
+| image | string | image url |
+
+### fs.chunks
 | Name | Data Type | Description |
 | :------------- | :------------- | :------------- |
-| username | string | Username of the user |
-| salt | string | Secret random key to hash |
-| hash | string | Hashed value of password |
-| email | string | Email of the user |
+| _id | ObjectId | The unique ObjectId of the chunk |
+| files_id | ObjectId | The _id of the "parent" document |
+| n | num | The sequence number of the chunk |
+| data | binary | The chunk's payload as a Binary type |
+
+### fs.files
+| Name | Data Type | Description |
+| :------------- | :------------- | :------------- |
+| _id | ObjectId | The unique identifier for this document |
+| length | num | The size of the document in bytes |
+| chunkSize | num | The size of each chunk in bytes |
+| uploadDate | timestamp | The date the document was first stored |
+| filename | string | A human-readable name for the file |
+| metadata | any | Holds item name and username |
 ## URL Routes / Mappings
 | URL Path | Description | Authentication |
 | :------------- | :------------- | :------------- |
