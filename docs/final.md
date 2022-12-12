@@ -1,7 +1,7 @@
 # Team Het
 UMass Lost and Found, Fall 2022
 ## Overview
-This website is created for UMass students, faculty, and residents that live around Amherst to find their lost items or give them a place to post items they found. Users create item posts by creating an account or logging into an existing one. Once the user is logged in they can submit a lost or found item by creating posts. Our users can communicate with each other through their email when they have found or want to claim an item. Users are able to update/delete their posts, attach/remove images to their posts, change their email, or change their password.
+This website is created for UMass students, faculty, and residents that related to UMass Amherst to find their lost items on campus or give them a place to post items they found on campus. Users create item posts by creating an account or logging into an existing one. Once the user is logged in they can submit a lost or found item by creating posts. Our users can communicate with each other through their email when they have found or want to claim an item. Users are able to update/delete their posts, attach/remove images to their posts, change their email, or change their password.
 
 A website like this doesn't exist at UMass Amherst, so it will be innovative and helpful for our town if this website could be put in use.
 ## Team Members
@@ -108,12 +108,13 @@ Anyone can browse the posts without loging in, however if they want to create, e
 ### Authorization:
 Anyone can browse any posts.
 However only the post owner can modify or delete their post.
+
 ## Division of Labor
 Kelly Chung:
 
 Yuqi Liu:
 
-Yujin Qin:
+Yujin Qin: Write overview, UI views, APIs, datebase part and help complete the conclusion part in the final.md. Combine and clean up submit_lost_item and update_post together, get rid of useless code/s or file/s. Try to finish reply function, add new key to the items database.
 
 ## Conclusion
 We had a good learning experience working together and all learned how to use HTML, CSS, and JavaScript to build up a website and make it usable for anyone. We communicated well through Slack with a to-do list and everyone tried their best in the group work. 
