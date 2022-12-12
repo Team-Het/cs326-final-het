@@ -94,9 +94,11 @@ window.onload = async function () {
 		localStorage.removeItem("updateBody");
 		document.getElementById('title').setAttribute("readonly","true");
 		localStorage.removeItem('update_click');
-		if (updateBody.image && updateBody.image.length > 0) {
+		if (updateBody.image && updateBody.image.includes("download")) {
 			const deleteButton = document.getElementById("deleteButton");
 			deleteButton.classList.remove('hidden');
+		} else {
+			document.getElementById('itemImage').src = '';
 		}
 	}
 };

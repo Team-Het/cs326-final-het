@@ -132,6 +132,8 @@ window.onload = function () {
     document.getElementById('itemImage').src = body.image;
     if (body.image && body.image.includes("download")) {
         document.getElementById('itemImage').classList.add("mt-3");
+    } else {
+        document.getElementById('itemImage').src = '';
     }
 };
 

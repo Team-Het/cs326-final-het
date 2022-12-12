@@ -242,6 +242,7 @@ async function createItem(req, res) {
 }
 
 async function updateItem(req, res) {
+	console.log(req.body);
 	console.log('inside updateItem');
 	try {
 		const filter = { username: req.body.username, item_name: req.body.item_name };
