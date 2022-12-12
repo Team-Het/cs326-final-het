@@ -18,10 +18,10 @@ A website such as this has not existed at UMass Amherst, so it would be innovati
 | create_account | Page For User To Create Account | ![dashboard wireframe](../imgs/create_account.jpg) |
 | login | Page For User To Login In | ![dashboard wireframe](../imgs/login.png) |
 | learn_more | Information About Us Page | ![dashboard wireframe](../imgs/learn_more.jpg) |
-| post_detail | Page Contains Details About Certain Item | ![dashboard wireframe](../imgs/post_detail.png) |
-| post_page | Page To View All Posts | ![dashboard wireframe](../imgs/post_page.png) |
-| profile | User's Profile With Personal Information | ![dashboard wireframe](../imgs/profile.png) |
-| submit_lost_item | Page For Submitting Lost Or Found Items | ![dashboard wireframe](../imgs/submit_lost_item.png) |
+| post_detail | Page Contains Details About Certain Item | ![dashboard wireframe](../imgs/post_detail.jpg) |
+| post_page | Page To View All Posts | ![dashboard wireframe](../imgs/post_page.jpg) |
+| profile | User's Profile With Personal Information | ![dashboard wireframe](../imgs/profile.jpg) |
+| submit_lost_item | Page For Submitting Lost Or Found Items | ![dashboard wireframe](../imgs/submit_lost_item.jpg) |
 ## APIs
 | Path | Descriptions | Input | Output |
 | :------------- | :------------- | :------------- | :------------- |
