@@ -3,7 +3,8 @@ UMass Lost and Found, Fall 2022
 ## Overview
 This website is created for UMass students, faculty, and residents that are related to UMass Amherst to give them a place to find their lost items or post found items on campus. Users can create item posts by creating an account or logging into an existing one. Once the user is logged in they can submit a lost or found item by creating posts. Our users can communicate with each other through their email when they have found or want to claim an item. Users are able to update/delete their posts, attach/remove images to their posts, change their email, or change their password.
 
-A website like this doesn't exist at UMass Amherst, so it will be innovative and helpful for our town if this website could be put in use.
+A website such as this has not existed at UMass Amherst, so it would be innovative and helpful to our town if this site were to become operational. Lost and Found is a unique platform that provides a valuable service to the UMass Amherst community. It effectively helps UMass students find their lost items in real time.
+
 ## Team Members
 | | Name | GitHub |
 | :------------- | :------------- | :------------- |
@@ -112,7 +113,7 @@ However only the post owner can modify or delete their post.
 ## Division of Labor
 Kelly Chung:
 
-Yuqi Liu:
+Yuqi Liu: Applyed datepicker, timepicker, Adjust the final.md, Fininshed the basic functionaly of filter. Add options to location and category(takes a lot of time, since we have 297 buildings...), create a json file based on the buildings. Fix some bugs, tried to finish the search bar, but not working.
 
 Yujin Qin: Write overview, UI views, APIs, datebase part and help complete the conclusion part in the final.md. Combine and clean up submit_lost_item and update_post together, get rid of useless code/s or file/s. Try to finish reply function, add new key to the items database.
 
