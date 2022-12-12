@@ -4,7 +4,23 @@ function goHome(){
 }
 
 function goProfile(){
-    window.location.href = "./profile.html";
+    const username = localStorage.getItem('username');
+    if(username){
+        window.location.href = "./profile.html";
+    } else {
+        localStorage.setItem('nextPage', 'profile.html');
+        window.location.href = "./login.html";
+    }
+}
+
+function goSubmit(){
+    const username = localStorage.getItem('username');
+    if(username){
+        window.location.href = "./submit_lost_item.html";
+    } else {
+        localStorage.setItem('nextPage', 'submit_lost_item.html');
+        window.location.href = "./login.html";
+    }
 }
 
 // Login functions

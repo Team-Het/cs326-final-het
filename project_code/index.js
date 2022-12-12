@@ -42,6 +42,16 @@ function refreshSign(){
     }
 }
 
+function goSubmit(){
+    const username = localStorage.getItem('username');
+    if(username){
+        window.location.href = "./submit_lost_item.html";
+    } else {
+        localStorage.setItem('nextPage', 'submit_lost_item.html');
+        window.location.href = "./login.html";
+    }
+}
+
 // Index functions
 window.onload = async function () {
     localStorage.setItem('nextPage', './index.html');
