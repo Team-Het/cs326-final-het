@@ -15,8 +15,8 @@ A website like this doesn't exist at UMass Amherst, so it will be innovative and
 | :------------- | :-------------------- | :------------- |
 | index | Home Page | ![dashboard wireframe](../imgs/index.jpg) |
 | create_account | Page For User To Create Account | ![dashboard wireframe](../imgs/create_account.jpg) |
-| learn_more | Information About Us Page | ![dashboard wireframe](../imgs/learn_more.png) |
 | login | Page For User To Login In | ![dashboard wireframe](../imgs/login.png) |
+| learn_more | Information About Us Page | ![dashboard wireframe](../imgs/learn_more.png) |
 | post_detail | Page Contains Details About Certain Item | ![dashboard wireframe](../imgs/post_detail.png) |
 | post_page | Page To View All Posts | ![dashboard wireframe](../imgs/post_page.png) |
 | profile | User's Profile With Personal Information | ![dashboard wireframe](../imgs/profile.png) |
