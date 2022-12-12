@@ -319,7 +319,6 @@ module.exports = {
 	getItem,
 	updateItem,
 	deleteItem,
-	testData,
 	connectToCluster,
 	logout
 };
