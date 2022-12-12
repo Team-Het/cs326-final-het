@@ -113,26 +113,26 @@ However only the post owner can modify or delete their post.
 ## Division of Labor
 ### Kelly Chung:
 Architected and Implemented:
--- MongoDB Database and connect with Express Server
--- Heroku environment for auto-deployment and securities
--- Database Structure for user, item, and images
--- CRUD for MongoDB on user, item, and images
--- Back-end routes for Restful API and CRUD for user, images, and helped with item
--- Security structure, passport, local strategy
--- MongoDB GridFs file database
--- Image upload and download functionality in both front and back-end
--- Website initial framework style for JS, HTML, and CSS
--- Dynamic client site website based on MongoDB data for Post Page
+* MongoDB Database and connect with Express Server
+* Heroku environment for auto-deployment and securities
+* Database Structure for user, item, and images
+* CRUD for MongoDB on user, item, and images
+* Back-end routes for Restful API and CRUD for user, images, and helped with item
+* Security structure, passport, local strategy
+* MongoDB GridFs file database
+* Image upload and download functionality in both front and back-end
+* Website initial framework style for JS, HTML, and CSS
+* Dynamic client site website based on MongoDB data for Post Page
 
 Created:
--- Client side RESTful API call and fetch for both sync and async calls
--- Client side CRUD for index, login, create account, profile, post page, submit form, image, and helped fix bugs for post detail.
--- Helped revise placements and alignments on all pages of the website
--- Navbar, Index, Login, Create Account, Profile Page's HTML, CSS, and JS for fucntionality and UI with Bootstrap
--- Helped Restructure Submit Lost Item and Post Page page with HTML, CSS, and JS
--- Helped design wireframe, raw frames of web pages, and the creation of the UI/UX for website 
--- To-do list for the team in Slack and help manage project workflow
--- Cleaned up project code with ESLint and checked over every file for cleanup
+* Client side RESTful API call and fetch for both sync and async calls
+* Client side CRUD for index, login, create account, profile, post page, submit form, image, and helped fix bugs for post detail.
+* Helped revise placements and alignments on all pages of the website
+* Navbar, Index, Login, Create Account, Profile Page's HTML, CSS, and JS for fucntionality and UI with Bootstrap
+* Helped Restructure Submit Lost Item and Post Page page with HTML, CSS, and JS
+* Helped design wireframe, raw frames of web pages, and the creation of the UI/UX for website 
+* To-do list for the team in Slack and help manage project workflow
+* Cleaned up project code with ESLint and checked over every file for cleanup
 ### Yuqi Liu:
 Come up with the project idea and the initial design. 
 Created and completed the HTML and CSS for Submit Lost Item Page, Submit Found Item Page, View Posts Page, View Details Page, and also lean_more.js & .html & .css. Imported map and accomplised the basic functinality. 
