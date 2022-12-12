@@ -34,10 +34,11 @@ A website like this doesn't exist at UMass Amherst, so it will be innovative and
 | \/item\/delete | Delete Item | item_id | success or failure |
 | \/item\/update | Update Item | user_id, item_id, item_name, item_desc, image, address, is_found,  | success or failure |
 | \/item\/view\/id | View Item | item_id | user_id, item_id, item_name, item_desc,  image, address, is_found |
-| \/item\/view\/getall | Get All Items, Same as \/item\/view\/id | NA | list of all items |
+| \/item\/view\/getall | Get All Items | NA | list of all items |
+| \/item\/upload | Upload Image | Formdata | success with url of image or failure |
 | \/item\/download\/:name | Upload Image | filename | success with filename or failure |
-## Database
 
+## Database
 ### User
 | Name | Data Type | Description |
 | :------------- | :------------- | :------------- |
