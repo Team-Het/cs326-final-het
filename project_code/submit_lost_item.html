@@ -21,10 +21,6 @@
                 <!-- Media breakpoint at width 546px in the future-->
                 <div class="d-flex">
                     <a class="navbar-brand fs-4 mx-2 pt-2 umass" onclick="goHome()">UMass Lost and Found</a>
-                    <!-- <form class="d-flex" role="search">
-                        <img src="search.svg" alt="Search" class="icon m-2">
-                        <input class="form-control m-2" type="search" placeholder="Search" aria-label="Search">
-                    </form> -->
                 </div>
                 <!-- Center alignment based on page width in the future-->
                 <form class="d-flex">
@@ -40,11 +36,8 @@
             <ul class="navbar-nav flex-row ms-auto me-4">
                 <li class="nav-item">
                     <a class="nav-link second-nav" id="nav_submit_lost" href="./submit_lost_item.html"
-                        onclick="submitItem()">Submit&nbsp;Lost&nbsp;&&nbsp;Found&nbsp;Item</a>
+                        onclick="submitPost()">Submit&nbsp;Lost&nbsp;&&nbsp;Found&nbsp;Item</a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link second-nav" id="nav_submit_found" href="./submit_found_item.html">Submit Found Item</a>
-                </li> -->
                 <li class="nav-item">
                     <a class="nav-link second-nav" id="nav_view_posts" href="./posts_page.html">View Posts</a>
                 </li>
@@ -55,9 +48,6 @@
         <!-- Fix media in the future -->
         <div class="container column-layout">
             <div class="row">
-                <!-- <div class="col-12 text-center mt-3">
-                    <h class="fs-1">Welcome To UMass Lost and Found!</h>
-                </div> -->
                 <div class="col-12 text-center mt-4">
                     <h class="fs-1" id="notupdate">Submit&nbsp;Your&nbsp;Lost&nbsp;&&nbsp;Found&nbsp;Item&nbsp;Information</h>
                     <h class="fs-1" id="yesupdate">Update&nbsp;Your&nbsp;Item&nbsp;Information</h>
@@ -78,11 +68,9 @@
                             </div>
                             <div class="d-flex flex-column inputClass">
                                 <input id="title" class="form-control mb-3" placeholder="Please fill this out...">
-                                <!-- <input id="where_you_lost" class="form-control mb-3" placeholder="Please fill this out..."> -->
                                 <select id="where_you_lost" class="form-control mb-3">
                                     <option selected value="null">Please select where you lost/found!</option>
                                   </select>
-                                <!-- <input id="category" class="form-control mb-3" placeholder="Please fill this out..."> -->
                                 <select id="category" class="form-control mb-3">
                                     <option selected value="null">Please select a category!</option>
                                     <option value="Electronics">Electronics</option>
@@ -94,7 +82,6 @@
                                     <option value="Home">Home</option>
                                     <option value="Sports">Sports</option>
                                   </select>
-                                <!-- <input id="date_lost" class="form-control mb-3" placeholder="Example: 12/23/2022"> -->
                                 <input type="date" id="date_lost" class="form-control mb-3" />
                                 <input type="time" id="time_lost" class="form-control mb-3">
                                 <input id="brand" class="form-control mb-3" placeholder="Optional information">
@@ -111,9 +98,7 @@
                                         type="file" onchange="uploadFile()">
                                     <button class="btn btn-dark btn-lg hidden btn-delete mt-2" id="deleteButton" onclick="deleteImage()">Delete Image</button>
                                 </div>
-                                <!-- <div class="col-6"> -->
                                 <img id="itemImage" class="submit-img" src="" />
-                                <!-- </div> -->
                             </div>
                         </div>
                     </div>
@@ -123,16 +108,6 @@
                         <button id="submit_found" class="btn btn-dark btn-lg ms-2" onclick="submitItem('found')">Submit Found Item!</button>
 
                     </div>
-                    <!-- <div class="col-3 m-5">
-                    <div class="d-flex flex-columns justify-content-evenly mt-3">
-                        <div>
-                         <div class="upload-button">
-                             <img id="itemImage" class="submitLost-img" src=""/>
-                             <span class="edit">Upload the picture of the item</picture></span>
-                             <input id="fileUpload" class="photo-input" type="file" onchange="uploadFile()">
-                         </div>
-                        </div>
-                </div> -->
                 </div>
             </div>
     </section>

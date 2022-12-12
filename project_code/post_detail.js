@@ -79,10 +79,10 @@ window.onload = function () {
     console.log(body);
 
     if (body.is_found === 'n') {
-        document.getElementById('lostorfound').innerHTML = "Lost An Item!"
+        document.getElementById('lostorfound').innerHTML = "Lost An Item!";
     }
     else {
-        document.getElementById('lostorfound').innerHTML = "Found An Item!"
+        document.getElementById('lostorfound').innerHTML = "Found An Item!";
     }
     document.getElementById("title").innerHTML = body.item_name;
     document.getElementById("additional").innerHTML = body.additional;
@@ -92,7 +92,7 @@ window.onload = function () {
     document.getElementById("date_lost").innerHTML = "Date & Time: " + body.date_lost + " " + body.time_lost;
     document.getElementById("address").innerHTML = "Location: " + body.address;
 
-    var currentdate = new Date();
+    const currentdate = new Date();
     let hours = 0;
     let string = '';
     if (currentdate.getHours() > 12) {
@@ -103,7 +103,7 @@ window.onload = function () {
         hours = currentdate.getHours();
         string = "a.m.";
     }
-    var datetime = "Most recent visit: " + (currentdate.getMonth() + 1) + "/"
+    const datetime = "Most recent visit: " + (currentdate.getMonth() + 1) + "/"
         + currentdate.getDate() + "/"
         + currentdate.getFullYear() + " "
         + hours + ":"
@@ -133,7 +133,7 @@ window.onload = function () {
     if (body.image && body.image.includes("download")) {
         document.getElementById('itemImage').classList.add("mt-3");
     }
-}
+};
 
 async function deletePost() {
     const body = JSON.parse(localStorage.getItem('item_detail'));
@@ -170,15 +170,4 @@ async function deletePost() {
     } else {
         alert('error! two');
     }
-}
-
-async function createComment() {
-    const body = JSON.parse(localStorage.getItem('item_detail'));
-    const comment = document.getElementById("userComment");
-    body.newComment = comment;
-    const response = await fetch(window.location.origin + '/item/comment/create', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json;charset=utf-8' },
-        body: JSON.stringify(body)
-    });
 }

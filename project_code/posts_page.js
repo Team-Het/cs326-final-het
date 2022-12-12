@@ -59,35 +59,8 @@ window.onload = async function () {
     refreshSign();
     this.getItems();
     localStorage.setItem('nextPage', './posts_page.html');
-    console.log("post detail next")
-    // const responsePost = await fetch('/item/view');
-    // const post = await responsePost.json();
-    // for(let i = 0; i < responsePost.length; i++){
-    //     let body = responsePost[responsePost.length - i]
-    //     if(body.is_found === 'n'){
-    //         document.getElementById('postTitle1').innerHTML = body.title;
-    //         document.getElementById('postDate1').innerHTML = body.date_lost + " " + body.time_lost;
-    //         document.getElementById('description1').innerHTML = "I lost " + body.color + " " + body.brand + " " + body.title + " at " + body.address;
-    //     }
-
-    //     else{
-    //         document.getElementById('postTitle2').innerHTML = body.title;
-    //         document.getElementById('postDate2').innerHTML = body.date_lost + " " + body.time_lost;
-    //         document.getElementById('description2').innerHTML = "I found " + body.color + " " + body.brand + " " + body.title + " at " + body.address;
-    //     }
-    // }
-    // const dic = await fetch("dictionary.json");
-	// window.dictionary = await dic.json();
-	// const select = document.getElementById('where_you_lost');
-	
-	// for (let address of dictionary) {
-	// 	const optionElement = document.createElement('option');
-  	// 	optionElement.value = address;
-  	// 	optionElement.text = address;
-  	// 	select.appendChild(optionElement);
-	// }
-    
-}
+    console.log("post detail next");
+};
 
 function readDetail(e) {
     localStorage.setItem("item_detail", JSON.stringify(e));
@@ -98,34 +71,10 @@ function getItems() {
 	fetch(window.location.origin + '/item/view/getall')
     .then((response)=>response.json())
     .then((data)=>{
-        console.log(data)
-
-        // const add = document.getElementById("where_you_lost").value
-        // const cat = document.getElementById("category").value
+        console.log(data);
 
         const lostItems = data.results.filter(v=>v.is_found==='n');
-        // const lostItems = data.results.filter(v=>{
-        //     if(add === "null" && cat === "null"){
-        //         return v.is_found==='n'
-        //     }
-
-        //     else{
-        //         return v.is_found==='n' && v.where_you_lost === add && v.category === cat
-        //     }
-            
-        // });
-
         const foundItems = data.results.filter(v=>v.is_found==='y');
-        // const foundItems = data.results.filter(v=>{
-        //     if(add === "null" && cat === "null"){
-        //         return v.is_found==='y'
-        //     }
-
-        //     else{
-        //         return v.is_found==='y' && v.where_you_lost === add && v.category === cat
-        //     }
-            
-        // });
 
         const lostDiv = document.getElementById("lost");
         lostItems.forEach( e => {
@@ -168,7 +117,7 @@ function getItems() {
             a.classList.add("alert-primary");
             a.classList.add("cursor");
             a.innerHTML = 'Read more details';
-            a.addEventListener('click', ()=>{readDetail(e)});
+            a.addEventListener('click', () => {readDetail(e)});
             const div4 = document.createElement("div");
             div4.classList.add("col-auto");
             div4.classList.add("d-none");

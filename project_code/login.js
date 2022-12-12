@@ -27,7 +27,6 @@ function goSubmit(){
 async function login() {
     const name = document.getElementById("username").value;
     const password = document.getElementById("password").value;
-    // const user = { "id": name, "user_name": password };
     console.log("login");
     if ((name && name.length > 0) && (password && password.length > 0)) {
         const response = await fetch(window.location.origin + '/login', {

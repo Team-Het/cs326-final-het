@@ -45,7 +45,7 @@ class MiniCrypt {
 	const salt = c.randomBytes(this.saltL).toString('hex'), // get our new salt for this pw
         hash = c.pbkdf2Sync(pw, salt, this.its, this.keyL, this.digest).toString('hex'); // hash the pw
 	return [salt, hash]; // return the pair for safe storage
-  };
+  }
 
   /**
     @public
@@ -58,9 +58,9 @@ class MiniCrypt {
    */
     check(pw, salt, hash) {
     return c.timingSafeEqual(c.pbkdf2Sync(pw, salt, this.its, this.keyL, this.digest), Buffer.from(hash, 'hex'));
-  };
+  }
 }
 
 module.exports = {
 	MiniCrypt,
-}
+};

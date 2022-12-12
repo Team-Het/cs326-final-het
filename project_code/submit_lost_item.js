@@ -7,7 +7,6 @@ function signOut() {
 	fetch(window.location.origin + '/logout')
 		.then((response) => response.json())
 		.then((data) => { });
-	// console.log("in signOut");
 	localStorage.removeItem("username");
 	localStorage.removeItem("email");
 	window.location.href = "./index.html";
@@ -28,7 +27,7 @@ function goProfile() {
 	}
 }
 
-function submitItem() {
+function submitPost() {
 	localStorage.removeItem('item');
 	localStorage.removeItem('location');
 }
@@ -43,8 +42,6 @@ function refreshSign(){
         signOut.classList.remove('hidden');
         loginName.innerHTML = 'Signed in as ' + username;
     } else {
-        // signIn.classList.remove('hidden');
-        // signOut.classList.add('hidden');
         loginName.innerHTML = '';
     }
 }
@@ -56,7 +53,7 @@ window.onload = async function () {
 	window.dictionary = await dic.json();
 	const select = document.getElementById('where_you_lost');
 	
-	for (let address of dictionary) {
+	for (const address of dictionary) {
 		const optionElement = document.createElement('option');
   		optionElement.value = address;
   		optionElement.text = address;
@@ -102,14 +99,13 @@ window.onload = async function () {
 			deleteButton.classList.remove('hidden');
 		}
 	}
-}
+};
 
 
 async function submitItem(submitType) {
 	const username = localStorage.getItem('username');
 	if (!username) {
 		localStorage.setItem('nextPage', './post_detail.html');
-		// localStorage.setItem('submitType', submitType);
 		window.location.href = './login.html';
 	}
 	let tmp = "";
@@ -159,7 +155,7 @@ async function submitItem(submitType) {
 		})
 	});
 
-	let src = document.getElementById("itemImage").src
+	let src = document.getElementById("itemImage").src;
 	if (src.includes("html")){
 		src = "";
 	}
@@ -195,7 +191,6 @@ async function submitItem(submitType) {
 		console.log(resp);
 		if (resp.status === 'success') {
 			window.location.href = './post_detail.html';
-			// localStorage.setItem('nextPage', './post_detail.html');
 		} else {
 			alert('Error Processing Data');
 		}
@@ -238,7 +233,7 @@ async function updatePost() {
 		})
 	});
 
-	let src = document.getElementById("itemImage").src
+	let src = document.getElementById("itemImage").src;
 	if (src.includes("html")){
 		src = "";
 	}
@@ -261,10 +256,6 @@ async function updatePost() {
 	if (response.ok) {
 		localStorage.setItem('item_detail', JSON.stringify(passBody));
 		console.log(localStorage.getItem('item_detail'));
-		// If it's passbody then the post detail won't upload so I changed it. - Kelly
-		// 
-		// localStorage.setItem('passBody', JSON.stringify(passBody));
-		// console.log(localStorage.getItem('passBody'));
 
 		localStorage.removeItem('item');
 		localStorage.removeItem('location');
@@ -278,7 +269,6 @@ async function updatePost() {
 		console.log(resp);
 		if (resp.status === 'success') {
 			window.location.href = './post_detail.html';
-			// localStorage.setItem('nextPage', './post_detail.html');
 		} else {
 			alert('Error Processing Data');
 		}
@@ -288,7 +278,7 @@ async function updatePost() {
 }
 
 function uploadFile() {
-	let formData = new FormData();
+	const formData = new FormData();
 	const fileUpload = document.getElementById("fileUpload");
 
 	formData.append("metadata", JSON.stringify({ username: localStorage.getItem('username'), item_name: document.getElementById('title').value}));
@@ -314,7 +304,7 @@ function uploadFile() {
 			} else {
 				alert('Error uploading file');
 			}
-		})
+		});
 }
 
 function deleteImage() {
@@ -322,7 +312,7 @@ function deleteImage() {
 		delete_image: "y",
 		item_name: document.getElementById('title').value,
 		username: localStorage.getItem('username'),
-	}
+	};
 	fetch('/item/update/', {
 		method: "POST",
 		body: body
@@ -346,5 +336,5 @@ function deleteImage() {
 			} else {
 				alert('Error deleting file');
 			}
-		})
+		});
 }

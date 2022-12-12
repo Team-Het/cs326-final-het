@@ -9,7 +9,6 @@ function signOut() {
 	fetch(window.location.origin + '/logout')
     .then((response)=>response.json())
     .then((data)=>{});
-    // console.log("in signOut");
     localStorage.removeItem("username");
     localStorage.removeItem("email");
     refreshSign();
@@ -57,4 +56,4 @@ function goSubmit(){
 
 window.onload = async function () {
     refreshSign();
-}
+};

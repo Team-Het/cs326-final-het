@@ -5,7 +5,6 @@ function signOut() {
 	fetch(window.location.origin + '/logout')
     .then((response)=>response.json())
     .then((data)=>{});
-    // console.log("in signOut");
     localStorage.removeItem("username");
     localStorage.removeItem("email");
     window.location.href = "./index.html";
@@ -55,7 +54,7 @@ window.onload = async function () {
     if (email){
         document.getElementById('email').value = email;
     }
-}
+};
 
 function inputKeyup() {
     const button = document.getElementById('save_changes');
@@ -73,9 +72,6 @@ async function saveChanges(){
     const email = document.getElementById('email').value;
     const name = document.getElementById("username").innerHTML;
     const password = document.getElementById("password").value;
-    // const currentPass = document.getElementById("currentPass").value;
-    // const newPass = document.getElementById("newPass").value;
-    // const confirmPass = document.getElementById("confirmPass").value;
     console.log("save changes");
     if ((password && password.length > 0) || (email && email.length > 0)) {
         const response = await fetch(window.location.origin + '/user/update', {
@@ -110,8 +106,8 @@ async function saveChanges(){
 }
 
 async function deleteUser() {
-    let res = confirm("Do you REALLY want to delete your account?")
-    
+    const res = confirm("Do you REALLY want to delete your account?");
+
     if(res){
         const response = await fetch(window.location.origin + '/user/delete', {
             method: 'POST',
@@ -137,7 +133,6 @@ async function deleteUser() {
         }
     }
     else{
-        alert('Account is NOT Deleted')
+        alert('Account is NOT Deleted');
     }
-	
 }

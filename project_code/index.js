@@ -9,7 +9,6 @@ function signOut() {
 	fetch(window.location.origin + '/logout')
     .then((response)=>response.json())
     .then((data)=>{});
-    // console.log("in signOut");
     localStorage.removeItem("username");
     localStorage.removeItem("email");
     refreshSign();
@@ -70,7 +69,7 @@ window.onload = async function () {
   		optionElement.text = address;
   		select.appendChild(optionElement);
 	}
-}
+};
 
 function submitItem(){
     const item = document.getElementById("search_item").value;

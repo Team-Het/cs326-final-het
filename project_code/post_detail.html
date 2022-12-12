@@ -21,10 +21,6 @@
                 <!-- Media breakpoint at width 546px in the future-->
                 <div class="d-flex">
                     <a class="navbar-brand fs-4 mx-2 pt-2 umass" onclick="goHome()">UMass Lost and Found</a>
-                    <!-- <form class="d-flex" role="search">
-                        <img src="search.svg" alt="Search" class="icon m-2">
-                        <input class="form-control m-2" type="search" placeholder="Search" aria-label="Search">
-                    </form> -->
                 </div>
                 <!-- Center alignment based on page width in the future-->
                 <form class="d-flex">
@@ -41,9 +37,6 @@
                 <li class="nav-item">
                     <a class="nav-link second-nav" onclick="goSubmit()">Submit Lost & Found Item</a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link second-nav" href="./submit_found_item.html">Submit Found Item</a>
-                </li> -->
                 <li class="nav-item">
                     <a class="nav-link second-nav" href="./posts_page.html">View Posts</a>
                 </li>
@@ -51,7 +44,6 @@
         </nav>
     </div>
     <section class="bg-light">
-        <!-- seprate -->
         <div class="container mb-5">
             <div class="bg-light extraSpace"></div>
             <div class="row mb-2">
@@ -63,7 +55,6 @@
                             <div class="col p-4 d-flex flex-column position-static">
                                 <strong class="d-inline-block mb-2 text-success" id="lostorfound"></strong>
                                 <label class="mb-0">Item Detail: </label>
-                                <!-- <input id="password" class="form-control mb-3" readonly="readonly"> -->
                                 <h3 class="mb-1" id="title"></h3>
                                 <div class="mb-1 text-muted" id="date_grey"></div>
                                 <p class="mb-2" id="additional"></p>
@@ -89,7 +80,6 @@
                                 <h3 class="mb-0" id="username"></h3>
                                 <div class="mb-1 text-muted" id="currentTime"></div>
                                 <p class="mb-auto" id="email"></p>
-                                <!-- <a href="#" class="stretched-link">More contact information.</a> -->
                             </div>
                         </div>
                     </div>
@@ -102,27 +92,10 @@
                     </div>
                     <div class="d-flex justify-content-around mt-5">
                         <button id="update_post" class="btn btn-outline-dark btn-lg hidden" onclick="goUpdate()">Update Post!</button>
-                        <!-- <button id="found_post" class="btn btn-dark btn-lg hidden" type="button" onclick="foundPost()">Found Item</button> -->
                         <button id="delete_post" class="btn btn-danger btn-lg hidden" type="button" onclick="deletePost()">Delete this post</button>
                     </div>
                 </div>
             </div>
-            <!-- <div class="card mt-5 comment">
-                <h5 class="card-header">Comments</h5>
-                <div class="card-body">
-                    <div id="comments"></div>
-                    <div class="d-flex">
-                        <div class="inputComment">
-                            <input type="writeComment" class="form-control" id="userComment"
-                                placeholder="Write your comments, replies, or any idea here."></input>
-                        </div>
-                        <div class="ms-3">
-                            <button type="button" class="btn btn-dark px-4" id="postComment"
-                                onclick="createComment()">Post</button>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </section>
     <nav class="navbar fixed-bottom navbar-secondary bg-secondary">

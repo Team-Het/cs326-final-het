@@ -26,11 +26,6 @@ async function connectToCluster() {
 	}
 }
 
-async function testData(req, res) {
-	const findResult = await db.collection('User').find().toArray();
-	res.send({ findResult });
-}
-
 async function getUser(req, res) {
 	try {
 		console.log('inside getUser');
@@ -302,7 +297,7 @@ async function deleteItem(req, res) {
 }
 
 async function getItem(req, res) {
-	console.log(req.params)
+	console.log(req.params);
 	if (req.params.id === 'getall') {
 		const results = await db.collection('Items').find().toArray();
 		res.send({ results });
