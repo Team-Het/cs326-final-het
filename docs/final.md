@@ -118,11 +118,11 @@ Created and completed the HTML and CSS for Submit Lost Item Page, Submit Found I
 Add options to location and category(takes a lot of time, since we have 297 buildings...), create a json file based on the buildings.
 Accomplished the basic functionality of uploading image. 
 Accomplished functions in server.js, submit_found_item.js, submit_lost_item.js, database.js. Accomplished some of the RESTful API. Accomplised some functionalify and format in .html for related page as well. 
-Accomplished the basic functionality of filter(js,html), but didn't get it used(contains bug). Applied datepicker, timepicker.
+Applied datepicker, timepicker.
 Updated the API CRUD. Come up with the initial version of login functionality, and helped with login page. 
 Helped with link between post page and post_detail page. Helped with modification of nav bar. Helped with bug fixing.
 Created samples for test. 
-Made contribution and modification on every milestone. 
+Made contribution and modification on every milestone.(For future: Accomplished the basic functionality of filter(js,html), but didn't get it used(contains bug). Tried to go accomplish the search bar.)
 
 Yujin Qin: Design and draw all the raw frames of web pages. Rearrange milestone1 markdown file and webpages. 
 <br>Completed post_detail.js, login.js, helped with submit_found_item.js and submit_lost_item.js, helped construct milestone2.md. 
