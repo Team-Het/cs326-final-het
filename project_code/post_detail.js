@@ -28,16 +28,19 @@ function goProfile() {
     }
 }
 
-function refreshSign() {
+function refreshSign(){
     const username = localStorage.getItem("username");
     const signIn = document.getElementById("signIn");
     const signOut = document.getElementById("signOut");
-    if (username) {
+    const loginName = document.getElementById("loginName");
+    if(username){
         signIn.classList.add('hidden');
         signOut.classList.remove('hidden');
+        loginName.innerHTML = 'Signed in as ' + username;
     } else {
         signIn.classList.remove('hidden');
         signOut.classList.add('hidden');
+        loginName.innerHTML = '';
     }
 }
 

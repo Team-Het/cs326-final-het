@@ -15,6 +15,16 @@ function goHome(){
     window.location.href = "./index.html";
 }
 
+function refreshSign(){
+    const username = localStorage.getItem("username");
+    const loginName = document.getElementById("loginName");
+    if(username){
+        loginName.innerHTML = 'Signed in as ' + username;
+    } else {
+        loginName.innerHTML = '';
+    }
+}
+
 function goProfile(){
     const username = localStorage.getItem('username');
     if(username){
@@ -36,6 +46,7 @@ function goSubmit(){
 
 // Index functions
 window.onload = async function () {
+    refreshSign();
     const username = localStorage.getItem('username');
     const email = localStorage.getItem('email');
     if (username) {

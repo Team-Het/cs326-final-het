@@ -1,31 +1,36 @@
-.umass:hover{
+.umass:hover {
     cursor:pointer;
 }
 
-.icon{
+.icon {
     width: 25px;
 }
 
-.icon:hover{
+.icon:hover {
     cursor: pointer;
 }
 
-.second-nav{
+.second-nav {
     color: white;
     margin: 0px 8px;
     font-size: 18px;
 }
 
-.hidden{
+.hidden {
     display: none;
 }
 
-.sign-in{
+.sign-in {
     color:white;
     margin-right: 20px;
 }
 
-.sign-in:hover{
+.sign-in:hover {
     color:grey;
     cursor: pointer;
+}
+
+.loginName{
+    color: white;
+    margin-right: 30px; 
 }
