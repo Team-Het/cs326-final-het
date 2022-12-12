@@ -111,9 +111,10 @@ Anyone can browse any posts.
 However only the post owner can modify or delete their post.
 
 ## Division of Labor
-Kelly Chung:
+### Kelly Chung:
 
-Yuqi Liu: Come up with the project idea and the initial design. 
+### Yuqi Liu:
+Come up with the project idea and the initial design. 
 Created and completed the HTML and CSS for Submit Lost Item Page, Submit Found Item Page, View Posts Page, View Details Page, and also lean_more.js & .html & .css. Imported map and accomplised the basic functinality. 
 Add options to location and category(takes a lot of time, since we have 297 buildings...), create a json file based on the buildings.
 Accomplished the basic functionality of uploading image. 
@@ -123,14 +124,14 @@ Updated the API CRUD. Come up with the initial version of login functionality, a
 Helped with link between post page and post_detail page. Helped with modification of nav bar. Helped with bug fixing.
 Created samples for test. 
 Made contribution and modification on every milestone.(For future: Accomplished the basic functionality of filter(js,html), but didn't get it used(contains bug). Tried to go accomplish the search bar.)
-
-Yujin Qin: Design and draw all the raw frames of web pages. Rearrange milestone1 markdown file and webpages. 
+### Yujin Qin:
+Design and draw all the raw frames of web pages. Rearrange milestone1 markdown file and webpages. 
 <br>Completed post_detail.js, login.js, helped with submit_found_item.js and submit_lost_item.js, helped construct milestone2.md. 
 <br>Generated and completed the post_detail page. Finished delete post function for post_detail page. Helped combine submit lost item page and submit found item page, modified nav bar. Created and finished update_post.js, update_post.html. Helped create some Restful API. Wrote the documentation and how to test the website of milestone3 markdown file. Created samples for testing. 
 <br>Write overview, UI views, APIs, datebase part and help complete the conclusion part in the final.md. Combine and clean up submit_lost_item and update_post together, get rid of useless code/s or file/s. Come up with the raw reply function and comment bar, comment box, add new key to the items database. Complete the setup.md file.
 
 ## Conclusion
-We had a good learning experience working together and all learned how to use HTML, CSS, and JavaScript to build up a website and make it usable for anyone. We communicated well through Slack with a to-do list and everyone tried their best in the group work. Complete the setup.md file.
+We had a good learning experience working together and all learned how to use HTML, CSS, and JavaScript to build up a website and make it usable for anyone. We communicated well through Slack with a to-do list and everyone tried their best in the group work.
 
 The most difficult thing is figuring out the logic, website flow and implementing our ideas. It was quite difficult to work on this website as we though we thought we had thoroughly planned out the structure of the wireframe but realized it was always missing some new logic.  As figuring out the logic and workflow of our website was always quite troublesome as there were so many variables between our users and the data in which they can/cannot interact with.  The many parts of our web were always depending and dependent on each other forcing us to stop a job to fix or create the relying job before we could test or incorporate another part.  
 
