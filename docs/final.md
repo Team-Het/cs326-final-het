@@ -95,9 +95,10 @@ Yuqi Liu:
 Yujin Qin:
 
 ## Conclusion
+We had a good learning experience working together and all learned how to use HTML, CSS, and JavaScript to build up a website and make it usable for anyone. We communicated well through Slack with a to-do list and everyone tried their best in the group work. 
 
-We had a good experience working together and all learned how to use HTML, css, and JavaScript to build up a website and make it be able to use. We communicated well and everyone tired to do his/her best in the group work. The most difficult thing is absolutely the coding part and debugging part. we found it's more difficult to rearrange existing webpages rather than build new ones. So for the next time and for our future group project, we need to fix existing bugs right away before going to another part. Also, we need to make sure everyone has their own branch before we start working because if two people are working on the same file at the same time, one of the unlucky guy will get him/her code be covered by the other one. 
+The most difficult thing is figuring out the logic and website flow then figuring out how to code and debug it. We found it was quite difficult to work on a website even though we had planned out where something was as many parts were depending and dependent on each other forcing us to stop that job to fix or create the relying job before we could test or incorporate another part.  Figuring out the logic of our website was also quite challenging as their were so many variables between our users and the data that they can/cannot interact with.
 
-
+Our team would have like to have had a better design on the wireframe of our website.  We realized while working on this project we came across many instances where there were extra/missing code that we didn't need or needed to add.  For example, at first we had a submit lost, submit found, and update page that were essentially the same except for a couple of buttons and text differences.  We lacked the knowledge/idea to simplify our work until our TA helped and pointed us to a much simpler alternative of combining the 3 pages into 1.  Also, it would be very helpful if everyone had their own branch before we started working because if two people are working on the same file at the same time, someone will have to revert there work for someone else. 
 ## Heroku Application Link
 https://umass-lost-and-found.herokuapp.com/
