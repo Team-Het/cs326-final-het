@@ -59,6 +59,17 @@ function goSubmit(){
 window.onload = async function () {
     localStorage.setItem('nextPage', './index.html');
     refreshSign();
+
+    const dic = await fetch("dictionary.json");
+	window.dictionary = await dic.json();
+	const select = document.getElementById('where_you_lost');
+	
+	for (let address of dictionary) {
+		const optionElement = document.createElement('option');
+  		optionElement.value = address;
+  		optionElement.text = address;
+  		select.appendChild(optionElement);
+	}
 }
 
 function submitItem(){
