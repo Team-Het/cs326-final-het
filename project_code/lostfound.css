@@ -2,6 +2,11 @@
     cursor:pointer;
 }
 
+.navSize {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 .icon {
     width: 25px;
 }
