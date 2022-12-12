@@ -118,7 +118,7 @@ Yuqi Liu: Applyed datepicker, timepicker, Adjust the final.md, Fininshed the bas
 Yujin Qin: Design and draw all the raw frames of web pages. Rearrange milestone1 markdown file and webpages. 
 <br>Completed post_detail.js, login.js, helped with submit_found_item.js and submit_lost_item.js, helped construct milestone2.md. 
 <br>Generated and completed the post_detail page. Finished delete post function for post_detail page. Helped combine submit lost item page and submit found item page, modified nav bar. Created and finished update_post.js, update_post.html. Helped create some Restful API. Wrote the documentation and how to test the website of milestone3 markdown file. Created samples for testing. 
-<br>Write overview, UI views, APIs, datebase part and help complete the conclusion part in the final.md. Combine and clean up submit_lost_item and update_post together, get rid of useless code/s or file/s. Try to finish reply function, add new key to the items database. Complete the setup.md file.
+<br>Write overview, UI views, APIs, datebase part and help complete the conclusion part in the final.md. Combine and clean up submit_lost_item and update_post together, get rid of useless code/s or file/s. Come up with the raw reply function and comment bar, comment box, add new key to the items database. Complete the setup.md file.
 
 ## Conclusion
 We had a good learning experience working together and all learned how to use HTML, CSS, and JavaScript to build up a website and make it usable for anyone. We communicated well through Slack with a to-do list and everyone tried their best in the group work. Complete the setup.md file.
