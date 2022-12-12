@@ -88,8 +88,34 @@ function getItems() {
     .then((response)=>response.json())
     .then((data)=>{
         console.log(data)
-        const lostItems = data.results.filter(v=>v.is_found==='n');
-        const foundItems = data.results.filter(v=>v.is_found==='y');
+
+        const add = document.getElementById("where_you_lost").value
+        const cat = document.getElementById("category").value
+
+        // const lostItems = data.results.filter(v=>v.is_found==='n');
+        const lostItems = data.results.filter(v=>{
+            if(add === "null" && cat === "null"){
+                return v.is_found==='n'
+            }
+
+            else{
+                return v.is_found==='n' && v.where_you_lost === add && v.category === cat
+            }
+            
+        });
+
+        // const foundItems = data.results.filter(v=>v.is_found==='y');
+        const foundItems = data.results.filter(v=>{
+            if(add === "null" && cat === "null"){
+                return v.is_found==='y'
+            }
+
+            else{
+                return v.is_found==='y' && v.where_you_lost === add && v.category === cat
+            }
+            
+        });
+
         const lostDiv = document.getElementById("lost");
         lostItems.forEach( e => {
             const div1 = document.createElement("div");
