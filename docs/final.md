@@ -106,7 +106,7 @@ Anyone can browse the posts without loging in, however if they want to create, e
 
 ### Authorization:
 Anyone can browse any posts.
-However only the post owner can change modify and delete.
+However only the post owner can modify or delete their post.
 ## Division of Labor
 Kelly Chung:
 
