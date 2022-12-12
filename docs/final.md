@@ -1,7 +1,7 @@
 # Team Het
 UMass Lost and Found, Fall 2022
 ## Overview
-This website is created for UMass students, faculty, and residents that related to UMass Amherst to find their lost items on campus or give them a place to post items they found on campus. Users create item posts by creating an account or logging into an existing one. Once the user is logged in they can submit a lost or found item by creating posts. Our users can communicate with each other through their email when they have found or want to claim an item. Users are able to update/delete their posts, attach/remove images to their posts, change their email, or change their password.
+This website is created for UMass students, faculty, and residents that are related to UMass Amherst to give them a place to find their lost items or post found items on campus. Users can create item posts by creating an account or logging into an existing one. Once the user is logged in they can submit a lost or found item by creating posts. Our users can communicate with each other through their email when they have found or want to claim an item. Users are able to update/delete their posts, attach/remove images to their posts, change their email, or change their password.
 
 A website like this doesn't exist at UMass Amherst, so it will be innovative and helpful for our town if this website could be put in use.
 ## Team Members
