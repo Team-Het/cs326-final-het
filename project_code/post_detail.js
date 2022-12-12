@@ -61,11 +61,22 @@ function goUpdate() {
 
 // Post Detail functions
 window.onload = function () {
+    const body = JSON.parse(localStorage.getItem('item_detail'));
     const username = localStorage.getItem("username");
     const email = localStorage.getItem("email");
+    let itemEmail = '';
+    const itemUsername = body.username;
+    document.getElementById('username').innerHTML = body.username;
+
+    fetch(window.location.origin + '/user/view/' + itemUsername)
+        .then((response) => response.json())
+        .then((data) => {
+            itemEmail = data.email;
+            document.getElementById('email').innerHTML = "Please contact me through " + itemEmail;
+            console.log(data);
+        });
 
     refreshSign();
-    const body = JSON.parse(localStorage.getItem('item_detail'));
 
     console.log(body);
 
@@ -103,10 +114,10 @@ window.onload = function () {
     localStorage.setItem("currentTime", datetime);
     document.getElementById("currentTime").innerHTML = localStorage.getItem("currentTime");
 
-    if (username && email) {
-        document.getElementById('username').innerHTML = body.username;
-        document.getElementById('email').innerHTML = "Please contact me through " + localStorage.getItem("email");
-    }
+    // if (username && email) {
+    //     document.getElementById('username').innerHTML = body.username;
+    //     document.getElementById('email').innerHTML = "Please contact me through " + localStorage.getItem("email");
+    // }
     window.username = username;
     localStorage.setItem("updateBody", JSON.stringify(body));
     console.log(localStorage.getItem("updateBody"));
