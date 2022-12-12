@@ -64,7 +64,7 @@ window.onload = async function () {
 	window.dictionary = await dic.json();
 	const select = document.getElementById('where_you_lost');
 	
-	for (let address of dictionary) {
+	for (const address of dictionary) {
 		const optionElement = document.createElement('option');
   		optionElement.value = address;
   		optionElement.text = address;
@@ -91,29 +91,3 @@ function submitItem(){
         alert("Please Enter the Above Queries");
     }
 }
-
-// function submitLostItem(){
-//     const item = document.getElementById("search_item").value;
-//     const location = document.getElementById("search_location").value;
-//     if((item && item.length > 0) && (location && location.length > 0)){
-//         localStorage.setItem('item', item);
-//         localStorage.setItem('location', location);
-//         localStorage.setItem('fromPage', 'index')
-//         window.location.href = "./submit_lost_item.html";
-//     } else {
-//         alert("Please Enter the Above Queries");
-//     }
-// }
-
-// function submitFoundItem(){
-//     const item = document.getElementById("search_item").value;
-//     const location = document.getElementById("search_location").value;
-//     if((item && item.length > 0) && (location && location.length > 0)){
-//         localStorage.setItem('item', item);
-//         localStorage.setItem('location', location);
-//         localStorage.setItem('fromPage', 'index')
-//         window.location.href = "./submit_lost_item.html";
-//     } else {
-//         alert("Please Enter the Above Queries");
-//     }
-// }

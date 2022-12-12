@@ -7,7 +7,6 @@ function signOut() {
     fetch(window.location.origin + '/logout')
         .then((response) => response.json())
         .then((data) => { });
-    // console.log("in signOut");
     localStorage.removeItem("username");
     localStorage.removeItem("email");
     window.location.href = "./index.html";
@@ -63,7 +62,6 @@ function goUpdate() {
 window.onload = function () {
     const body = JSON.parse(localStorage.getItem('item_detail'));
     const username = localStorage.getItem("username");
-    const email = localStorage.getItem("email");
     let itemEmail = '';
     const itemUsername = body.username;
     document.getElementById('username').innerHTML = body.username;
@@ -87,7 +85,6 @@ window.onload = function () {
         document.getElementById('lostorfound').innerHTML = "Found An Item!"
     }
     document.getElementById("title").innerHTML = body.item_name;
-    //document.getElementById("date_grey").innerHTML = body.date_lost + " " + body.time_lost;
     document.getElementById("additional").innerHTML = body.additional;
     document.getElementById("category").innerHTML = "Category: " + body.category;
     document.getElementById("brand").innerHTML = "Brand: " + body.brand;
@@ -114,47 +111,18 @@ window.onload = function () {
     localStorage.setItem("currentTime", datetime);
     document.getElementById("currentTime").innerHTML = localStorage.getItem("currentTime");
 
-    // if (username && email) {
-    //     document.getElementById('username').innerHTML = body.username;
-    //     document.getElementById('email').innerHTML = "Please contact me through " + localStorage.getItem("email");
-    // }
     window.username = username;
     localStorage.setItem("updateBody", JSON.stringify(body));
-    console.log(localStorage.getItem("updateBody"));
-    // localStorage.removeItem('passBody');
 
     const update = document.getElementById('update_post');
-    // const found = document.getElementById('found_post');
     const deleteP = document.getElementById('delete_post');
     if (username && username === body.username) {
         update.classList.remove('hidden');
         deleteP.classList.remove('hidden');
-        // found.classList.add('hidden');
-        // if(body.is_found = "y"){
-        //     found.innerHTML = "Claim Item";
-        // } else {
-        //     found.innerHTML = "Found Item";
-        // }
     } else {
         update.classList.add('hidden');
         deleteP.classList.add('hidden');
-        // found.classList.remove('hidden');
-        // if (body.is_found === "y") {
-        //     found.innerHTML = "Claim Item";
-        // } else if (body.is.found === "n") {
-        //     found.innerHTML = "Found Item";
-        // }
     }
-
-    // if (window.username) {
-    //     update.classList.remove('hidden');
-    //     found.classList.remove('hidden');
-    //     deleteP.classList.remove('hidden');
-    // } else {
-    //     update.classList.add('hidden');
-    //     found.classList.add('hidden');
-    //     deleteP.classList.add('hidden');
-    // }
 
     if (!body.additional) {
         document.getElementById('additional').classList.add("mb-auto");
@@ -214,4 +182,3 @@ async function createComment() {
         body: JSON.stringify(body)
     });
 }
-

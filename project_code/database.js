@@ -39,10 +39,6 @@ async function getUser(req, res) {
 			console.log('inside getUser many');
 			const results = await db.collection('User').find().toArray();
 			res.send({ results });
-			// const cursor = await db.collection('User').find();
-			// const results = await cursor.toArray();
-			// return {results}
-			// res.send(results.findResult);
 		} else {
 			console.log('inside getUser 1');
 			const cursor = await db.collection('User').findOne({ username: req.params.id });
@@ -141,7 +137,7 @@ async function uploadItemImage(req, res) {
 	console.log('filename = ' + req.files.filename);
 	console.log('metadata = ' + req.body.metadata);
 	try {
-		if (req.files == undefined) {
+		if (req.files === undefined) {
 			return res.send({
 				message: "You must select a file.",
 			});
@@ -150,14 +146,14 @@ async function uploadItemImage(req, res) {
 		const filename = req.files.filename;
 		const metadata = JSON.parse(req.body.metadata);
 		console.log('username = ' + metadata.username + ', item_name = ' + metadata.item_name);
-		await filename.mv('./tempFiles/' + filename.name)
+		await filename.mv('./tempFiles/' + filename.name);
 		await fs.createReadStream('./tempFiles/' + filename.name).
 			pipe(uploadStream = bucket.openUploadStream(filename.name, {
 				chunkSizeBytes: 1048576,
 				metadata: { username: metadata.username, item_name: metadata.item_name }
 			})
 			).on('error', function (error) {
-				console.log(error)
+				console.log(error);
 			}).
 			on('finish', async function () {
 				console.log('Done');
@@ -176,11 +172,6 @@ async function uploadItemImage(req, res) {
 				});
 			});
 		console.log(req.files);
-		// fs.unlink('./tempFiles/' + filename.name, (err) => {
-		// if (err) throw err;
-		// console.log(filename.name + ' was deleted');
-		// });
-
 	} catch (error) {
 		console.log(error);
 
@@ -263,7 +254,6 @@ async function updateItem(req, res) {
 		const updateDoc = {
 			$set: {
 				item_desc: req.body.item_desc,
-				// image: req.body.image,
 				address: req.body.address,
 				is_found: req.body.is_found,
 				date_lost: req.body.date_lost,
@@ -322,43 +312,6 @@ async function getItem(req, res) {
 	}
 }
 
-async function createComment(req, res) {
-	console.log(req.body);
-	try {
-		if ("comment" in req.body) {
-			req.body.comment.push({
-				"user": req.body.username,
-				"comment": req.body.newComment
-			});
-		} else {
-			req.body.comment = [...{
-				"user": req.body.username,
-				"comment": req.body.newComment
-			}];
-		}
-		delete req.body.newComment;
-		const filter = { username: req.body.username, item_name: req.body.item_name };
-		const options = { upsert: true };
-		const updateDoc = {
-			$set: {
-				comment: req.body.comment
-			},
-		};
-		await db.collection('Items').updateOne(filter, options, updateDoc);
-		res.send({
-			"status": "success",
-		});
-	} catch (error) {
-		res.send({
-			"status": 'error',
-		});
-	}
-}
-
-async function getComment(req, res) {
-
-}
-
 module.exports = {
 	getUser,
 	updateUser,
@@ -373,7 +326,5 @@ module.exports = {
 	deleteItem,
 	testData,
 	connectToCluster,
-	logout,
-	createComment,
-	getComment
-}
+	logout
+};

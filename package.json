@@ -1,24 +1,56 @@
 {
-  "name": "test",
-  "version": "0.0.0",
-  "license": "MIT",
-  "appConfigs": {},
-  "scripts": {
-    "start": "node project_code/server.js"
-  },
-  "private": true,
-  "dependencies": {
-    "crypto": "^1.0.1",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "express-fileupload": "^1.4.0",
-    "express-session": "^1.17.3",
-    "gridfs-stream": "^1.1.1",
-    "mongodb": "^4.12.0",
-    "passport": "^0.6.0",
-    "passport-local": "^1.0.0"
-  },
-  "engines": {
-    "node": ">=6.15.0"
-  }
+    "name": "test",
+    "version": "0.0.0",
+    "license": "MIT",
+    "appConfigs": {},
+    "scripts": {
+        "start": "node project_code/server.js",
+        "lint": "eslint project_code/"
+    },
+    "private": true,
+    "dependencies": {
+        "crypto": "^1.0.1",
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2",
+        "express-fileupload": "^1.4.0",
+        "express-session": "^1.17.3",
+        "gridfs-stream": "^1.1.1",
+        "mongodb": "^4.12.0",
+        "passport": "^0.6.0",
+        "passport-local": "^1.0.0"
+    },
+    "engines": {
+        "node": ">=6.15.0"
+    },
+    "devDependencies": {
+        "eslint": "^8.29.0"
+    },
+    "eslintConfig": {
+        "env": {
+            "browser": true,
+            "es2021": true,
+            "node": true
+        },
+        "extends": "eslint:recommended",
+        "parserOptions": {
+            "ecmaVersion": 12,
+            "sourceType": "module"
+        },
+        "rules": {
+            "no-var": "error",
+            "eqeqeq": "error",
+            "semi": [
+                "error",
+                "always"
+            ],
+            "curly": [
+                "warn",
+                "all"
+            ],
+            "prefer-const": [
+                "warn",
+                {}
+            ]
+        }
+    }
 }
