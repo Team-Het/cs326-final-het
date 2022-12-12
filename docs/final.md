@@ -1,18 +1,14 @@
 # Team Het
 UMass Lost and Found, Fall 2022
-
 ## Overview
-
-This website is created for UMass students, faculty, and residents live around Amherst to find their lost items and give them a chance to return the found items. The user of this website will be asked to create an account if they don't have one. Once the account is created, they could feel free to submit the lost or found items by creating posts, and be able to contact with other users through email by seeing all posts. They will also be able to update their posts, delete their posts, and upload images.<br/>
+This website is created for UMass students, faculty, and residents that live around Amherst to find their lost items or give them a place to post found items. The user of this website will be asked to create an account if they don't have one. Once the account is created, they could feel free to submit the lost or found items by creating posts, and be able to contact with other users through email by seeing all posts. They will also be able to update their posts, delete their posts, and upload images.<br/>
 A website like this doesn't exist at UMass Amherst, so it will be innovative and helpful for our town if this website could be put in use.
-
 ## Team Members
 | | Name | GitHub |
 | :------------- | :------------- | :------------- |
 | ![](https://avatars.githubusercontent.com/u/71847172?s=48&v=4) | Yujin Qin | [nenevadera](https://github.com/nenevadera) |
 | ![]() | Kelly Chung | [Kelly2c](https://github.com/Kelly2c) |
 | ![](https://avatars.githubusercontent.com/u/58710754?s=40&v=4) | Yuqi Liu| [ZephyrusLiu](https://github.com/ZephyrusLiu) |
-
 ## User Interface
 | Name | Purpose | Screenshot |
 | :------------- | :-------------------- | :------------- |
@@ -24,10 +20,7 @@ A website like this doesn't exist at UMass Amherst, so it will be innovative and
 | post_page | Page To View All Posts | ![dashboard wireframe](../imgs/post_page.png) |
 | profile | User's Profile With Personal Information | ![dashboard wireframe](../imgs/profile.png) |
 | submit_lost_item | Page For Submitting Lost Or Found Items | ![dashboard wireframe](../imgs/submit_lost_item.png) |
-
-
 ## APIs
-
 | Path | Descriptions | Input | Output |
 | :------------- | :------------- | :------------- | :------------- |
 | \/login | Login | user_name, password | success with user_id or failure |
@@ -43,9 +36,7 @@ A website like this doesn't exist at UMass Amherst, so it will be innovative and
 | \/item\/view\/id | View Item | item_id | user_id, item_id, item_name, item_desc,  image, address, is_found |
 | \/item\/view\/getall | Get All Items, Same as \/item\/view\/id | NA | list of all items |
 | \/item\/download\/:name | Upload Image | filename | success with filename or failure |
-
 ## Database
-
 ### Items
 | Name | Data Type | Description |
 | :------------- | :------------- | :------------- |
@@ -59,7 +50,6 @@ A website like this doesn't exist at UMass Amherst, so it will be innovative and
 | address | string | Where the item lost or found |
 | additional | string | Additional information add by post owner |
 | is_found | string | Check the item is lost or found |
-
 ### User
 | Name | Data Type | Description |
 | :------------- | :------------- | :------------- |
@@ -67,7 +57,6 @@ A website like this doesn't exist at UMass Amherst, so it will be innovative and
 | salt | string | Secret random key to hash |
 | hash | string | Hashed value of password |
 | email | string | Email of the user |
-
 ## URL Routes / Mappings
 | URL Path | Description | Authentication |
 | :------------- | :------------- | :------------- |
@@ -87,6 +76,16 @@ A website like this doesn't exist at UMass Amherst, so it will be innovative and
 | \/item\/download\/:name | Download Image | not required |
 ## Authentication / Authorization
 
+### Authentication:
+All users are required to create an account with a username, email, and password.
+The password is stored in the hash format according to the project standard format.
+Such as session id with passport local strategy.
+
+Anyone can browse the posts without loging in, however if they want to create, edit, or delete the data they will have to sign in using their login credentials.
+
+### Authorization:
+Anyone can browse any posts.
+However only the post owner can change modify and delete.
 ## Division of Labor
 Kelly Chung:
 
