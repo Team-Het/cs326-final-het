@@ -113,7 +113,16 @@ However only the post owner can modify or delete their post.
 ## Division of Labor
 Kelly Chung:
 
-Yuqi Liu: Applyed datepicker, timepicker, Adjust the final.md, Fininshed the basic functionaly of filter. Add options to location and category(takes a lot of time, since we have 297 buildings...), create a json file based on the buildings. Fix some bugs, tried to finish the search bar, but not working.
+Yuqi Liu: Come up with the project idea and the initial design. 
+Created and completed the HTML and CSS for Submit Lost Item Page, Submit Found Item Page, View Posts Page, View Details Page, and also lean_more.js & .html & .css. Imported map and accomplised the basic functinality. 
+Add options to location and category(takes a lot of time, since we have 297 buildings...), create a json file based on the buildings.
+Accomplished the basic functionality of uploading image. 
+Accomplished functions in server.js, submit_found_item.js, submit_lost_item.js, database.js. Accomplished some of the RESTful API. Accomplised some functionalify and format in .html for related page as well. 
+Accomplished the basic functionality of filter(js,html), but didn't get it used(contains bug). Applied datepicker, timepicker.
+Updated the API CRUD. Come up with the initial version of login functionality, and helped with login page. 
+Helped with link between post page and post_detail page. Helped with modification of nav bar. Helped with bug fixing.
+Created samples for test. 
+Made contribution and modification on every milestone. 
 
 Yujin Qin: Design and draw all the raw frames of web pages. Rearrange milestone1 markdown file and webpages. 
 <br>Completed post_detail.js, login.js, helped with submit_found_item.js and submit_lost_item.js, helped construct milestone2.md. 
