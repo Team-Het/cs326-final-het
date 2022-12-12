@@ -115,7 +115,7 @@ Kelly Chung:
 
 Yuqi Liu: Applyed datepicker, timepicker, Adjust the final.md, Fininshed the basic functionaly of filter. Add options to location and category(takes a lot of time, since we have 297 buildings...), create a json file based on the buildings. Fix some bugs, tried to finish the search bar, but not working.
 
-Yujin Qin: Write overview, UI views, APIs, datebase part and help complete the conclusion part in the final.md. Combine and clean up submit_lost_item and update_post together, get rid of useless code/s or file/s. Try to finish reply function, add new key to the items database.
+Yujin Qin: Write overview, UI views, APIs, datebase part and help complete the conclusion part in the final.md. Combine and clean up submit_lost_item and update_post together, get rid of useless code/s or file/s. Try to finish reply function, add new key to the items database. Complete the setup.md file.
 
 ## Conclusion
 We had a good learning experience working together and all learned how to use HTML, CSS, and JavaScript to build up a website and make it usable for anyone. We communicated well through Slack with a to-do list and everyone tried their best in the group work. Complete the setup.md file.
