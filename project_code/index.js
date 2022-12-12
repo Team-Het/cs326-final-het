@@ -74,13 +74,19 @@ window.onload = async function () {
 
 function submitItem(){
     const item = document.getElementById("search_item").value;
-    const location = document.getElementById("search_location").value;
+    const location = document.getElementById("where_you_lost").value;
+    const username = localStorage.getItem("username");
+
     if((item && item.length > 0) && (location && location.length > 0)){
         localStorage.setItem('item', item);
         localStorage.setItem('location', location);
         localStorage.setItem('nextPage', './submit_lost_item.html');
-        localStorage.setItem('fromPage', 'index')
-        window.location.href = "./submit_lost_item.html";
+        localStorage.setItem('fromPage', 'index');   
+        if(username){
+            window.location.href = "./submit_lost_item.html";
+        } else {
+            window.location.href = "./login.html";
+        }
     } else {
         alert("Please Enter the Above Queries");
     }
